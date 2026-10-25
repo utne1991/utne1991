@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "c6bf1105-78d0-4309-8806-6eee23531ed8",
+  "status": "current",
+  "command": "deliver",
+  "type": "workflow",
+  "input": "/workspace/utne1991/resort-management/docs/diagrams/sources/00-roadmap.json",
+  "output": "/workspace/utne1991/resort-management/docs/diagrams/exports/00-roadmap.html",
+  "specification": {
+    "sha256": "1a315da24e713831924b58d807b9feddf5353963eca48d9af7419ab71f6dd374",
+    "bytes": 4591
+  },
+  "artifact": {
+    "sha256": "a99b899d01693ef18ff60c9a29de29cb8c06dded0541d11e18e7c12e6282f39a",
+    "bytes": 838088
+  }
+}

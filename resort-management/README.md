@@ -7,6 +7,7 @@ Bộ tài liệu dự án trong repository `utne1991/utne1991`, thư mục `reso
 - Đọc [Tổng quan dự án](PROJECT-OVERVIEW.md) trước để thống nhất mục tiêu, phạm vi và trạng thái.
 - Xem [Từng bước thực hiện](docs/IMPLEMENTATION-STEPS.md) và [Danh mục sơ đồ](docs/diagrams/README.md) để theo dõi kế hoạch ngay trên GitHub.
 - Đọc [Công cụ và nguồn tham khảo](docs/TOOLING-AND-SOURCES.md) để hiểu vai trò của Archify, ECC và Hello-Agents. Claude bắt đầu từ [CLAUDE.md](CLAUDE.md).
+- [Bộ bản đồ tương tác Archify](docs/diagrams/exports/index.html): tải repo và mở HTML. Đọc [cách agent làm việc trong cloud](docs/ARCHIFY-WORKFLOW.md) và [giới hạn kiểm tra](docs/diagrams/VERIFICATION.md).
 
 - Mở `design/dashboard.html` bằng trình duyệt để xem bản mẫu dashboard. Không cần cài thư viện hay chạy server.
 - Đọc `docs/PRODUCT-MAP.md` để hiểu bản đồ màn hình, quy tắc và lộ trình.

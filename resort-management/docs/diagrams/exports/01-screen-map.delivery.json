@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "760c2218-9e5a-47d5-9d2d-e6ddcd9a5fae",
+  "status": "current",
+  "command": "deliver",
+  "type": "tree",
+  "input": "/workspace/utne1991/resort-management/docs/diagrams/sources/01-screen-map.json",
+  "output": "/workspace/utne1991/resort-management/docs/diagrams/exports/01-screen-map.html",
+  "specification": {
+    "sha256": "e67f73165ae408c8fa38f08e611abcc96e099cfe1601d49ed8ac1517b852f651",
+    "bytes": 6811
+  },
+  "artifact": {
+    "sha256": "59c8a521868d190ff93f9e8dcba63afb684ecacfb1b36e5dda75c6a6976ff165",
+    "bytes": 855695
+  }
+}

@@ -2,6 +2,8 @@
 
 Mở từng file `.md` trên GitHub ở chế độ xem thông thường để xem Mermaid. Các sơ đồ là **thiết kế đề xuất**. Chưa có backend hoặc tích hợp live tương ứng.
 
+Đã tạo [bộ sơ đồ tương tác Archify](exports/index.html) và [nguồn JSON](sources/). Tải repo rồi mở `exports/index.html`; GitHub không tự chạy HTML này. Xem [bằng chứng và giới hạn kiểm tra](VERIFICATION.md) trước khi dùng làm cơ sở duyệt giao diện.
+
 | Thứ tự | Sơ đồ | Câu hỏi được trả lời |
 | --- | --- | --- |
 | 0 | [Từng bước thực hiện](../IMPLEMENTATION-STEPS.md) | Đang ở đâu, làm gì tiếp? |
@@ -15,6 +17,6 @@ Mở từng file `.md` trên GitHub ở chế độ xem thông thường để x
 
 Mermaid là nguồn sơ đồ hiện có, được giữ cùng tài liệu trong Git. Có thể sửa nội dung trong PR và xem diff văn bản. Chưa kiểm tra render trực tiếp trên GitHub bằng trình duyệt.
 
-Khi được giao dùng Archify, tạo nguồn theo schema của nó ở `sources/` và xuất HTML ở `exports/`; các thư mục đó chỉ tạo khi có artifact thật. Không đặt tên file hoặc gắn nhãn “đã tạo bằng Archify” khi chưa chạy công cụ.
+Archify đã chạy để tạo sáu sơ đồ ở `sources/` và `exports/`: lộ trình, màn hình, booking, kiến trúc, doanh thu và vòng làm việc agent/GitHub. [Quy trình chạy lại trong cloud](../ARCHIFY-WORKFLOW.md) giải thích cách sửa nguồn và xuất lại. Sơ đồ dữ liệu vẫn là ERD khái niệm Mermaid; chưa chốt schema vật lý.
 
 Không cần bật GitHub Pages để đọc Mermaid. HTML tương tác cần tải/mở hoặc hosting riêng; đây là quyết định tách biệt với việc lưu dự án trên GitHub.

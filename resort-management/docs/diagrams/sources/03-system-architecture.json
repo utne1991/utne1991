@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Kiến trúc tổng quan Resort 100 — chưa triển khai",
+    "output": "docs/diagrams/exports/03-system-architecture.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/utne1991/utne1991.git",
+      "revision": "24f04ba30d214edff148b6dfcac83db7f2cad67c"
+    }
+  },
+  "components": [
+    {
+      "id": "staff",
+      "type": "external",
+      "label": "Nhân viên / quản lý",
+      "sublabel": "Theo vai trò",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        170,
+        70
+      ],
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/03-system-architecture.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ]
+    },
+    {
+      "id": "web",
+      "type": "frontend",
+      "label": "Web app",
+      "sublabel": "Dashboard và nghiệp vụ",
+      "pos": [
+        320,
+        40
+      ],
+      "size": [
+        170,
+        70
+      ],
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/03-system-architecture.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ]
+    },
+    {
+      "id": "api",
+      "type": "backend",
+      "label": "API và nghiệp vụ",
+      "sublabel": "Xác thực, quyền, tồn phòng",
+      "pos": [
+        600,
+        40
+      ],
+      "size": [
+        170,
+        70
+      ],
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/03-system-architecture.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "type": "database",
+      "label": "Dữ liệu nghiệp vụ",
+      "sublabel": "Booking và trạng thái",
+      "pos": [
+        880,
+        40
+      ],
+      "size": [
+        170,
+        70
+      ],
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/03-system-architecture.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ]
+    },
+    {
+      "id": "adapter",
+      "type": "messagebus",
+      "label": "Tích hợp và đối soát",
+      "sublabel": "Hàng đợi, retry",
+      "pos": [
+        600,
+        240
+      ],
+      "size": [
+        170,
+        70
+      ],
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/03-system-architecture.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ]
+    },
+    {
+      "id": "pms",
+      "type": "cloud",
+      "label": "PMS / kênh bán",
+      "sublabel": "Nguồn chính cần chốt",
+      "pos": [
+        320,
+        240
+      ],
+      "size": [
+        170,
+        70
+      ],
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/03-system-architecture.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ]
+    },
+    {
+      "id": "audit",
+      "type": "database",
+      "label": "Nhật ký thao tác",
+      "sublabel": "Ai làm gì, khi nào",
+      "pos": [
+        600,
+        440
+      ],
+      "size": [
+        170,
+        70
+      ],
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/03-system-architecture.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ]
+    },
+    {
+      "id": "metrics",
+      "type": "backend",
+      "label": "Báo cáo / chỉ số",
+      "sublabel": "Tính xác định từ dữ liệu",
+      "pos": [
+        880,
+        240
+      ],
+      "size": [
+        170,
+        70
+      ],
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/03-system-architecture.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "staff-to-web",
+      "from": "staff",
+      "to": "web"
+    },
+    {
+      "id": "web-to-api",
+      "from": "web",
+      "to": "api"
+    },
+    {
+      "id": "api-to-data",
+      "from": "api",
+      "to": "data"
+    },
+    {
+      "id": "pms-to-adapter",
+      "from": "pms",
+      "to": "adapter"
+    },
+    {
+      "id": "adapter-to-pms",
+      "from": "adapter",
+      "to": "pms"
+    },
+    {
+      "id": "adapter-to-api",
+      "from": "adapter",
+      "to": "api"
+    },
+    {
+      "id": "api-to-adapter",
+      "from": "api",
+      "to": "adapter"
+    },
+    {
+      "id": "api-to-audit",
+      "from": "api",
+      "to": "audit"
+    },
+    {
+      "id": "data-to-metrics",
+      "from": "data",
+      "to": "metrics"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "amber",
+      "title": "Thiết kế khái niệm",
+      "items": [
+        "Chưa có backend, database hoặc kết nối live. Chưa chốt nhà cung cấp hosting.",
+        "API và nghiệp vụ được nhóm trong một khối; chi tiết endpoint chưa được thiết kế."
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Phạm vi của bản đồ",
+      "items": [
+        "Báo cáo trả qua API theo quyền; chưa vẽ đường trả để giữ mức tổng quan.",
+        "Sao lưu, AI tùy chọn và luồng duyệt giá được mô tả trong các tài liệu liên quan."
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Công cụ phát triển nằm ngoài runtime",
+      "items": [
+        "Archify tạo bản đồ. ECC hỗ trợ Claude Code hoặc Codex.",
+        "Hello-Agents là nguồn tham khảo; chưa là thư viện hoặc dịch vụ trong app."
+      ]
+    }
+  ]
+}

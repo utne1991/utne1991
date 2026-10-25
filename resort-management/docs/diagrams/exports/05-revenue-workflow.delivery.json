@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "515017ba-22ad-4941-a342-2bc041d810ec",
+  "status": "current",
+  "command": "deliver",
+  "type": "workflow",
+  "input": "/workspace/utne1991/resort-management/docs/diagrams/sources/05-revenue-workflow.json",
+  "output": "/workspace/utne1991/resort-management/docs/diagrams/exports/05-revenue-workflow.html",
+  "specification": {
+    "sha256": "86058ea2d832b347c991639f91c1fc3d796cc09b4b5eca5f3edc438bc9b6a68a",
+    "bytes": 6230
+  },
+  "artifact": {
+    "sha256": "65109ac35e4f667a88b7723f814594e750bbeec5cce492a9f7c865cbf3005aff",
+    "bytes": 847026
+  }
+}

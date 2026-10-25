@@ -1,0 +1,195 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Lộ trình Resort 100 — thiết kế, chưa phải app chạy thật",
+    "output": "docs/diagrams/exports/00-roadmap.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/utne1991/utne1991.git",
+      "revision": "24f04ba30d214edff148b6dfcac83db7f2cad67c"
+    }
+  },
+  "lanes": [
+    {
+      "id": "design",
+      "label": "Thiết kế và chuẩn bị"
+    },
+    {
+      "id": "build",
+      "label": "Triển khai sau khi được giao"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "s0",
+      "lane": "design",
+      "col": 0,
+      "type": "backend",
+      "label": "S0 · Tổng quan",
+      "sources": [
+        {
+          "path": "resort-management/docs/IMPLEMENTATION-STEPS.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Đã có bản nháp",
+      "icon": "flag"
+    },
+    {
+      "id": "s1",
+      "lane": "design",
+      "col": 1,
+      "type": "backend",
+      "label": "S1 · Bản đồ",
+      "sources": [
+        {
+          "path": "resort-management/docs/IMPLEMENTATION-STEPS.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Đang hoàn thiện Archify",
+      "icon": "flag"
+    },
+    {
+      "id": "s2",
+      "lane": "design",
+      "col": 2,
+      "type": "backend",
+      "label": "S2 · Chốt yêu cầu",
+      "sources": [
+        {
+          "path": "resort-management/docs/IMPLEMENTATION-STEPS.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Chưa chốt với chủ dự án",
+      "icon": "decision"
+    },
+    {
+      "id": "s3",
+      "lane": "design",
+      "col": 3,
+      "type": "backend",
+      "label": "S3 · Giao diện",
+      "sources": [
+        {
+          "path": "resort-management/docs/IMPLEMENTATION-STEPS.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Chưa làm app framework"
+    },
+    {
+      "id": "s4",
+      "lane": "build",
+      "col": 3,
+      "type": "backend",
+      "label": "S4 · Backend",
+      "sources": [
+        {
+          "path": "resort-management/docs/IMPLEMENTATION-STEPS.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Booking, quyền, buồng phòng"
+    },
+    {
+      "id": "s5",
+      "lane": "build",
+      "col": 2,
+      "type": "backend",
+      "label": "S5 · Đồng bộ",
+      "sources": [
+        {
+          "path": "resort-management/docs/IMPLEMENTATION-STEPS.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Chạy thử và đối soát"
+    },
+    {
+      "id": "s6",
+      "lane": "build",
+      "col": 1,
+      "type": "backend",
+      "label": "S6 · Doanh thu",
+      "sources": [
+        {
+          "path": "resort-management/docs/IMPLEMENTATION-STEPS.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Dữ liệu và người duyệt"
+    },
+    {
+      "id": "s7",
+      "lane": "build",
+      "col": 0,
+      "type": "backend",
+      "label": "S7 · Trợ lý AI",
+      "sources": [
+        {
+          "path": "resort-management/docs/IMPLEMENTATION-STEPS.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Tùy chọn, chưa triển khai"
+    }
+  ],
+  "edges": [
+    {
+      "id": "s0-to-s1",
+      "from": "s0",
+      "to": "s1"
+    },
+    {
+      "id": "s1-to-s2",
+      "from": "s1",
+      "to": "s2"
+    },
+    {
+      "id": "s2-to-s3",
+      "from": "s2",
+      "to": "s3"
+    },
+    {
+      "id": "s3-to-s4",
+      "from": "s3",
+      "to": "s4"
+    },
+    {
+      "id": "s4-to-s5",
+      "from": "s4",
+      "to": "s5"
+    },
+    {
+      "id": "s5-to-s6",
+      "from": "s5",
+      "to": "s6"
+    },
+    {
+      "id": "s6-to-s7",
+      "from": "s6",
+      "to": "s7"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "amber",
+      "title": "Điểm hiện tại",
+      "items": [
+        "Đã có dashboard HTML mẫu và tài liệu; chưa có backend hoặc PMS thật.",
+        "S2 cần xác nhận nghiệp vụ. Các bước sau không tự động được giao cho Claude."
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Cách chuyển bước",
+      "items": [
+        "Mỗi bước lưu thay đổi, kết quả kiểm tra và giới hạn trong GitHub.",
+        "Archify tạo bản đồ; ECC hỗ trợ agent lập trình; Hello-Agents là nguồn tham khảo giai đoạn AI."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "40a1ee81-fef3-4405-81fd-527e6e57079d",
+  "status": "current",
+  "command": "deliver",
+  "type": "workflow",
+  "input": "/workspace/utne1991/resort-management/docs/diagrams/sources/02-booking-workflow.json",
+  "output": "/workspace/utne1991/resort-management/docs/diagrams/exports/02-booking-workflow.html",
+  "specification": {
+    "sha256": "9098e9f821805c8130e804b01cafbeb45cd8cf37267ea7b9348ac7e0cd3959b5",
+    "bytes": 9330
+  },
+  "artifact": {
+    "sha256": "9484df0a0d2b99e01e015dffada1d45a3a70037593eaf9e27aeacb430e8f744b",
+    "bytes": 862293
+  }
+}

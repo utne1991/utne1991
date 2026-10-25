@@ -127,6 +127,8 @@ Các câu hỏi này không chặn việc xem và chỉnh bản thiết kế hi�
 - [Các bước thực hiện và trạng thái](docs/IMPLEMENTATION-STEPS.md)
 - [Danh mục sơ đồ theo từng câu hỏi](docs/diagrams/README.md)
 - [Vai trò và snapshot Archify, ECC, Hello-Agents](docs/TOOLING-AND-SOURCES.md)
+- [Sáu sơ đồ tương tác Archify](docs/diagrams/exports/index.html) và [bằng chứng kiểm tra](docs/diagrams/VERIFICATION.md)
+- [Quy trình dùng Archify trong cloud](docs/ARCHIFY-WORKFLOW.md)
 - [Bắt đầu và công cụ](README.md)
 - [Bản đồ màn hình, nghiệp vụ và dữ liệu](docs/PRODUCT-MAP.md)
 - [Bản mẫu dashboard](design/dashboard.html)

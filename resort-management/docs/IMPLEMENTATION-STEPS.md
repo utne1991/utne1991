@@ -16,7 +16,7 @@ flowchart TD
 | Bước | Trạng thái | Đầu vào / công việc | Đầu ra và kiểm tra |
 | --- | --- | --- | --- |
 | S0 | Có bản nháp | Tổng quan, PRODUCT-MAP, HTML dashboard | Có file; đã kiểm tra cú pháp JS và phép tính mẫu; chưa kiểm tra giao diện trong trình duyệt |
-| S1 | Có tài liệu | Danh mục ba nguồn, sơ đồ nghiệp vụ, hướng dẫn đọc | Mermaid trong Markdown, liên kết nội bộ hợp lệ; chưa xuất bằng Archify và chưa kiểm tra render bằng trình duyệt |
+| S1 | Có tài liệu và HTML Archify; kiểm tra trình duyệt còn vướng | Danh mục ba nguồn, sơ đồ nghiệp vụ, hướng dẫn đọc | Sáu HTML đã đạt validate/deliver/strict check; browser-check lỗi môi trường, chưa duyệt trực quan. Xem [bằng chứng](diagrams/VERIFICATION.md) |
 | S2 | Chưa chốt | Xem bản mẫu; xác nhận PMS, kênh bán, loại phòng, vai trò, giá/thuế và phạm vi ưu tiên | Ghi quyết định của chủ dự án và các giả định còn mở; ảnh/bố cục được rà soát |
 | S3 | Chưa làm | Được giao triển khai giao diện; dùng CLAUDE-HANDOFF | App demo có hướng dẫn chạy, trạng thái dữ liệu, kiểm tra responsive, build/typecheck và PR |
 | S4 | Chưa làm | Quyết định nguồn booking/tồn phòng chính và mô hình dữ liệu | Booking, quyền, dọn phòng, thanh toán theo phạm vi; kiểm thử đặt đồng thời, chồng lịch, quyền và khôi phục dữ liệu |

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "workflow",
+  "quality": "showcase",
+  "specification": {
+    "path": "/workspace/utne1991/resort-management/docs/diagrams/sources/02-booking-workflow.json",
+    "sha256": "9098e9f821805c8130e804b01cafbeb45cd8cf37267ea7b9348ac7e0cd3959b5",
+    "bytes": 9330
+  },
+  "artifact": {
+    "path": "/workspace/utne1991/resort-management/docs/diagrams/exports/02-booking-workflow.html",
+    "sha256": "9484df0a0d2b99e01e015dffada1d45a3a70037593eaf9e27aeacb430e8f744b",
+    "bytes": 862293
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "fail"
+  },
+  "failedStage": "browser-check",
+  "diagnostics": [
+    {
+      "code": "viewer/browser-check-runtime",
+      "severity": "error",
+      "message": "browser-check could not complete its Chrome inspection.",
+      "subject": {
+        "artifact": "/workspace/utne1991/resort-management/docs/diagrams/exports/02-booking-workflow.html"
+      },
+      "evidence": {
+        "reason": "Chrome DevTools read pipe failed: stream ended\nChrome process: still running.\nChrome stderr:\n[9046:9046:1025/161905.977307:ERROR:third_party/crashpad/crashpad/util/file/filesystem_posix.cc:63] mkdir : No such file or directory (2)\nchrome_crashpad_handler: --database is required\nTry 'chrome_crashpad_handler --help' for more information.\n[9046:9046:1025/161905.979897:FATAL:sandbox/linux/suid/client/setuid_sandbox_host.cc:172] The SUID sandbox helper binary was found, but is not configured correctly. Rather than run without sandboxing I'm aborting now. You need to make sure that /usr/lib/chromium/chrome-sandbox is owned by root and has mode 4755.\nChrome transport: Node v24.19.0, libuv 1.52.1, linux; pid=9046, exitCode=null, signalCode=null.\nChrome read pipe: readable=false, ended=true, destroyed=false, receivedBytes=0, messages=0, bufferedBytes=0.\nChrome write pipe: writable=true, ended=false, destroyed=false, completedWrites=1, writtenBytes=50, bufferedBytes=0."
+      },
+      "supportedFixes": [
+        "resolve the reported Chrome inspection error, then rerun browser-check"
+      ]
+    }
+  ],
+  "diagnosticSummary": {
+    "total": 1,
+    "shown": 1,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "/workspace/utne1991/resort-management/docs/diagrams/exports/02-booking-workflow.finalize.json",
+    "summaryReceipt": "/workspace/utne1991/resort-management/docs/diagrams/exports/02-booking-workflow.finalize-summary.json",
+    "browserCheckReceipt": "/workspace/utne1991/resort-management/docs/diagrams/exports/02-booking-workflow.browser-check.json"
+  },
+  "visualReview": "not-requested",
+  "durationMs": 1479,
+  "browserCheck": {
+    "requested": true,
+    "ran": false
+  }
+}

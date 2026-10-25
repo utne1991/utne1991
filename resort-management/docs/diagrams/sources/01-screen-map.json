@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "diagram_type": "tree",
+  "meta": {
+    "title": "Bản đồ màn hình Resort 100 — đề xuất",
+    "output": "docs/diagrams/exports/01-screen-map.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/utne1991/utne1991.git",
+      "revision": "24f04ba30d214edff148b6dfcac83db7f2cad67c"
+    }
+  },
+  "nodes": [
+    {
+      "id": "resort",
+      "label": "Resort 100",
+      "sublabel": "Màn hình đề xuất",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/01-screen-map.md",
+          "label": "Tài liệu thiết kế"
+        },
+        {
+          "path": "resort-management/PROJECT-OVERVIEW.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ]
+    },
+    {
+      "id": "operations",
+      "parent": "resort",
+      "label": "Vận hành",
+      "sublabel": "Lễ tân và buồng phòng",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/01-screen-map.md",
+          "label": "Tài liệu thiết kế"
+        },
+        {
+          "path": "resort-management/PROJECT-OVERVIEW.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ]
+    },
+    {
+      "id": "business",
+      "parent": "resort",
+      "label": "Kinh doanh",
+      "sublabel": "Quản lý và kế toán",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/01-screen-map.md",
+          "label": "Tài liệu thiết kế"
+        },
+        {
+          "path": "resort-management/PROJECT-OVERVIEW.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ]
+    },
+    {
+      "id": "system",
+      "parent": "resort",
+      "label": "Hệ thống",
+      "sublabel": "Người có quyền cấu hình",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/01-screen-map.md",
+          "label": "Tài liệu thiết kế"
+        },
+        {
+          "path": "resort-management/PROJECT-OVERVIEW.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ]
+    },
+    {
+      "id": "dashboard",
+      "parent": "operations",
+      "label": "Dashboard",
+      "sublabel": "Chỉ có HTML mẫu",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/01-screen-map.md",
+          "label": "Tài liệu thiết kế"
+        },
+        {
+          "path": "resort-management/PROJECT-OVERVIEW.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ]
+    },
+    {
+      "id": "calendar",
+      "parent": "operations",
+      "label": "Lịch phòng",
+      "sublabel": "Khả dụng theo ngày",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/01-screen-map.md",
+          "label": "Tài liệu thiết kế"
+        },
+        {
+          "path": "resort-management/PROJECT-OVERVIEW.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ]
+    },
+    {
+      "id": "booking",
+      "parent": "operations",
+      "label": "Đặt phòng",
+      "sublabel": "Khách đến, trả, đổi và hủy",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/01-screen-map.md",
+          "label": "Tài liệu thiết kế"
+        },
+        {
+          "path": "resort-management/PROJECT-OVERVIEW.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ]
+    },
+    {
+      "id": "housekeeping",
+      "parent": "operations",
+      "label": "Buồng phòng",
+      "sublabel": "Dọn, kiểm tra và bảo trì",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/01-screen-map.md",
+          "label": "Tài liệu thiết kế"
+        },
+        {
+          "path": "resort-management/PROJECT-OVERVIEW.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ]
+    },
+    {
+      "id": "reports",
+      "parent": "business",
+      "label": "Báo cáo",
+      "sublabel": "Công suất và chi phí kênh",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/01-screen-map.md",
+          "label": "Tài liệu thiết kế"
+        },
+        {
+          "path": "resort-management/PROJECT-OVERVIEW.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ]
+    },
+    {
+      "id": "revenue",
+      "parent": "business",
+      "label": "Giá và khuyến mãi",
+      "sublabel": "Có người duyệt",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/01-screen-map.md",
+          "label": "Tài liệu thiết kế"
+        },
+        {
+          "path": "resort-management/PROJECT-OVERVIEW.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ]
+    },
+    {
+      "id": "payments",
+      "parent": "business",
+      "label": "Đối soát thanh toán",
+      "sublabel": "Theo quyền và chính sách",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/01-screen-map.md",
+          "label": "Tài liệu thiết kế"
+        },
+        {
+          "path": "resort-management/PROJECT-OVERVIEW.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ]
+    },
+    {
+      "id": "roles",
+      "parent": "system",
+      "label": "Tài khoản và quyền",
+      "sublabel": "Kiểm tra tại backend",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/01-screen-map.md",
+          "label": "Tài liệu thiết kế"
+        },
+        {
+          "path": "resort-management/PROJECT-OVERVIEW.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ]
+    },
+    {
+      "id": "settings",
+      "parent": "system",
+      "label": "Cấu hình cơ sở",
+      "sublabel": "Phòng, thuế và chính sách",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/01-screen-map.md",
+          "label": "Tài liệu thiết kế"
+        },
+        {
+          "path": "resort-management/PROJECT-OVERVIEW.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ]
+    },
+    {
+      "id": "integrations",
+      "parent": "system",
+      "label": "Kết nối PMS",
+      "sublabel": "Đồng bộ và dữ liệu trễ",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/01-screen-map.md",
+          "label": "Tài liệu thiết kế"
+        },
+        {
+          "path": "resort-management/PROJECT-OVERVIEW.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "dot": "amber",
+      "title": "Chưa lập trình toàn bộ",
+      "items": [
+        "Nhánh thể hiện phân nhóm chức năng, không phải quyền mặc định.",
+        "Chỉ dashboard HTML mẫu tồn tại. Các trang nghiệp vụ và đăng nhập chưa chạy."
+      ]
+    }
+  ]
+}

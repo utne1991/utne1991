@@ -18,6 +18,8 @@ Xây dựng ứng dụng quản lý phòng, lịch đặt phòng, buồng phòng
 - [Tổng quan dự án](resort-management/PROJECT-OVERVIEW.md)
 - [Sơ đồ từng bước và tiến độ](resort-management/docs/IMPLEMENTATION-STEPS.md)
 - [Danh mục sơ đồ](resort-management/docs/diagrams/README.md)
+- [Bản đồ tương tác Archify](resort-management/docs/diagrams/exports/index.html) — tải repo và mở HTML bằng trình duyệt.
+- [Cách ChatGPT Cloud và Claude làm việc với repo](resort-management/docs/ARCHIFY-WORKFLOW.md)
 - [Archify, ECC và Hello-Agents trong dự án](resort-management/docs/TOOLING-AND-SOURCES.md)
 - [Bản đồ chức năng và lộ trình](resort-management/docs/PRODUCT-MAP.md)
 - [Bản mẫu dashboard HTML](resort-management/design/dashboard.html) — tải về rồi mở bằng trình duyệt.

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "32424e8e-e98f-4160-bb40-2ddf0c568d72",
+  "status": "current",
+  "command": "deliver",
+  "type": "workflow",
+  "input": "/workspace/utne1991/resort-management/docs/diagrams/sources/06-cloud-working-loop.json",
+  "output": "/workspace/utne1991/resort-management/docs/diagrams/exports/06-cloud-working-loop.html",
+  "specification": {
+    "sha256": "9369e08b2ea9e8649970de185fc49512fcb6ef1484fc56591cdc955c20f4dcf9",
+    "bytes": 4548
+  },
+  "artifact": {
+    "sha256": "56543c05b134aa5874b4bf78dc44c80adfeb97769018a0f1952d20ff5533d9e2",
+    "bytes": 839907
+  }
+}

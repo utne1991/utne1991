@@ -1,0 +1,258 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Giá và khuyến mãi — có người duyệt, chưa triển khai",
+    "output": "docs/diagrams/exports/05-revenue-workflow.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/utne1991/utne1991.git",
+      "revision": "24f04ba30d214edff148b6dfcac83db7f2cad67c"
+    }
+  },
+  "lanes": [
+    {
+      "id": "data",
+      "label": "Dữ liệu và đề xuất"
+    },
+    {
+      "id": "approval",
+      "label": "Quản lý và kiểm soát"
+    },
+    {
+      "id": "result",
+      "label": "Thực thi và đánh giá"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "inputs",
+      "lane": "data",
+      "col": 0,
+      "type": "database",
+      "label": "Dữ liệu nguồn",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/05-revenue-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Booking, phí và chi phí"
+    },
+    {
+      "id": "quality",
+      "lane": "data",
+      "col": 1,
+      "type": "security",
+      "label": "Đủ dữ liệu?",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/05-revenue-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Đã đối soát và còn mới"
+    },
+    {
+      "id": "missing",
+      "lane": "approval",
+      "col": 1,
+      "type": "backend",
+      "label": "Báo dữ liệu thiếu",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/05-revenue-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Không tự bịa chỉ số"
+    },
+    {
+      "id": "calc",
+      "lane": "data",
+      "col": 2,
+      "type": "backend",
+      "label": "Tính chỉ số",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/05-revenue-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Khoảng trống và lợi nhuận"
+    },
+    {
+      "id": "suggest",
+      "lane": "data",
+      "col": 3,
+      "type": "backend",
+      "label": "Đề xuất phương án",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/05-revenue-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Quy tắc; AI tùy chọn"
+    },
+    {
+      "id": "review",
+      "lane": "approval",
+      "col": 3,
+      "type": "security",
+      "label": "Quản lý duyệt?",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/05-revenue-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Giá và ngân sách"
+    },
+    {
+      "id": "edit",
+      "lane": "approval",
+      "col": 4,
+      "type": "backend",
+      "label": "Sửa hoặc bỏ",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/05-revenue-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Chưa thực thi"
+    },
+    {
+      "id": "guard",
+      "lane": "result",
+      "col": 3,
+      "type": "security",
+      "label": "Kiểm tra giới hạn",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/05-revenue-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Quyền, giá sàn, thời hạn"
+    },
+    {
+      "id": "execute",
+      "lane": "result",
+      "col": 2,
+      "type": "backend",
+      "label": "Thực thi",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/05-revenue-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Tích hợp được hỗ trợ"
+    },
+    {
+      "id": "log",
+      "lane": "result",
+      "col": 1,
+      "type": "database",
+      "label": "Ghi kết quả",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/05-revenue-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Lưu nhật ký"
+    },
+    {
+      "id": "evaluate",
+      "lane": "result",
+      "col": 0,
+      "type": "backend",
+      "label": "Đánh giá",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/05-revenue-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Lợi nhuận tăng thêm"
+    }
+  ],
+  "edges": [
+    {
+      "id": "inputs-to-quality",
+      "from": "inputs",
+      "to": "quality"
+    },
+    {
+      "id": "quality-to-missing",
+      "from": "quality",
+      "to": "missing",
+      "label": "Chưa"
+    },
+    {
+      "id": "quality-to-calc",
+      "from": "quality",
+      "to": "calc",
+      "label": "Có"
+    },
+    {
+      "id": "calc-to-suggest",
+      "from": "calc",
+      "to": "suggest"
+    },
+    {
+      "id": "suggest-to-review",
+      "from": "suggest",
+      "to": "review"
+    },
+    {
+      "id": "review-to-edit",
+      "from": "review",
+      "to": "edit",
+      "label": "Không"
+    },
+    {
+      "id": "review-to-guard",
+      "from": "review",
+      "to": "guard",
+      "label": "Có"
+    },
+    {
+      "id": "guard-to-execute",
+      "from": "guard",
+      "to": "execute",
+      "label": "Hợp lệ"
+    },
+    {
+      "id": "execute-to-log",
+      "from": "execute",
+      "to": "log"
+    },
+    {
+      "id": "log-to-evaluate",
+      "from": "log",
+      "to": "evaluate"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "amber",
+      "title": "Không tự chi quảng cáo",
+      "items": [
+        "Chưa kết nối tài khoản quảng cáo hoặc có ngân sách được duyệt.",
+        "Luồng thực thi chỉ tiếp tục khi quyền và giới hạn hợp lệ."
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Đánh giá để cải thiện vòng sau",
+      "items": [
+        "Kết quả được dùng làm dữ liệu cho lần đề xuất tiếp theo.",
+        "Lợi nhuận đóng góp chưa phải lợi nhuận ròng; attribution chưa chứng minh tăng thêm."
+      ]
+    }
+  ]
+}

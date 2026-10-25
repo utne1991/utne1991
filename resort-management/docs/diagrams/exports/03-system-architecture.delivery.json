@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "85703945-8932-481c-956c-e5f66505e9df",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "/workspace/utne1991/resort-management/docs/diagrams/sources/03-system-architecture.json",
+  "output": "/workspace/utne1991/resort-management/docs/diagrams/exports/03-system-architecture.html",
+  "specification": {
+    "sha256": "961721074a908b735325db9169e519f27f3beb2d14d355e94ed9767c3284414e",
+    "bytes": 5486
+  },
+  "artifact": {
+    "sha256": "bceb51d5a1330a32ad9fd9258ba14bcf81833b4d80ac33e2451b9073651d1595",
+    "bytes": 844182
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "workflow",
+  "quality": "showcase",
+  "specification": {
+    "path": "/workspace/utne1991/resort-management/docs/diagrams/sources/00-roadmap.json",
+    "sha256": "1a315da24e713831924b58d807b9feddf5353963eca48d9af7419ab71f6dd374",
+    "bytes": 4591
+  },
+  "artifact": {
+    "path": "/workspace/utne1991/resort-management/docs/diagrams/exports/00-roadmap.html",
+    "sha256": "a99b899d01693ef18ff60c9a29de29cb8c06dded0541d11e18e7c12e6282f39a",
+    "bytes": 838088
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "fail"
+  },
+  "failedStage": "browser-check",
+  "diagnostics": [
+    {
+      "code": "viewer/browser-check-runtime",
+      "severity": "error",
+      "message": "browser-check could not complete its Chrome inspection.",
+      "subject": {
+        "artifact": "/workspace/utne1991/resort-management/docs/diagrams/exports/00-roadmap.html"
+      },
+      "evidence": {
+        "reason": "Chrome DevTools read pipe failed: stream ended\nChrome process: still running.\nChrome stderr:\n[8914:8914:1025/161903.540596:ERROR:third_party/crashpad/crashpad/util/file/filesystem_posix.cc:63] mkdir : No such file or directory (2)\nchrome_crashpad_handler: --database is required\nTry 'chrome_crashpad_handler --help' for more information.\n[8914:8914:1025/161903.549043:FATAL:sandbox/linux/suid/client/setuid_sandbox_host.cc:172] The SUID sandbox helper binary was found, but is not configured correctly. Rather than run without sandboxing I'm aborting now. You need to make sure that /usr/lib/chromium/chrome-sandbox is owned by root and has mode 4755.\nChrome transport: Node v24.19.0, libuv 1.52.1, linux; pid=8914, exitCode=null, signalCode=null.\nChrome read pipe: readable=false, ended=true, destroyed=false, receivedBytes=0, messages=0, bufferedBytes=0.\nChrome write pipe: writable=true, ended=false, destroyed=false, completedWrites=1, writtenBytes=50, bufferedBytes=0."
+      },
+      "supportedFixes": [
+        "resolve the reported Chrome inspection error, then rerun browser-check"
+      ]
+    }
+  ],
+  "diagnosticSummary": {
+    "total": 1,
+    "shown": 1,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "/workspace/utne1991/resort-management/docs/diagrams/exports/00-roadmap.finalize.json",
+    "summaryReceipt": "/workspace/utne1991/resort-management/docs/diagrams/exports/00-roadmap.finalize-summary.json",
+    "browserCheckReceipt": "/workspace/utne1991/resort-management/docs/diagrams/exports/00-roadmap.browser-check.json"
+  },
+  "visualReview": "not-requested",
+  "durationMs": 1129,
+  "browserCheck": {
+    "requested": true,
+    "ran": false
+  }
+}

@@ -1,0 +1,393 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Booking đến phòng sẵn sàng — quy trình đề xuất",
+    "output": "docs/diagrams/exports/02-booking-workflow.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/utne1991/utne1991.git",
+      "revision": "24f04ba30d214edff148b6dfcac83db7f2cad67c"
+    }
+  },
+  "lanes": [
+    {
+      "id": "request",
+      "label": "Yêu cầu và kiểm tra tồn"
+    },
+    {
+      "id": "confirm",
+      "label": "Giữ chỗ và xác nhận"
+    },
+    {
+      "id": "stay",
+      "label": "Nhận khách và lưu trú"
+    },
+    {
+      "id": "rooms",
+      "label": "Buồng phòng và bảo trì"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "request",
+      "lane": "request",
+      "col": 0,
+      "type": "frontend",
+      "label": "Yêu cầu đặt",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/02-booking-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Ngày và loại phòng"
+    },
+    {
+      "id": "stock",
+      "lane": "request",
+      "col": 1,
+      "type": "backend",
+      "label": "Kiểm tra tồn",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/02-booking-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Trong giao dịch an toàn"
+    },
+    {
+      "id": "available",
+      "lane": "request",
+      "col": 2,
+      "type": "security",
+      "label": "Còn tồn?",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/02-booking-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Kiểm tra cả loại phòng"
+    },
+    {
+      "id": "alternative",
+      "lane": "request",
+      "col": 3,
+      "type": "backend",
+      "label": "Phương án khác",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/02-booking-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Không đủ tồn"
+    },
+    {
+      "id": "hold",
+      "lane": "confirm",
+      "col": 2,
+      "type": "backend",
+      "label": "Giữ chỗ có hạn",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/02-booking-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Có tồn hợp lệ"
+    },
+    {
+      "id": "confirm",
+      "lane": "confirm",
+      "col": 3,
+      "type": "security",
+      "label": "Đủ điều kiện?",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/02-booking-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Theo chính sách resort"
+    },
+    {
+      "id": "release",
+      "lane": "confirm",
+      "col": 4,
+      "type": "backend",
+      "label": "Giải phóng tồn",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/02-booking-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Hết hạn hoặc hủy"
+    },
+    {
+      "id": "booked",
+      "lane": "stay",
+      "col": 3,
+      "type": "backend",
+      "label": "Xác nhận booking",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/02-booking-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Theo dõi đến, hủy, vắng"
+    },
+    {
+      "id": "cancel",
+      "lane": "stay",
+      "col": 4,
+      "type": "backend",
+      "label": "Hủy / không đến",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/02-booking-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Phí và tồn theo chính sách"
+    },
+    {
+      "id": "ready",
+      "lane": "stay",
+      "col": 2,
+      "type": "security",
+      "label": "Phòng sẵn sàng?",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/02-booking-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Gán phòng và kiểm tra"
+    },
+    {
+      "id": "resolve",
+      "lane": "confirm",
+      "col": 1,
+      "type": "backend",
+      "label": "Dọn hoặc đổi phòng",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/02-booking-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Kiểm tra tồn rồi thử lại"
+    },
+    {
+      "id": "in",
+      "lane": "stay",
+      "col": 1,
+      "type": "backend",
+      "label": "Nhận khách",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/02-booking-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Chỉ khi phòng sẵn sàng"
+    },
+    {
+      "id": "out",
+      "lane": "stay",
+      "col": 0,
+      "type": "backend",
+      "label": "Trả phòng",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/02-booking-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Đối soát và chuyển chờ dọn"
+    },
+    {
+      "id": "clean",
+      "lane": "rooms",
+      "col": 0,
+      "type": "backend",
+      "label": "Dọn phòng",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/02-booking-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Phân công và thực hiện"
+    },
+    {
+      "id": "inspect",
+      "lane": "rooms",
+      "col": 1,
+      "type": "security",
+      "label": "Kiểm tra",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/02-booking-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Có lỗi cần sửa?"
+    },
+    {
+      "id": "repair",
+      "lane": "rooms",
+      "col": 2,
+      "type": "backend",
+      "label": "Chặn bảo trì",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/02-booking-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Sửa và kiểm tra lại"
+    },
+    {
+      "id": "sell",
+      "lane": "rooms",
+      "col": 3,
+      "type": "backend",
+      "label": "Sạch, sẵn sàng",
+      "sources": [
+        {
+          "path": "resort-management/docs/diagrams/02-booking-workflow.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Vẫn kiểm tra lịch bán"
+    }
+  ],
+  "edges": [
+    {
+      "id": "request-to-stock",
+      "from": "request",
+      "to": "stock"
+    },
+    {
+      "id": "stock-to-available",
+      "from": "stock",
+      "to": "available"
+    },
+    {
+      "id": "available-to-alternative",
+      "from": "available",
+      "to": "alternative",
+      "label": "Không"
+    },
+    {
+      "id": "available-to-hold",
+      "from": "available",
+      "to": "hold",
+      "label": "Có"
+    },
+    {
+      "id": "hold-to-confirm",
+      "from": "hold",
+      "to": "confirm"
+    },
+    {
+      "id": "confirm-to-release",
+      "from": "confirm",
+      "to": "release",
+      "label": "Hết hạn / hủy"
+    },
+    {
+      "id": "confirm-to-booked",
+      "from": "confirm",
+      "to": "booked",
+      "label": "Đạt"
+    },
+    {
+      "id": "booked-to-cancel",
+      "from": "booked",
+      "to": "cancel",
+      "label": "Hủy / vắng"
+    },
+    {
+      "id": "booked-to-ready",
+      "from": "booked",
+      "to": "ready",
+      "label": "Khách đến"
+    },
+    {
+      "id": "ready-to-resolve",
+      "from": "ready",
+      "to": "resolve",
+      "label": "Chưa"
+    },
+    {
+      "id": "resolve-to-ready",
+      "from": "resolve",
+      "to": "ready",
+      "label": "Thử lại"
+    },
+    {
+      "id": "ready-to-in",
+      "from": "ready",
+      "to": "in",
+      "label": "Có"
+    },
+    {
+      "id": "in-to-out",
+      "from": "in",
+      "to": "out"
+    },
+    {
+      "id": "out-to-clean",
+      "from": "out",
+      "to": "clean"
+    },
+    {
+      "id": "clean-to-inspect",
+      "from": "clean",
+      "to": "inspect"
+    },
+    {
+      "id": "inspect-to-repair",
+      "from": "inspect",
+      "to": "repair",
+      "label": "Có lỗi"
+    },
+    {
+      "id": "repair-to-inspect",
+      "from": "repair",
+      "to": "inspect",
+      "label": "Đã sửa"
+    },
+    {
+      "id": "inspect-to-sell",
+      "from": "inspect",
+      "to": "sell",
+      "label": "Đạt"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "amber",
+      "title": "Phân biệt hai việc",
+      "items": [
+        "Phòng đã trả cần dọn và kiểm tra trước khi nhận khách khác.",
+        "Phòng sạch vẫn có thể đã được đặt trong ngày tương lai."
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Điều kiện nghiệp vụ",
+      "items": [
+        "Chống chồng lịch và đặt đồng thời phải thực hiện ở backend.",
+        "Chính sách đặt cọc, hủy và không đến chưa được chủ resort xác nhận."
+      ]
+    }
+  ]
+}

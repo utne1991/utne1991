@@ -1,0 +1,193 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "ChatGPT Cloud, GitHub và Claude — cách làm việc",
+    "output": "docs/diagrams/exports/06-cloud-working-loop.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/utne1991/utne1991.git",
+      "revision": "24f04ba30d214edff148b6dfcac83db7f2cad67c"
+    }
+  },
+  "lanes": [
+    {
+      "id": "design",
+      "label": "Chủ dự án và agent trong cloud"
+    },
+    {
+      "id": "delivery",
+      "label": "Kiểm tra và bàn giao"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "user",
+      "lane": "design",
+      "col": 0,
+      "type": "external",
+      "label": "Giao yêu cầu",
+      "sources": [
+        {
+          "path": "resort-management/CLAUDE.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Chọn bước trong kế hoạch"
+    },
+    {
+      "id": "repo",
+      "lane": "design",
+      "col": 1,
+      "type": "database",
+      "label": "Đọc repo",
+      "sources": [
+        {
+          "path": "resort-management/CLAUDE.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Tài liệu và nguồn sơ đồ"
+    },
+    {
+      "id": "author",
+      "lane": "design",
+      "col": 2,
+      "type": "backend",
+      "label": "Sửa thiết kế",
+      "sources": [
+        {
+          "path": "resort-management/CLAUDE.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Tạo nguồn Archify"
+    },
+    {
+      "id": "render",
+      "lane": "design",
+      "col": 3,
+      "type": "backend",
+      "label": "Chạy Archify",
+      "sources": [
+        {
+          "path": "resort-management/CLAUDE.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Tạo HTML tương tác"
+    },
+    {
+      "id": "verify",
+      "lane": "delivery",
+      "col": 3,
+      "type": "security",
+      "label": "Kiểm tra",
+      "sources": [
+        {
+          "path": "resort-management/CLAUDE.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Schema, đầu ra, trình duyệt"
+    },
+    {
+      "id": "publish",
+      "lane": "delivery",
+      "col": 2,
+      "type": "database",
+      "label": "Lưu GitHub",
+      "sources": [
+        {
+          "path": "resort-management/CLAUDE.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Commit theo phạm vi được giao"
+    },
+    {
+      "id": "handoff",
+      "lane": "delivery",
+      "col": 1,
+      "type": "backend",
+      "label": "Agent phiên sau đọc",
+      "sources": [
+        {
+          "path": "resort-management/CLAUDE.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Claude hoặc ChatGPT"
+    },
+    {
+      "id": "next",
+      "lane": "delivery",
+      "col": 0,
+      "type": "external",
+      "label": "Tiếp tục bước được giao",
+      "sources": [
+        {
+          "path": "resort-management/CLAUDE.md",
+          "label": "Tài liệu thiết kế"
+        }
+      ],
+      "sublabel": "Không tự chạy toàn lộ trình"
+    }
+  ],
+  "edges": [
+    {
+      "id": "user-to-repo",
+      "from": "user",
+      "to": "repo"
+    },
+    {
+      "id": "repo-to-author",
+      "from": "repo",
+      "to": "author"
+    },
+    {
+      "id": "author-to-render",
+      "from": "author",
+      "to": "render"
+    },
+    {
+      "id": "render-to-verify",
+      "from": "render",
+      "to": "verify"
+    },
+    {
+      "id": "verify-to-publish",
+      "from": "verify",
+      "to": "publish",
+      "label": "Đạt"
+    },
+    {
+      "id": "publish-to-handoff",
+      "from": "publish",
+      "to": "handoff"
+    },
+    {
+      "id": "handoff-to-next",
+      "from": "handoff",
+      "to": "next"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Repo là nơi lưu ngữ cảnh",
+      "items": [
+        "Lưu yêu cầu, quy tắc, nguồn sơ đồ, HTML và bằng chứng kiểm tra.",
+        "Không lưu mật khẩu, khóa API hoặc dữ liệu khách thật."
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Không tự chạy chỉ vì đã push",
+      "items": [
+        "Agent cần được cấp quyền đọc repo và được giao nhiệm vụ. GitHub không tự gọi Claude.",
+        "Chạy CLI trong workspace không có nghĩa đã cài skill toàn cục cho mọi phiên ChatGPT."
+      ]
+    }
+  ]
+}

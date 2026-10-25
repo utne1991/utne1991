@@ -2,9 +2,9 @@
 
 ## 1. Mục đích
 
-Đây là danh mục nguồn giúp Claude hiểu cách thiết kế và xây sản phẩm. Các nguồn không phải ba module đã được cài trong resort. Chỉ liên kết và ghi lại thông tin kiểm tra; chưa sao chép mã, chưa thêm submodule hay dependency.
+Đây là danh mục nguồn giúp Claude hiểu cách thiết kế và xây sản phẩm. Các nguồn không phải ba module đã được cài trong resort. Chưa thêm submodule hay dependency chạy app. Archify đã được chạy từ checkout ngoài repo để tạo artifact HTML; license và notice đi kèm artifact được giữ trong `diagrams/vendor-notices/archify/`.
 
-Kiểm tra tài liệu và mã định danh nguồn ngày 25/10/2026. Chưa chạy cài đặt hoặc kiểm thử các công cụ bên ngoài. Thông tin phiên bản bên dưới chỉ mô tả snapshot đã đọc; không phải chỉ dẫn luôn dùng bản mới nhất.
+Kiểm tra tài liệu và mã định danh nguồn ngày 25/10/2026. Đã chạy Archify, xem [quy trình cloud](ARCHIFY-WORKFLOW.md) và [bằng chứng](diagrams/VERIFICATION.md). Chưa cài ECC hoặc chạy ví dụ Hello-Agents. Thông tin phiên bản bên dưới chỉ mô tả snapshot đã đọc; không phải chỉ dẫn luôn dùng bản mới nhất.
 
 | Nguồn | Vai trò | Lựa chọn cho dự án |
 | --- | --- | --- |
@@ -24,7 +24,7 @@ Kiểm tra tài liệu và mã định danh nguồn ngày 25/10/2026. Chưa ch�
 
 1. Xác nhận agent đang dùng có thể chạy công cụ và đọc skill; xem hướng dẫn cài của đúng phiên bản.
 2. Tạo nguồn có cấu trúc theo schema Archify dựa trên các sơ đồ nghiệp vụ ở `docs/diagrams/`; không giả định đổi đuôi `.md` thành `.json` là chuyển đổi được.
-3. Ghi nguồn ở `docs/diagrams/sources/`, HTML ở `docs/diagrams/exports/` khi thực sự tạo chúng. Hai thư mục này chưa có artifact.
+3. Ghi nguồn ở `docs/diagrams/sources/`, HTML ở `docs/diagrams/exports/`. Hiện đã có sáu nguồn JSON và HTML tương ứng.
 4. Chạy validator của phiên bản đã chọn; kiểm tra đọc, điều hướng và bố cục trên trình duyệt.
 5. Lưu nguồn, HTML và bằng chứng kiểm tra cùng commit; giữ bản Mermaid dễ đọc trên GitHub.
 
