@@ -4,6 +4,8 @@
 
 Chỉ sử dụng khi chủ dự án yêu cầu triển khai. Hiện tại chưa giao việc cho Claude.
 
+Trước khi dùng prompt, đọc [CLAUDE.md của dự án](../CLAUDE.md), [các bước thực hiện](IMPLEMENTATION-STEPS.md), [danh mục sơ đồ](diagrams/README.md) và [quy định dùng nguồn ngoài](TOOLING-AND-SOURCES.md). Không tự cài công cụ hoặc coi các bước chưa làm là đã hoàn thành.
+
 > Dự án nằm trong thư mục resort-management/ của repository utne1991/utne1991. Hãy đọc resort-management/README.md, resort-management/PROJECT-OVERVIEW.md, resort-management/docs/PRODUCT-MAP.md và resort-management/design/dashboard.html trước khi làm. Triển khai giai đoạn giao diện mẫu: dashboard quản lý resort 100 phòng dựa trên bản thiết kế này, giữ ngôn ngữ tiếng Việt và các định nghĩa KPI. Đây là giao diện dùng dữ liệu giả; không trình bày nó như hệ thống đã tích hợp PMS, quảng cáo hoặc AI thật. Giữ mã dự án trong resort-management/, không ghi đè README hồ sơ ở gốc repo. Nếu đã có framework, theo framework và quy ước hiện có. Nếu chưa có app, đề xuất dùng Next.js + TypeScript, Tailwind và Recharts; ghi rõ lựa chọn trước khi triển khai. Không sửa các tài liệu thiết kế để làm biến mất tiêu chí chưa đạt. Không tự kết nối hay chi tiền vào tài khoản quảng cáo. Làm một pull request có ảnh màn hình, hướng dẫn chạy và kết quả kiểm tra.
 
 ## Phạm vi pull request giao diện đầu tiên

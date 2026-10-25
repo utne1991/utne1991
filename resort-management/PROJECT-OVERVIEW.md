@@ -123,6 +123,10 @@ Các câu hỏi này không chặn việc xem và chỉnh bản thiết kế hi�
 
 ## 10. Tài liệu và cách làm việc tiếp theo
 
+- [Hướng dẫn Claude đọc dự án](CLAUDE.md)
+- [Các bước thực hiện và trạng thái](docs/IMPLEMENTATION-STEPS.md)
+- [Danh mục sơ đồ theo từng câu hỏi](docs/diagrams/README.md)
+- [Vai trò và snapshot Archify, ECC, Hello-Agents](docs/TOOLING-AND-SOURCES.md)
 - [Bắt đầu và công cụ](README.md)
 - [Bản đồ màn hình, nghiệp vụ và dữ liệu](docs/PRODUCT-MAP.md)
 - [Bản mẫu dashboard](design/dashboard.html)

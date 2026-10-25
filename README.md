@@ -16,6 +16,9 @@ You can click the Preview link to take a look at your changes.
 Xây dựng ứng dụng quản lý phòng, lịch đặt phòng, buồng phòng và hiệu quả kinh doanh cho resort 100 phòng.
 
 - [Tổng quan dự án](resort-management/PROJECT-OVERVIEW.md)
+- [Sơ đồ từng bước và tiến độ](resort-management/docs/IMPLEMENTATION-STEPS.md)
+- [Danh mục sơ đồ](resort-management/docs/diagrams/README.md)
+- [Archify, ECC và Hello-Agents trong dự án](resort-management/docs/TOOLING-AND-SOURCES.md)
 - [Bản đồ chức năng và lộ trình](resort-management/docs/PRODUCT-MAP.md)
 - [Bản mẫu dashboard HTML](resort-management/design/dashboard.html) — tải về rồi mở bằng trình duyệt.
 
