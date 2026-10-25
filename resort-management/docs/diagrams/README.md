@@ -12,6 +12,13 @@ Mở từng file `.md` trên GitHub ở chế độ xem thông thường để x
 | 3 | [Kiến trúc hệ thống](03-system-architecture.md) | Các thành phần kết nối ra sao? |
 | 4 | [Mô hình dữ liệu khái niệm](04-data-model.md) | Cần những đối tượng và quan hệ nào? |
 | 5 | [Đề xuất doanh thu và duyệt](05-revenue-workflow.md) | Giá, khuyến mãi và AI được kiểm soát ra sao? |
+| 6 | [Vòng làm việc cloud/GitHub](exports/06-cloud-working-loop.html) | Agent đọc, sửa, kiểm tra và bàn giao bằng repo thế nào? |
+| 7 | [Ngoại lệ booking](07-booking-exceptions.md) | Đổi ngày, gia hạn, hủy một phần và tiền đến muộn xử lý ra sao? |
+| 8 | [Đồng bộ và đối soát](08-sync-and-reconciliation.md) | Chống trùng, retry và dữ liệu lệch được xử lý ở đâu? |
+| 9 | [Quyền tại backend](09-access-control.md) | Ai được làm gì với dữ liệu nào? |
+| 10 | [Chạy thử và khôi phục](10-release-and-recovery.md) | Điều kiện mở vận hành và xử lý sự cố là gì? |
+
+Mục 6 là [vòng làm việc cloud/GitHub](exports/06-cloud-working-loop.html) trong bộ Archify. Các mục 7–10 hiện là Mermaid bổ sung sau rà soát; chưa xuất Archify. Sáu HTML cũ ghim snapshot tài liệu trước lần bổ sung, không đại diện một baseline đã khóa. Xem [báo cáo rà soát](../DESIGN-REVIEW.md).
 
 ## Mermaid và Archify
 

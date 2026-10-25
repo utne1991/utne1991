@@ -6,6 +6,8 @@ Chỉ sử dụng khi chủ dự án yêu cầu triển khai. Hiện tại chưa
 
 Trước khi dùng prompt, đọc [CLAUDE.md của dự án](../CLAUDE.md), [các bước thực hiện](IMPLEMENTATION-STEPS.md), [danh mục sơ đồ](diagrams/README.md) và [quy định dùng nguồn ngoài](TOOLING-AND-SOURCES.md). Không tự cài công cụ hoặc coi các bước chưa làm là đã hoàn thành.
 
+Phạm vi dưới đây là **S3a dashboard demo** theo [IMPLEMENTATION-BRIEF](IMPLEMENTATION-BRIEF.md). Lịch phòng/booking demo đầy đủ là S3b, đợt riêng. Xem [rà soát thiết kế](DESIGN-REVIEW.md) và [sổ quyết định](DECISIONS.md); chưa có baseline được chủ dự án xác nhận.
+
 > Dự án nằm trong thư mục resort-management/ của repository utne1991/utne1991. Hãy đọc resort-management/README.md, resort-management/PROJECT-OVERVIEW.md, resort-management/docs/PRODUCT-MAP.md và resort-management/design/dashboard.html trước khi làm. Triển khai giai đoạn giao diện mẫu: dashboard quản lý resort 100 phòng dựa trên bản thiết kế này, giữ ngôn ngữ tiếng Việt và các định nghĩa KPI. Đây là giao diện dùng dữ liệu giả; không trình bày nó như hệ thống đã tích hợp PMS, quảng cáo hoặc AI thật. Giữ mã dự án trong resort-management/, không ghi đè README hồ sơ ở gốc repo. Nếu đã có framework, theo framework và quy ước hiện có. Nếu chưa có app, đề xuất dùng Next.js + TypeScript, Tailwind và Recharts; ghi rõ lựa chọn trước khi triển khai. Không sửa các tài liệu thiết kế để làm biến mất tiêu chí chưa đạt. Không tự kết nối hay chi tiền vào tài khoản quảng cáo. Làm một pull request có ảnh màn hình, hướng dẫn chạy và kết quả kiểm tra.
 
 ## Phạm vi pull request giao diện đầu tiên
@@ -65,6 +67,8 @@ interface DashboardPayload {
 7. Kiểm tra ở 1440, 1024, 768 và 390px; không tràn ngang toàn trang.
 8. Kiểm thử có ý nghĩa cho công thức công suất, loại trừ phòng bảo trì, bộ lọc và thao tác xem phòng. Chạy typecheck/build theo framework.
 9. Không đưa secrets, dữ liệu khách thật hoặc cấu hình production vào repo.
+10. Khi mẫu số công suất bằng 0, dữ liệu thiếu hoặc dữ liệu trễ, hiển thị đúng “Không áp dụng”/trạng thái thiếu/trễ; không thay mọi trường hợp bằng 0%.
+11. Thời gian còn lại tính theo cùng `asOf` và timezone; không dùng chuỗi đếm ngược cố định trong app. Chỉ số tiền thu/cọc không bị gắn nhãn doanh thu phòng.
 
 ## Quy tắc làm việc
 

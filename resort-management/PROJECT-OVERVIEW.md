@@ -2,6 +2,8 @@
 
 **Trạng thái:** thiết kế sản phẩm và xác định nghiệp vụ. Chưa có backend, cơ sở dữ liệu, tích hợp thật hoặc ứng dụng production.
 
+**Kết luận rà soát:** đã có bản đồ tổng quan; chưa khóa thiết kế vận hành. Xem [báo cáo rà soát](docs/DESIGN-REVIEW.md), [sổ quyết định](docs/DECISIONS.md) và [phạm vi từng đợt](docs/IMPLEMENTATION-BRIEF.md) trước khi giao code.
+
 **Chủ dự án:** utne1991. **Nơi lưu:** repository `utne1991/utne1991`, thư mục `resort-management/`.
 
 ## 1. Mục tiêu kinh doanh
@@ -92,12 +94,14 @@ Chi tiết công thức và trạng thái nằm trong [PRODUCT-MAP](docs/PRODUCT
 
 | Bước | Công việc | Điều kiện hoàn thành |
 | --- | --- | --- |
-| 0 — Hiện tại | Tổng quan, sơ đồ chức năng, bản mẫu dashboard | Chủ dự án có tài liệu chung để thảo luận và điều chỉnh |
-| 1 — Chốt giao diện | Xác nhận bố cục và màn hình ưu tiên | Mỗi phần có hành động và tiêu chí nghiệm thu rõ |
-| 2 — Claude triển khai giao diện | Chuyển bản mẫu thành app dùng dữ liệu giả | Có PR, chạy được, kiểm tra responsive và số liệu |
-| 3 — Backend nghiệp vụ | Đăng nhập, booking, tồn phòng, dọn phòng, quyền và nhật ký | Kiểm thử chồng lịch/đặt đồng thời, phân quyền, sao lưu/khôi phục |
-| 4 — Kết nối và chạy thử | PMS/kênh bán, đối soát, quy trình vận hành | Dữ liệu khớp; lỗi đồng bộ được phát hiện và xử lý; có phương án quay lui |
-| 5 — Tối ưu doanh thu | Báo cáo thật, giá/khuyến mãi có người duyệt | Chỉ số được đối soát và kết quả chiến dịch đo được |
+| S0–S1 — Hiện tại | Tổng quan, sơ đồ, dashboard HTML mẫu và rà soát | Có tài liệu chung; kiểm tra trình duyệt Archify còn vướng môi trường |
+| S2 — Chốt phạm vi | Xác nhận thiết kế và quyết định cho đợt cần làm | Ghi baseline, người xác nhận và các giả định còn mở |
+| S3a — Dashboard demo | Chuyển dashboard thành app dùng dữ liệu giả | Có PR, chạy được, kiểm tra responsive và số liệu |
+| S3b — Lịch/booking demo | Đợt UI riêng sau dashboard | Có hợp đồng dữ liệu, lịch theo ngày và xử lý xung đột demo |
+| S4 — Backend nghiệp vụ | Đăng nhập, booking, tồn phòng, dọn phòng, quyền và nhật ký | Chốt D01–D07; kiểm thử chồng lịch/đặt đồng thời, quyền, sao lưu/khôi phục |
+| S5 — Kết nối và chạy thử | PMS/kênh bán, đối soát, quy trình vận hành | Dữ liệu khớp; xử lý lỗi đồng bộ và có phương án quay lui |
+| S6 — Tối ưu doanh thu | Báo cáo thật, giá/khuyến mãi có người duyệt | Chỉ số đối soát được, đo kết quả và chi phí |
+| S7 — AI tùy chọn | Trợ lý chỉ đọc trước, đánh giá chất lượng | Dữ liệu theo quyền, câu trả lời có căn cứ và chi phí được kiểm soát |
 
 Chưa giao việc cho Claude, chưa ấn định ngân sách hoặc lịch hoàn thành khi chưa biết hệ thống hiện tại và phạm vi tích hợp.
 

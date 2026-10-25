@@ -6,6 +6,8 @@ Một cơ sở 100 phòng. Giao diện tiếng Việt, tiền VND, múi giờ c�
 
 Mục tiêu: biết phòng nào có thể bán và vào ngày nào, phục vụ khách đúng hạn, tối ưu lợi nhuận sau chi phí thay vì chỉ tăng công suất. Không cam kết AI sẽ lấp đầy phòng.
 
+Đây là bản đồ sản phẩm tổng thể. Phạm vi được giao từng đợt nằm ở [IMPLEMENTATION-BRIEF](IMPLEMENTATION-BRIEF.md); chính sách còn mở ở [DECISIONS](DECISIONS.md). Xem [OPERATING-RULES](OPERATING-RULES.md) cho ngoại lệ, quyền và chỉ số. Không coi mọi nhánh sơ đồ đều thuộc PR dashboard đầu tiên.
+
 ## 2. Bản đồ màn hình
 
 ```mermaid
@@ -55,6 +57,7 @@ Bản HTML là mẫu cho chủ resort/quản lý. Vai trò buồng phòng chỉ 
 - `Room`: phòng vật lý; `RoomType`: loại phòng. Không gộp hai khái niệm.
 - `Reservation` chứa một hoặc nhiều `ReservationRoom`; mỗi dòng có loại phòng, thời gian và giá. Có thể chưa gán phòng vật lý khi mới đặt.
 - Trạng thái reservation: tentative, confirmed, checked_in, checked_out, cancelled, no_show. Chỉ hold chưa hết hạn và booking hợp lệ mới giữ tồn theo chính sách.
+- Danh sách trên chưa phải state machine đầy đủ: booking nhiều phòng phải có trạng thái từng dòng và tổng hợp nhận/trả/hủy một phần; thanh toán là trạng thái độc lập.
 - Trạng thái housekeeping: dirty, cleaning, inspected, ready. Bảo trì là một khoảng chặn phòng riêng; trạng thái ở của khách được suy ra từ lưu trú.
 - Ô phòng có nhãn hiển thị tổng hợp; dữ liệu backend vẫn tách booking, dọn phòng và bảo trì.
 - Dùng khoảng lưu trú `[check_in, check_out)` để cho phép trả và nhận cùng ngày; giờ sẵn sàng thực tế còn phụ thuộc dọn phòng và chính sách.
@@ -97,11 +100,12 @@ Nếu đã có PMS, chọn nguồn dữ liệu chính trước khi code. Không 
 
 ## 6. Lộ trình triển khai
 
-1. **Giao diện mẫu:** dashboard, lịch phòng, chi tiết phòng, dữ liệu giả nhất quán. Chưa có tác động tài chính.
-2. **Nghiệp vụ cốt lõi:** đăng nhập/phân quyền, booking, tồn phòng, dọn phòng, bảo trì, nhật ký, sao lưu và kiểm thử khôi phục.
-3. **Tích hợp và chạy thử:** chọn nguồn chính; đồng bộ kênh bán; đối soát booking/tồn phòng; chạy thử song song có kiểm soát trước khi nhận vận hành thật.
-4. **Doanh thu:** giá và khuyến mãi theo quy tắc; phí kênh và chi phí phục vụ; quản lý duyệt.
-5. **Tối ưu nâng cao:** đánh giá dự báo trên dữ liệu lịch sử, đo hiệu quả tăng thêm của chiến dịch; tự động hóa trong giới hạn có thể thu hồi.
+1. **S0–S2 — Thiết kế và chốt phạm vi:** bản mẫu, sơ đồ, rà soát và các quyết định của đợt làm.
+2. **S3a — Dashboard mẫu:** chi tiết phòng và tương tác dashboard; dữ liệu giả, chưa có tác động tài chính. **S3b — Lịch/booking demo:** đợt riêng sau đó, không gộp vào PR dashboard.
+3. **S4 — Nghiệp vụ cốt lõi:** đăng nhập/phân quyền, booking, tồn phòng, dọn phòng, bảo trì, nhật ký, sao lưu và kiểm thử khôi phục.
+4. **S5 — Tích hợp và chạy thử:** chọn nguồn chính; đồng bộ kênh bán; đối soát booking/tồn phòng; chạy thử có kiểm soát, một nguồn ghi chính trước khi nhận vận hành thật.
+5. **S6 — Doanh thu:** giá và khuyến mãi theo quy tắc; phí kênh và chi phí phục vụ; quản lý duyệt.
+6. **S7 — AI tùy chọn:** đánh giá trên dữ liệu lịch sử, đo hiệu quả tăng thêm; tự động hóa trong giới hạn có thể thu hồi.
 
 ## 7. Quyết định còn cần xác nhận trước backend
 

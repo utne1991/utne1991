@@ -11,8 +11,9 @@ flowchart TD
     RULE --> EXPLAIN[Giải thích căn cứ và giới hạn; AI là tùy chọn]
     EXPLAIN --> REVIEW{Quản lý duyệt?}
     REVIEW -->|Không| EDIT[Sửa hoặc bỏ phương án]
-    REVIEW -->|Có| GUARD[Kiểm tra quyền, giá sàn, ngân sách và thời hạn]
-    GUARD --> EXECUTE[Thực thi qua tích hợp được hỗ trợ]
+    REVIEW -->|Có| GUARD{Quyền, giá sàn, ngân sách và thời hạn hợp lệ?}
+    GUARD -->|Không| STOP[Dừng và trả lý do, không thực thi]
+    GUARD -->|Có| EXECUTE[Thực thi qua tích hợp được hỗ trợ]
     EXECUTE --> LOG[Ghi kết quả và nhật ký]
     LOG --> EVALUATE[Đánh giá lợi nhuận tăng thêm và chi phí]
     EVALUATE --> RULE

@@ -18,3 +18,9 @@ Chưa kiểm tra cảm quan bố cục, tương tác và hiển thị trên trì
 Mỗi HTML có các tệp cùng tên `.delivery.json`, `.browser-check.json`, `.finalize.json` và `.finalize-summary.json` trong `exports/`. Các tệp chứa kết quả, hash và đường dẫn thực tế của lần chạy; chúng không phải chứng nhận tính đúng của nghiệp vụ thiết kế.
 
 Sơ đồ dữ liệu hiện chỉ là [ERD khái niệm Mermaid](04-data-model.md); chưa tạo ERD vật lý bằng Archify vì chưa chốt schema/cột/khóa. Không dựng bảng SQL giả để làm sơ đồ có vẻ hoàn chỉnh.
+
+## Rà soát sau khi xuất
+
+Đã kiểm tra lại sáu cặp nguồn/HTML so với hash receipt và sự tồn tại của các đường dẫn bằng chứng tại revision được ghim: khớp. Đây là kiểm tra tính toàn vẹn, không phải chạy lại Chromium hoặc kiểm thử nghiệp vụ.
+
+Lần [rà soát thiết kế](../DESIGN-REVIEW.md) bổ sung các sơ đồ Mermaid 7–10, quy tắc và tiêu chí giao việc. Những nội dung đó chưa được xuất lại vào sáu HTML ở bảng trên. Receipt vẫn chỉ chứng minh snapshot cũ; không có baseline vận hành đã được duyệt.

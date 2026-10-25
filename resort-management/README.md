@@ -4,6 +4,8 @@ Bộ tài liệu dự án trong repository `utne1991/utne1991`, thư mục `reso
 
 ## Bắt đầu
 
+- **Trước khi khóa triển khai:** đọc [kết quả rà soát](docs/DESIGN-REVIEW.md), [quyết định còn mở](docs/DECISIONS.md) và [phạm vi từng đợt](docs/IMPLEMENTATION-BRIEF.md). Chưa có baseline vận hành được xác nhận.
+
 - Đọc [Tổng quan dự án](PROJECT-OVERVIEW.md) trước để thống nhất mục tiêu, phạm vi và trạng thái.
 - Xem [Từng bước thực hiện](docs/IMPLEMENTATION-STEPS.md) và [Danh mục sơ đồ](docs/diagrams/README.md) để theo dõi kế hoạch ngay trên GitHub.
 - Đọc [Công cụ và nguồn tham khảo](docs/TOOLING-AND-SOURCES.md) để hiểu vai trò của Archify, ECC và Hello-Agents. Claude bắt đầu từ [CLAUDE.md](CLAUDE.md).
