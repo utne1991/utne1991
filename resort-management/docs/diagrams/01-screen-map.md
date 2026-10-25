@@ -15,11 +15,17 @@ flowchart TD
     DETAIL --> CHANGE[Thay đổi / hủy theo chính sách]
     DASH --> HK[Buồng phòng và bảo trì]
     HK --> TASK[Phân công và kiểm tra]
+    DASH --> GUEST[Khách và yêu cầu]
+    GUEST --> SERVICE[Phân công, thời hạn và xác minh phục vụ]
+    DASH --> FINANCE[Thu chi và bàn giao ca]
+    FINANCE --> FOLIO[Folio, cọc, thu, hoàn, phải thu và đối soát]
     DASH --> REPORT[Báo cáo công suất và hiệu quả kênh]
     REPORT --> REVENUE[Đề xuất giá và khuyến mãi]
     DASH --> SETTINGS[Cấu hình và tích hợp]
 ```
 
 Dashboard quản lý không phải màn hình chung cho mọi nhân viên. Buồng phòng chỉ được xem dữ liệu phục vụ công việc; quyền cần kiểm tra tại backend. Danh sách màn hình không tự cấp quyền thao tác.
+
+Danh mục hiện tại gồm UI01–UI09 theo [đặc tả bố cục](../SCREEN-SPECIFICATIONS.md). Sáu HTML Archify cũ chưa cập nhật toàn bộ phạm vi này; sơ đồ màn hình không thay bản vẽ chi tiết của từng trang.
 
 [Quay lại danh mục](README.md)

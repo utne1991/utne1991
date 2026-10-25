@@ -2,6 +2,8 @@
 
 Đây là đề xuất để chốt phạm vi, chưa phải lệnh bắt đầu code. Đọc cùng [sổ quyết định](DECISIONS.md) và [quy tắc vận hành](OPERATING-RULES.md).
 
+**Cập nhật 26/10/2026:** thiết kế phải bao quát cả PMS trước khi chốt giao diện. [Chín đặc tả màn hình](SCREEN-SPECIFICATIONS.md) và [các hành trình cần rà](SCREEN-COVERAGE.md) là đầu vào chung. Các đợt S3 bên dưới chỉ chia khối lượng code; không phải giới hạn thiết kế vào dashboard. Tám phân hệ ngoài dashboard hiện chưa có bản vẽ/UI chi tiết.
+
 ## 1. S3a — PR dashboard mẫu đầu tiên
 
 Gồm dashboard hiện tại, bộ lọc trạng thái, chuyển nhóm công việc, chi tiết phòng, các liên kết/ngày bấm được và form tạo booking mẫu. Các trang chưa làm hiển thị rõ trạng thái đang phát triển. Dữ liệu in-memory có thể reset; không nhận booking/tiền thật, không mô phỏng đăng nhập thành cơ chế bảo mật thật.
@@ -20,11 +22,21 @@ Không nằm trong PR này: lịch kéo thả đầy đủ, backend, database, P
 
 Cần chốt bản vẽ và hợp đồng dữ liệu riêng trước PR này. Chưa có thiết kế giao diện chi tiết cho toàn bộ các trang lịch/form trong bản HTML hiện tại.
 
-## 3. S4/S5 — Backend và tích hợp
+## 3. S3c — Buồng phòng, bảo trì và khách demo
+
+UI04/UI05: bảng việc, phân công, kiểm tra chất lượng, lỗi/chặn phòng, hồ sơ khách tối thiểu và yêu cầu. Dùng cùng fixture booking/phòng với S3b; thay đổi giờ đến/trả ảnh hưởng ưu tiên việc. Kiểm tra nhận/trả → việc dọn → sẵn sàng và yêu cầu khách → người xử lý → xác minh. Chưa có dữ liệu khách thật hay cơ chế gửi tin thật.
+
+## 4. S3d — Thu chi, doanh thu, báo cáo và cấu hình demo
+
+UI06–UI09: folio/cọc/thu/hoàn/phải thu minh họa, bàn giao ca, báo cáo, phương án giá/gói/chiến dịch có duyệt, danh mục/quyền/kết nối giả lập. Cần phân biệt doanh thu và dòng tiền, dữ liệu cùng kỳ/khác kỳ, phương án dự kiến/đã thực thi. Không thu tiền, phát hành chứng từ hợp lệ hay chi quảng cáo thật.
+
+Cấu hình/fixture và định nghĩa quyền chung phải có ngay khi làm nền giao diện các đợt trước; việc để UI09 ở đợt S3d không có nghĩa trì hoãn quyết định nguồn dữ liệu hoặc quyền đến cuối.
+
+## 5. S4/S5 — Backend và tích hợp
 
 Trước khi code: chốt các D01–D07, ERD vật lý, API đọc/ghi, ràng buộc dữ liệu, source ownership và chính sách nghiệp vụ. Khi thêm tích hợp, chốt D08 và chạy thử bằng môi trường/quyền phù hợp.
 
-## 4. Tình huống nghiệm thu bắt buộc khi có nghiệp vụ thật
+## 6. Tình huống nghiệm thu bắt buộc khi có nghiệp vụ thật
 
 | ID | Tình huống | Kết quả cần kiểm tra |
 | --- | --- | --- |
@@ -45,7 +57,7 @@ Trước khi code: chốt các D01–D07, ERD vật lý, API đọc/ghi, ràng b
 
 Chỉ chạy và báo đạt các tình huống khi có implementation thực. Hiện bảng này là tiêu chí thiết kế, chưa có bài test đã thực thi.
 
-## 5. Cổng trước vận hành production
+## 7. Cổng trước vận hành production
 
 - Có người phụ trách vận hành, staging riêng và cấu hình production không nằm trong repo.
 - Hoàn tất kiểm tra quyền, kết nối, migration, backup/restore theo phạm vi đã chốt.

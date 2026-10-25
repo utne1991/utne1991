@@ -6,6 +6,8 @@
 
 **Chủ dự án:** utne1991. **Nơi lưu:** repository `utne1991/utne1991`, thư mục `resort-management/`.
 
+**Phạm vi thiết kế cập nhật 26/10/2026:** toàn bộ PMS chín phân hệ, không chỉ dashboard. Xem [mô hình vận hành resort](docs/RESORT-OPERATING-MODEL.md), [đặc tả màn hình](docs/SCREEN-SPECIFICATIONS.md) và [phần đã/chưa được vẽ](docs/SCREEN-COVERAGE.md). Mới dashboard có HTML; các phân hệ còn lại mới có đặc tả bằng văn bản.
+
 ## 1. Mục tiêu kinh doanh
 
 Xây dựng một ứng dụng web để người quản lý trả lời nhanh:
@@ -36,6 +38,7 @@ Mỗi vai trò chỉ xem và thao tác dữ liệu cần thiết. Phân quyền 
 | Dashboard | Biết tình hình hôm nay và việc cần xử lý | Giai đoạn giao diện đầu tiên |
 | Lịch phòng | Xem khả dụng theo ngày, loại phòng và phòng vật lý | Nghiệp vụ cốt lõi |
 | Đặt phòng | Booking nhiều phòng, nhận/trả, thay đổi/hủy, tránh bán trùng | Nghiệp vụ cốt lõi |
+| Khách và yêu cầu | Khách/đầu mối đoàn, công việc phục vụ có người nhận và hạn | Nghiệp vụ cốt lõi theo quyền |
 | Buồng phòng và bảo trì | Phân biệt khách đã trả với phòng thực sự sẵn sàng | Nghiệp vụ cốt lõi |
 | Tài chính vận hành | Đặt cọc, thanh toán, hoàn tiền, đối soát | Nghiệp vụ cốt lõi; chi tiết cần xác nhận |
 | Kết nối kênh bán | Nhận booking và đồng bộ tồn/giá qua tích hợp được hỗ trợ | Trước vận hành đa kênh |
@@ -98,6 +101,8 @@ Chi tiết công thức và trạng thái nằm trong [PRODUCT-MAP](docs/PRODUCT
 | S2 — Chốt phạm vi | Xác nhận thiết kế và quyết định cho đợt cần làm | Ghi baseline, người xác nhận và các giả định còn mở |
 | S3a — Dashboard demo | Chuyển dashboard thành app dùng dữ liệu giả | Có PR, chạy được, kiểm tra responsive và số liệu |
 | S3b — Lịch/booking demo | Đợt UI riêng sau dashboard | Có hợp đồng dữ liệu, lịch theo ngày và xử lý xung đột demo |
+| S3c — Vận hành/khách demo | Buồng phòng, bảo trì và yêu cầu khách | Dùng chung fixture, bàn giao giữa bộ phận và trạng thái nhất quán |
+| S3d — Kinh doanh/cấu hình demo | Thu chi, giá/gói/chiến dịch, báo cáo và cấu hình mẫu | Định nghĩa tiền/chỉ số/quyền rõ; không giao dịch thật |
 | S4 — Backend nghiệp vụ | Đăng nhập, booking, tồn phòng, dọn phòng, quyền và nhật ký | Chốt D01–D07; kiểm thử chồng lịch/đặt đồng thời, quyền, sao lưu/khôi phục |
 | S5 — Kết nối và chạy thử | PMS/kênh bán, đối soát, quy trình vận hành | Dữ liệu khớp; xử lý lỗi đồng bộ và có phương án quay lui |
 | S6 — Tối ưu doanh thu | Báo cáo thật, giá/khuyến mãi có người duyệt | Chỉ số đối soát được, đo kết quả và chi phí |

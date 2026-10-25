@@ -17,8 +17,10 @@ Mở từng file `.md` trên GitHub ở chế độ xem thông thường để x
 | 8 | [Đồng bộ và đối soát](08-sync-and-reconciliation.md) | Chống trùng, retry và dữ liệu lệch được xử lý ở đâu? |
 | 9 | [Quyền tại backend](09-access-control.md) | Ai được làm gì với dữ liệu nào? |
 | 10 | [Chạy thử và khôi phục](10-release-and-recovery.md) | Điều kiện mở vận hành và xử lý sự cố là gì? |
+| 11 | [Chu trình vận hành toàn PMS](11-resort-operating-cycle.md) | Chín phân hệ phối hợp trong một kỳ ở và ngày kinh doanh thế nào? |
+| 12 | [Bàn giao lễ tân, buồng phòng và bảo trì](12-housekeeping-handover.md) | Phòng có khách sắp đến được ưu tiên và bàn giao ra sao? |
 
-Mục 6 là [vòng làm việc cloud/GitHub](exports/06-cloud-working-loop.html) trong bộ Archify. Các mục 7–10 hiện là Mermaid bổ sung sau rà soát; chưa xuất Archify. Sáu HTML cũ ghim snapshot tài liệu trước lần bổ sung, không đại diện một baseline đã khóa. Xem [báo cáo rà soát](../DESIGN-REVIEW.md).
+Mục 6 là [vòng làm việc cloud/GitHub](exports/06-cloud-working-loop.html) trong bộ Archify. Các mục 7–12 hiện là Mermaid bổ sung; chưa xuất Archify. Sáu HTML cũ ghim snapshot tài liệu trước lần bổ sung, không đại diện một baseline đã khóa. Xem [báo cáo rà soát](../DESIGN-REVIEW.md), [mô hình vận hành](../RESORT-OPERATING-MODEL.md) và [bảng bao phủ màn hình](../SCREEN-COVERAGE.md).
 
 ## Mermaid và Archify
 

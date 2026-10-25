@@ -8,6 +8,8 @@ Mục tiêu: biết phòng nào có thể bán và vào ngày nào, phục vụ 
 
 Đây là bản đồ sản phẩm tổng thể. Phạm vi được giao từng đợt nằm ở [IMPLEMENTATION-BRIEF](IMPLEMENTATION-BRIEF.md); chính sách còn mở ở [DECISIONS](DECISIONS.md). Xem [OPERATING-RULES](OPERATING-RULES.md) cho ngoại lệ, quyền và chỉ số. Không coi mọi nhánh sơ đồ đều thuộc PR dashboard đầu tiên.
 
+Thiết kế toàn PMS trước khi chia đợt code: [RESORT-OPERATING-MODEL](RESORT-OPERATING-MODEL.md), [UI01–UI09](SCREEN-SPECIFICATIONS.md) và [bảng bao phủ](SCREEN-COVERAGE.md). Dashboard là một phân hệ; hồ sơ/yêu cầu khách, thu chi và bàn giao ca cũng nằm trong thiết kế tổng thể.
+
 ## 2. Bản đồ màn hình
 
 ```mermaid
@@ -17,6 +19,10 @@ flowchart TD
     HOME --> CAL[Lịch phòng 7 / 30 / 90 ngày]
     HOME --> BOOK[Đặt phòng]
     HOME --> HK[Buồng phòng và bảo trì]
+    HOME --> GUEST[Khách và yêu cầu phục vụ]
+    GUEST --> REQUEST[Người phụ trách, hạn và xác minh kết quả]
+    HOME --> CASH[Thu chi và bàn giao ca]
+    CASH --> RECONCILE[Folio, cọc, thu, hoàn, phải thu và đối soát]
     HOME --> REV[Doanh thu và chiến dịch]
     HOME --> REPORT[Báo cáo]
     HOME --> SETTINGS[Cài đặt]
@@ -101,7 +107,7 @@ Nếu đã có PMS, chọn nguồn dữ liệu chính trước khi code. Không 
 ## 6. Lộ trình triển khai
 
 1. **S0–S2 — Thiết kế và chốt phạm vi:** bản mẫu, sơ đồ, rà soát và các quyết định của đợt làm.
-2. **S3a — Dashboard mẫu:** chi tiết phòng và tương tác dashboard; dữ liệu giả, chưa có tác động tài chính. **S3b — Lịch/booking demo:** đợt riêng sau đó, không gộp vào PR dashboard.
+2. **S3 — Giao diện demo theo đợt:** S3a dashboard, S3b lịch/booking, S3c buồng phòng/bảo trì/khách, S3d thu chi/doanh thu/báo cáo/cấu hình mẫu. Thiết kế chung cả chín phân hệ trước, chia PR sau; chưa có tác động tài chính thật.
 3. **S4 — Nghiệp vụ cốt lõi:** đăng nhập/phân quyền, booking, tồn phòng, dọn phòng, bảo trì, nhật ký, sao lưu và kiểm thử khôi phục.
 4. **S5 — Tích hợp và chạy thử:** chọn nguồn chính; đồng bộ kênh bán; đối soát booking/tồn phòng; chạy thử có kiểm soát, một nguồn ghi chính trước khi nhận vận hành thật.
 5. **S6 — Doanh thu:** giá và khuyến mãi theo quy tắc; phí kênh và chi phí phục vụ; quản lý duyệt.

@@ -2,6 +2,8 @@
 
 Ngày rà soát: 25/10/2026. Cơ sở kiểm tra: repo đến commit `c5ec8f3`, nội dung dashboard, tài liệu bàn giao, nguồn JSON và receipt của sáu sơ đồ Archify. Báo cáo này không phải xác nhận của chủ dự án hoặc lệnh bắt đầu code.
 
+**Cập nhật yêu cầu 26/10/2026:** chủ dự án yêu cầu bao quát toàn PMS trước khi chốt, thay vì chỉ dashboard. Đã thêm [mô hình vận hành](RESORT-OPERATING-MODEL.md), [đặc tả chín phân hệ](SCREEN-SPECIFICATIONS.md), [bảng bao phủ](SCREEN-COVERAGE.md) và hai Mermaid vận hành/bàn giao. Chưa có bản vẽ chi tiết cho UI02–UI09. Kết luận trước đây về khả năng giao riêng dashboard là nhận định phạm vi code, không có nghĩa thiết kế toàn PMS đã hoàn tất.
+
 ## Kết luận
 
 **Đã có bản đồ tổng quan, chưa khóa thiết kế vận hành toàn hệ thống.** Có thể dùng bộ tài liệu để chốt và giao riêng đợt giao diện dashboard với dữ liệu giả. Chưa đủ để tự chọn backend, đồng bộ OTA, xử lý tiền thật hoặc triển khai production.

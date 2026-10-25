@@ -7,6 +7,7 @@
 - Dự án hướng tới resort 100 phòng; cần biết sắp trả, khả dụng theo ngày, công suất và cơ hội cải thiện kinh doanh.
 - Tài liệu/mã nguồn lưu trong `utne1991/utne1991/resort-management/`.
 - Hoàn thiện bản đồ bằng Archify trước; việc giao Claude lập trình để sau. Không có yêu cầu bắt đầu backend hoặc chạy quảng cáo thật.
+- Cập nhật yêu cầu 26/10/2026: thiết kế phải bao quát lịch, booking, buồng phòng, doanh thu/chiến dịch và toàn quy trình PMS, không chỉ dashboard. Đây là yêu cầu phạm vi thiết kế; chưa đồng nghĩa đã duyệt từng bố cục hoặc cho phép code.
 
 ## Các quyết định cần chốt
 
@@ -14,7 +15,7 @@
 | --- | --- | --- | --- |
 | D01 | Hệ thống hiện có | Resort dùng PMS/channel manager nào, kênh bán nào, có API/export được hỗ trợ không? | S4 |
 | D02 | Nguồn dữ liệu chính | Nếu giữ PMS: app tích hợp theo quyền; nếu chưa có: đánh giá app làm nguồn booking/tồn chính. Chọn một bên sở hữu ghi cho từng dữ liệu. | S4 |
-| D03 | Phạm vi đợt đầu | Đề xuất S3a chỉ dashboard; S3b lịch và booking demo làm đợt riêng. | S3a / S3b tương ứng |
+| D03 | Phạm vi thiết kế và chia đợt code | Thiết kế toàn UI01–UI09 trước. Đề xuất chia code S3a dashboard, S3b lịch/booking, S3c vận hành/khách, S3d thu chi/báo cáo/doanh thu/cấu hình mẫu; chốt từng đợt sau khi rà hành trình liên màn hình. | Trước chốt UI và đợt code tương ứng |
 | D04 | Phòng và thời gian | Danh mục phòng/loại thật; múi giờ, giờ nhận/trả, chốt ngày, khách nhận sớm/trả muộn, dọn phòng. Tiếng Việt/VND/Asia/Ho_Chi_Minh hiện là giả định mẫu. | S4 |
 | D05 | Chính sách bán | Hold bao lâu, điều kiện xác nhận, hủy/no-show, khách đoàn, gia hạn, overbooking và phòng bảo trì. Đề xuất không chủ động overbooking. | S4 |
 | D06 | Giá và tiền | Giá theo đêm, người/giường phụ nếu có; VAT/phí, đặt cọc, hoàn tiền, giảm giá; giao dịch nào qua app, giao dịch nào đối soát từ PMS. | S4 |
@@ -35,4 +36,6 @@ Ghi ID, nội dung chọn, lựa chọn bị loại và lý do nếu cần, ngư
 | --- | --- | --- | --- |
 | S3a dashboard mẫu | Đề xuất, chưa chốt | Chưa có | Chưa có |
 | S3b lịch và booking demo | Đề xuất, chưa chốt | Chưa có | Chưa có |
+| S3c vận hành và khách demo | Đề xuất, chưa chốt | Chưa có | Chưa có |
+| S3d kinh doanh và cấu hình demo | Đề xuất, chưa chốt | Chưa có | Chưa có |
 | S4 backend | Chưa đủ quyết định | Chưa có | Chưa có |

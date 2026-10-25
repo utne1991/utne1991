@@ -16,6 +16,8 @@ You can click the Preview link to take a look at your changes.
 Xây dựng ứng dụng quản lý phòng, lịch đặt phòng, buồng phòng và hiệu quả kinh doanh cho resort 100 phòng.
 
 - [Tổng quan dự án](resort-management/PROJECT-OVERVIEW.md)
+- [Quy trình vận hành và chín phân hệ PMS](resort-management/docs/RESORT-OPERATING-MODEL.md)
+- [Đặc tả từng màn hình](resort-management/docs/SCREEN-SPECIFICATIONS.md)
 - [Rà soát trước khi chốt triển khai](resort-management/docs/DESIGN-REVIEW.md)
 - [Sơ đồ từng bước và tiến độ](resort-management/docs/IMPLEMENTATION-STEPS.md)
 - [Danh mục sơ đồ](resort-management/docs/diagrams/README.md)
