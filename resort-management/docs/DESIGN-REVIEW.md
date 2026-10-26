@@ -1,5 +1,7 @@
 # Rà soát trước khi chốt triển khai
 
+**Trạng thái mới nhất:** [audit 002](TASK-RESORT-DESIGN-AUDIT-002.md) bổ sung wireframe local cho chín phân hệ/bốn mobile view, bảy blueprint và benchmark PMS. Các nhận định thiếu bản vẽ bên dưới là lịch sử tại thời điểm rà soát; chưa có nghiệm thu Figma hoặc code production từ lần bổ sung này.
+
 Ngày rà soát: 25/10/2026. Cơ sở kiểm tra: repo đến commit `c5ec8f3`, nội dung dashboard, tài liệu bàn giao, nguồn JSON và receipt của sáu sơ đồ Archify. Báo cáo này không phải xác nhận của chủ dự án hoặc lệnh bắt đầu code.
 
 **Cập nhật yêu cầu 26/10/2026:** chủ dự án yêu cầu bao quát toàn PMS trước khi chốt, thay vì chỉ dashboard. Đã thêm [mô hình vận hành](RESORT-OPERATING-MODEL.md), [đặc tả chín phân hệ](SCREEN-SPECIFICATIONS.md), [bảng bao phủ](SCREEN-COVERAGE.md) và hai Mermaid vận hành/bàn giao. Chưa có bản vẽ chi tiết cho UI02–UI09. Kết luận trước đây về khả năng giao riêng dashboard là nhận định phạm vi code, không có nghĩa thiết kế toàn PMS đã hoàn tất.

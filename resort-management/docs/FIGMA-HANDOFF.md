@@ -2,11 +2,17 @@
 
 Ngày tiếp nhận báo cáo: 26/10/2026. Nguồn là nội dung người dùng chuyển tiếp từ MrAiTiNiuBi trong cuộc trò chuyện. Tài liệu này ghi nhận nguồn thiết kế bên ngoài và công việc đối chiếu; **không phải biên bản nghiệm thu thiết kế**.
 
+## Cập nhật audit 002
+
+Báo cáo kiểm toán mới của MrAiTiNiuBi nói đã đọc trực tiếp 4 trang và sửa tổng số từ **13 thành 16 khung: 9 UI + 7 bổ sung**. Đồng thời báo cáo 0 prototype links trên node đã kiểm tra, 0 reusable components/Auto Layout được phát hiện, chưa có frame mobile và chưa hoàn tất kiểm tra cảm quan. Đây là **kết quả do người kiểm toán bên ngoài báo cáo**, không phải Codex vừa đọc được Figma. Không suy quan sát “không phát hiện” thành chứng minh mọi node/file hoặc phiên bản đều không có khả năng đó.
+
+Văn bản mới vẫn chưa cung cấp node ID, danh mục frame/version hoặc snapshot. Vì vậy chưa thể hoàn tất yêu cầu “cập nhật node ID đã xác minh”, chưa đổi D13 thành đã duyệt. Xem [TASK-RESORT-DESIGN-AUDIT-002](TASK-RESORT-DESIGN-AUDIT-002.md), [benchmark mã PMS](research/PMS-BENCHMARK.md) và [wireframe local bổ sung](../design/pms-wireframes.html). Wireframe local không được gọi là source Figma đã nhập.
+
 ## 1. Tài liệu được báo cáo đã tạo
 
 | Tài liệu | Liên kết | Thông tin theo báo cáo | Đã xác minh trong phiên này |
 | --- | --- | --- | --- |
-| BeeSmart HotelOS — UI & Business Blueprint | [Figma design](https://www.figma.com/design/tqj8gIVcaEPR8tyJiRZx3W) | 4 trang, 13 khung, text/hình có thể chỉnh sửa; có 9 màn nghiệp vụ và các nội dung kinh doanh bổ sung | Chưa đọc được file hoặc node; chưa xác minh số trang, số khung, nội dung hoặc quyền chỉnh sửa |
+| BeeSmart HotelOS — UI & Business Blueprint | [Figma design](https://www.figma.com/design/tqj8gIVcaEPR8tyJiRZx3W) | Theo audit mới: 4 trang, **16 khung (9 UI + 7 bổ sung)**; số 13 trong báo cáo tạo ban đầu được sửa | Codex chưa đọc được file/node hoặc frame/version; bằng chứng kiểm toán ở mức báo cáo chuyển tiếp |
 | BeeSmart HotelOS — System & Operations | [FigJam board](https://www.figma.com/board/fpwBy4R8xWmiLpWPqLkxzm) | 2 sơ đồ kiến trúc và chu trình booking → nhận khách → lưu trú → trả → dọn → sẵn sàng | Chưa đọc được board, node hoặc các nhánh ngoại lệ |
 
 Báo cáo nói đã có ảnh kiểm tra dashboard và bảng giá; các ảnh đó chưa được cung cấp trong workspace để kiểm tra. Chưa có danh mục frame/node, version thiết kế hoặc bản export được nhập vào repo. Link tới file không phải link cố định tới một frame/version đã nghiệm thu.
@@ -31,10 +37,10 @@ Mỗi dòng hiện là công việc cần kiểm tra, không phải kết luận
 | UI01 | Dashboard 100 phòng | Công thức KPI, tuổi dữ liệu, vai trò, cảnh báo có người phụ trách và hành động mở đúng trang | Chưa xác minh |
 | UI02 | Lịch đặt phòng | Hai góc nhìn tồn loại/phòng vật lý; booking chưa gán, 7/30/90 ngày, chặn bảo trì, đổi ngày xung đột | Chưa xác minh |
 | UI03 | Lễ tân | Booking nhiều phòng, hold/cọc, nhận/trả một phần, đổi/gia hạn/hủy, form và lịch sử | Chưa xác minh; không mặc định màn lễ tân đã đủ mọi chức năng booking |
-| UI04 | Housekeeping | Phân công, kiểm tra/làm lại, dọn trong kỳ ở, bảo trì và chặn ảnh hưởng booking, bàn giao | Chưa xác minh; báo cáo không mô tả chi tiết bảo trì |
+| UI04 | Theo audit mới: có danh sách công việc và bảo trì | Phân công, kiểm tra/làm lại, dọn trong kỳ ở, bảo trì và chặn ảnh hưởng booking, bàn giao | Theo người kiểm toán báo cáo; Codex chưa đọc node hoặc nghiệm thu luồng |
 | UI05 | Chăm sóc khách | Yêu cầu có người xử lý/hạn/kết quả, quyền dữ liệu khách, dịch vụ tính tiền đi tới folio | Chưa xác minh |
 | UI06 | Thu chi | Tách doanh thu/cọc/thu/phải thu/hoàn, điều chỉnh có duyệt, bàn giao ca và đối soát | Chưa xác minh |
-| UI07 | Dynamic pricing | Giá/điều kiện, gói khuyến mãi và chiến dịch là ba phần; có giới hạn tồn/giá/ngân sách và duyệt/thực thi/lỗi/dừng | Chưa xác minh; dynamic pricing không tự chứng minh đã có chiến dịch quảng cáo |
+| UI07 | Theo audit mới: có đề xuất giá/chiến dịch | Giá/điều kiện, gói khuyến mãi và chiến dịch là ba phần; có giới hạn tồn/giá/ngân sách và duyệt/thực thi/lỗi/dừng | Theo người kiểm toán báo cáo; calendar giá, phê duyệt và kết quả thực thi còn cần mở rộng |
 | UI08 | Báo cáo, ROI | On-the-books/dự báo/thực tế, định nghĩa ADR/RevPAR, nguồn chi phí, đóng góp so với lợi nhuận ròng, giả định ROI | Chưa xác minh |
 | UI09 | Cấu hình | Danh mục/phòng, chính sách, quyền, nguồn ghi chính, mapping, lỗi/retry/đối soát kết nối | Chưa xác minh |
 

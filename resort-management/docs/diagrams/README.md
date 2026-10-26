@@ -2,6 +2,8 @@
 
 Mở từng file `.md` trên GitHub ở chế độ xem thông thường để xem Mermaid. Các sơ đồ là **thiết kế đề xuất**. Chưa có backend hoặc tích hợp live tương ứng.
 
+Audit 002 có [bảy blueprint P0/P1](../blueprints/README.md), gồm ERD lõi, state/inventory, finance/night audit, sync, tenant/RBAC, service operations và revenue approval. Chúng mới là Mermaid nháp, chưa xuất Archify/FigJam hoặc đồng bộ sáu HTML cũ.
+
 Đã tạo [bộ sơ đồ tương tác Archify](exports/index.html) và [nguồn JSON](sources/). Tải repo rồi mở `exports/index.html`; GitHub không tự chạy HTML này. Xem [bằng chứng và giới hạn kiểm tra](VERIFICATION.md) trước khi dùng làm cơ sở duyệt giao diện.
 
 | Thứ tự | Sơ đồ | Câu hỏi được trả lời |

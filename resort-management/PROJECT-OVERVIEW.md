@@ -6,7 +6,9 @@
 
 **Chủ dự án:** utne1991. **Nơi lưu:** repository `utne1991/utne1991`, thư mục `resort-management/`.
 
-**Phạm vi thiết kế cập nhật 26/10/2026:** toàn bộ PMS chín phân hệ, không chỉ dashboard. Xem [mô hình vận hành resort](docs/RESORT-OPERATING-MODEL.md), [đặc tả màn hình](docs/SCREEN-SPECIFICATIONS.md) và [bảng bao phủ](docs/SCREEN-COVERAGE.md). Repo mới có dashboard HTML; bộ Figma/FigJam BeeSmart HotelOS đã được người dùng báo cáo tạo nhưng chưa đối chiếu, xem [tiếp nhận thiết kế](docs/FIGMA-HANDOFF.md). SaaS/profile dịch vụ là [phương án mở rộng chưa chốt](docs/BEESMART-PRODUCT-OPTIONS.md).
+**Audit 002:** [gói thiết kế bổ sung](docs/TASK-RESORT-DESIGN-AUDIT-002.md) có wireframe local chín phân hệ/bốn mobile view, form mẫu, bảy blueprint và benchmark mã PMS. Figma được người kiểm toán báo cáo có 16 frame; Codex chưa có node/version để đối chiếu. Các đầu ra vẫn là bản nháp, không có baseline hoặc backend đã duyệt.
+
+**Phạm vi thiết kế cập nhật 26/10/2026:** toàn bộ PMS chín phân hệ, không chỉ dashboard. Xem [mô hình vận hành resort](docs/RESORT-OPERATING-MODEL.md), [đặc tả màn hình](docs/SCREEN-SPECIFICATIONS.md) và [bảng bao phủ](docs/SCREEN-COVERAGE.md). Repo có dashboard cũ và wireframe bổ sung; Figma/FigJam vẫn được theo dõi độc lập ở [tiếp nhận thiết kế](docs/FIGMA-HANDOFF.md). SaaS/profile dịch vụ là [phương án mở rộng chưa chốt](docs/BEESMART-PRODUCT-OPTIONS.md).
 
 ## 1. Mục tiêu kinh doanh
 

@@ -23,9 +23,9 @@
 | D08 | Kết nối | Mapping phòng/giá, SLA dữ liệu mới, quyền API, lịch đối soát, xử lý khi mất kết nối hoặc OTA bán vượt tồn. Không tự hứa đồng bộ realtime. | S5 |
 | D09 | Vận hành và hosting | Nơi chạy, ngân sách, người trực xử lý, mục tiêu mất dữ liệu tối đa/phục hồi (RPO/RTO), sao lưu, bảo trì và quay lui. | Chạy thử production |
 | D10 | Mức tự động hóa | Đề xuất giá/quảng cáo có người duyệt; AI chỉ đọc trước. Ngân sách và giá sàn chưa được cấp. | S6 / S7 |
-| D11 | BeeSmart và phạm vi SaaS | Báo cáo đưa tên BeeSmart HotelOS, nhiều cơ sở/khách hàng và gói thuê bao. Cần chọn đây là nghiên cứu giai đoạn sau hay yêu cầu phiên bản đầu; nếu chọn SaaS phải chốt tenant/source ownership trước schema. | Trước backend và mở rộng phạm vi |
+| D11 | BeeSmart và phạm vi SaaS | Audit 002 đề xuất pilot một resort, thiết kế tenant/property/membership từ đầu nhưng chưa làm SaaS billing/portfolio. Đã có ERD/quyền nháp theo phương án đó; chưa được chủ dự án xác nhận hoặc chọn topology DB. | Trước backend và mở rộng phạm vi |
 | D12 | Profile dịch vụ 2–5 sao | Chọn checklist/năng lực nào, tiêu chuẩn/loại hình/quốc gia áp dụng và phân quyền; không coi phần mềm tự cấp sao hoặc hạng sao quyết định giá phần mềm. | Trước đưa profile vào scope |
-| D13 | Nguồn thiết kế được duyệt | Đọc Figma/FigJam, gán node/version cho UI01–UI09, xử lý chênh lệch với đặc tả và ghi baseline. Báo cáo 13 khung chưa là nghiệm thu. | Trước chốt UI/giao code theo Figma |
+| D13 | Nguồn thiết kế được duyệt | Audit mới sửa thành 16 khung/4 trang và báo cáo đã đọc trực tiếp; chưa kèm node/version/export. Cần ánh xạ, mở rộng form/mobile/states và ghi baseline; chưa nghiệm thu. | Trước chốt UI/giao code theo Figma |
 
 D01 đã được hỏi trong cuộc trò chuyện; chưa nhận thông tin thì tiếp tục làm tài liệu và giao diện mẫu, giữ câu trả lời là chưa biết. Không suy từ README hồ sơ GitHub rằng resort chưa có PMS.
 

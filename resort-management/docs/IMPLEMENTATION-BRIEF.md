@@ -2,7 +2,7 @@
 
 Đây là đề xuất để chốt phạm vi, chưa phải lệnh bắt đầu code. Đọc cùng [sổ quyết định](DECISIONS.md) và [quy tắc vận hành](OPERATING-RULES.md).
 
-**Cập nhật 26/10/2026:** thiết kế phải bao quát cả PMS trước khi chốt giao diện. [Chín đặc tả màn hình](SCREEN-SPECIFICATIONS.md) và [các hành trình cần rà](SCREEN-COVERAGE.md) là đầu vào chung. Các đợt S3 bên dưới chỉ chia khối lượng code; không phải giới hạn thiết kế vào dashboard. Repo chưa chứa UI chi tiết ngoài dashboard; bộ Figma mới được báo cáo có chín màn cần đối chiếu theo [FIGMA-HANDOFF](FIGMA-HANDOFF.md).
+**Cập nhật 26/10/2026:** thiết kế phải bao quát cả PMS trước khi chốt giao diện. [Chín đặc tả màn hình](SCREEN-SPECIFICATIONS.md), [các hành trình cần rà](SCREEN-COVERAGE.md) và [wireframe local audit 002](../design/pms-wireframes.html) là đầu vào chung. Các đợt S3 chia khối lượng code, không giới hạn thiết kế vào dashboard. Wireframe còn là phác thảo, chưa mọi biến thể; Figma 16 frame theo báo cáo ngoài cần node/version và đối chiếu theo [FIGMA-HANDOFF](FIGMA-HANDOFF.md).
 
 ## 1. S3a — PR dashboard mẫu đầu tiên
 

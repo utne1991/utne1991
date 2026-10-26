@@ -1,9 +1,11 @@
 # Điểm bắt đầu cho Claude — Resort 100
 
+Ưu tiên đọc [TASK-RESORT-DESIGN-AUDIT-002](docs/TASK-RESORT-DESIGN-AUDIT-002.md): cập nhật 16 frame theo báo cáo ngoài, wireframe local, bảy blueprint, benchmark PMS và các quyết định còn mở. Không diễn giải checklist bảy nhóm việc thành “7/7 đã xong”.
+
 ## Đọc theo thứ tự
 
 1. [PROJECT-OVERVIEW.md](PROJECT-OVERVIEW.md): mục tiêu và phạm vi.
-   Yêu cầu cập nhật 26/10/2026: thiết kế toàn PMS trước khi chia đợt code. Đọc [mô hình vận hành](docs/RESORT-OPERATING-MODEL.md), [đặc tả chín phân hệ](docs/SCREEN-SPECIFICATIONS.md) và [bảng bao phủ](docs/SCREEN-COVERAGE.md). Trong repo mới có HTML dashboard; người dùng đã báo cáo có bộ Figma/FigJam bên ngoài, xem [FIGMA-HANDOFF](docs/FIGMA-HANDOFF.md), chưa được đọc/đối chiếu ở phiên hiện tại.
+   Yêu cầu cập nhật 26/10/2026: thiết kế toàn PMS trước khi chia đợt code. Đọc [mô hình vận hành](docs/RESORT-OPERATING-MODEL.md), [đặc tả chín phân hệ](docs/SCREEN-SPECIFICATIONS.md) và [bảng bao phủ](docs/SCREEN-COVERAGE.md). Repo có dashboard cũ và wireframe local bổ sung; bộ Figma/FigJam độc lập được theo dõi ở [FIGMA-HANDOFF](docs/FIGMA-HANDOFF.md), chưa được Codex trực tiếp đọc node/version.
    Đọc thêm [kết quả rà soát](docs/DESIGN-REVIEW.md), [sổ quyết định](docs/DECISIONS.md), [phạm vi từng đợt](docs/IMPLEMENTATION-BRIEF.md) và [quy tắc vận hành](docs/OPERATING-RULES.md) trước khi làm bước được giao.
 2. [docs/IMPLEMENTATION-STEPS.md](docs/IMPLEMENTATION-STEPS.md): vị trí hiện tại và bước tiếp theo.
 3. [docs/diagrams/README.md](docs/diagrams/README.md): bản đồ các sơ đồ.

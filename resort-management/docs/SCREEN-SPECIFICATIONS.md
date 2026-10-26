@@ -1,8 +1,10 @@
 # Đặc tả bố cục chín phân hệ PMS
 
-**Bản thiết kế bằng văn bản ngày 26/10/2026.** Chưa phải chín giao diện đã được vẽ/chạy; HTML hiện tại chỉ là dashboard mẫu. Đặc tả này là đầu vào để vẽ các trang liên kết và xuất Archify sau khi các quyết định liên quan được xác nhận.
+**Bản thiết kế nghiệp vụ ngày 26/10/2026.** Đây là đặc tả, không phải chín giao diện PMS đã chạy. Repo có dashboard cũ và wireframe local audit 002 với hành vi mẫu; vẫn cần hoàn thiện/duyệt bản vẽ, nguồn Figma và các quyết định trước khi triển khai nghiệp vụ.
 
 Bộ Figma/FigJam BeeSmart HotelOS bên ngoài đã được người dùng báo cáo tạo thành công, nhưng chưa đối chiếu nội dung trong phiên này. Xem [FIGMA-HANDOFF](FIGMA-HANDOFF.md); không tự đổi trạng thái các yêu cầu thành đạt từ số lượng khung hoặc tiêu đề báo cáo.
+
+Audit 002 bổ sung [wireframe local có form và bốn view mobile](../design/pms-wireframes.html) cùng [form/state matrix](FORM-STATE-MATRIX.md). Bản vẽ có thao tác mẫu, chưa phải implementation các yêu cầu nghiệp vụ dưới đây hoặc bản Figma đã cập nhật.
 
 ## Thành phần dùng chung
 

@@ -1,0 +1,40 @@
+{
+  "result": "PASS",
+  "desktopViews": 9,
+  "mobileViews": 4,
+  "stateCases": 65,
+  "calendarRanges": [
+    7,
+    30,
+    90
+  ],
+  "forms": 13,
+  "conflictPreservesInput": true,
+  "invalidDatesBlocked": true,
+  "cancelDoesNotSave": true,
+  "submittedTextNotHTML": true,
+  "scope": "DOM-only; native dialog APIs stubbed. No real browser, CSS layout, backend, PMS, money or authorization tested.",
+  "date": "2026-10-26",
+  "tools": {
+    "jsdom": "26.1.0",
+    "node": "v24.19.0"
+  },
+  "artifacts": {
+    "design/pms-wireframes.html": {
+      "sha256": "268980a348a8f8ee416500becab97aecf2321e45ce4c6c2e170f129ca9df8927",
+      "bytes": 3192
+    },
+    "design/pms-wireframes.css": {
+      "sha256": "2bdd4f09dd717522e6ed2ed05e06c75b82835e7b0e0c3993bd2e0a92fe0d4540",
+      "bytes": 5928
+    },
+    "design/pms-wireframes.js": {
+      "sha256": "59fa269d797df8ceb51c159c4dd583932bc764c5e8d006a3b246833b12e9dfa3",
+      "bytes": 20605
+    },
+    "scripts/check-wireframes.cjs": {
+      "sha256": "40306ce3e267ea844f51e2c7609ba636ed0556541bae403e71ab0e785224bbde",
+      "bytes": 4274
+    }
+  }
+}

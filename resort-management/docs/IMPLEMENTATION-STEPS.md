@@ -6,6 +6,8 @@
 
 Đã tiếp nhận báo cáo thiết kế Figma/FigJam BeeSmart HotelOS; việc ánh xạ frame và nghiệm thu chưa xác minh. Xem [FIGMA-HANDOFF](FIGMA-HANDOFF.md). Chưa đổi các bước S3–S7 thành đã làm từ báo cáo thiết kế.
 
+[Audit 002](TASK-RESORT-DESIGN-AUDIT-002.md) bổ sung wireframe local UI01–UI09, bốn mobile view, ma trận form/quyền/profile và bảy blueprint. Đây là đầu ra thiết kế đã có thao tác mẫu, không phải việc S3 đã hoàn tất thành app framework hoặc backend. UI prototype local đã kiểm tra DOM; visual review/Figma/baseline còn mở.
+
 ```mermaid
 flowchart TD
     S0["S0 · Tổng quan và dashboard mẫu: đã có"] --> S1["S1 · Bản đồ từng bước và nguồn tham khảo: đã có"]

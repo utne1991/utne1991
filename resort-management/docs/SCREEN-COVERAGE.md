@@ -4,17 +4,19 @@ Ngày 26/10/2026. Bảng này phân biệt **có đặc tả**, **có bản vẽ
 
 **Nguồn bên ngoài mới:** người dùng đã cung cấp báo cáo tạo Figma/FigJam BeeSmart HotelOS gồm chín màn nghiệp vụ. Xem [liên kết và bảng đối chiếu](FIGMA-HANDOFF.md). Chưa đọc được nội dung trong phiên cloud này nên không coi bản vẽ bên ngoài là chưa tồn tại hoặc đã nghiệm thu. Bảng bên dưới mô tả artifact hiện có trong repo.
 
+**Audit 002:** người kiểm toán báo cáo 16 frame/4 page, chín UI mới ở mức concept, chưa prototype/components/Auto Layout/mobile trên phần đã kiểm tra. Trong repo nay có [wireframe local cho UI01–09 và bốn mobile view](../design/pms-wireframes.html), [form/state matrix](FORM-STATE-MATRIX.md) và [bảy blueprint](blueprints/README.md). Đây là bản nháp bổ sung, không phải Figma đã cập nhật hoặc implementation PMS. Chưa duyệt trực quan/thiết bị.
+
 | ID | Phân hệ | Đặc tả bố cục/hành động | Bản vẽ/HTML trong repo | App / nghiệm thu |
 | --- | --- | --- | --- | --- |
 | UI01 | Tổng quan | Có bản nháp | Có dashboard HTML mẫu, chưa kiểm tra hiển thị | Chưa |
-| UI02 | Lịch phòng | Có bản nháp | Chưa có bản vẽ chi tiết | Chưa |
-| UI03 | Đặt phòng | Có bản nháp | Chưa có bản vẽ chi tiết | Chưa |
-| UI04 | Buồng phòng/bảo trì | Có bản nháp | Chưa có bản vẽ chi tiết | Chưa |
-| UI05 | Khách/yêu cầu | Có bản nháp | Chưa có bản vẽ chi tiết | Chưa |
-| UI06 | Thu chi/đối soát | Có bản nháp | Chưa có bản vẽ chi tiết | Chưa |
-| UI07 | Doanh thu/chiến dịch | Có bản nháp | Dashboard chỉ có thẻ đề xuất, chưa phải phân hệ | Chưa |
-| UI08 | Báo cáo | Có bản nháp | Dashboard chỉ có bảng mẫu, chưa phải phân hệ | Chưa |
-| UI09 | Cấu hình/kết nối | Có bản nháp | Chưa có bản vẽ chi tiết | Chưa |
+| UI02 | Lịch phòng | Có bản nháp | Wireframe local: lịch và form ví dụ; chưa mọi biến thể | Chưa |
+| UI03 | Đặt phòng | Có bản nháp | Wireframe local: hàng đợi và form phác thảo, chưa wizard đầy đủ | Chưa |
+| UI04 | Buồng phòng/bảo trì | Có bản nháp | Wireframe desktop + mobile HK/MT, checklist/QA mẫu | Chưa |
+| UI05 | Khách/yêu cầu | Có bản nháp | Wireframe desktop + mobile GS, form/ticket mẫu | Chưa |
+| UI06 | Thu chi/đối soát | Có bản nháp | Wireframe folio, thu/hoàn/chia và night-audit form mẫu | Chưa |
+| UI07 | Doanh thu/chiến dịch | Có bản nháp | Wireframe calendar/đề xuất và form duyệt mẫu | Chưa |
+| UI08 | Báo cáo | Có bản nháp | Wireframe nguồn chỉ số, drill-down mẫu | Chưa |
+| UI09 | Cấu hình/kết nối | Có bản nháp | Wireframe scope/membership/mapping mẫu | Chưa |
 
 Xem [SCREEN-SPECIFICATIONS](SCREEN-SPECIFICATIONS.md). “Có bản nháp” chưa có nghĩa chủ dự án đã duyệt.
 

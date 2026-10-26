@@ -4,6 +4,8 @@ Bộ tài liệu dự án trong repository `utne1991/utne1991`, thư mục `reso
 
 ## Bắt đầu
 
+- **Audit 002:** [Task và điểm còn chặn](docs/TASK-RESORT-DESIGN-AUDIT-002.md), [wireframe chín phân hệ + bốn mobile view](design/pms-wireframes.html), [bảy sơ đồ nghiệp vụ](docs/blueprints/README.md), [benchmark ba PMS](docs/research/PMS-BENCHMARK.md). Mở HTML local để xem, không phải app hay export Figma.
+
 - **Bộ thiết kế bên ngoài được báo cáo:** [Figma/FigJam BeeSmart HotelOS và checklist đối chiếu](docs/FIGMA-HANDOFF.md). Đã ghi nhận liên kết; chưa đọc được frame/node. [SaaS và profile 2–5 sao](docs/BEESMART-PRODUCT-OPTIONS.md) là phương án nghiên cứu, chưa khóa phạm vi/giá.
 
 - **Toàn bộ PMS, không chỉ dashboard:** đọc [mô hình vận hành resort 100 phòng](docs/RESORT-OPERATING-MODEL.md), [đặc tả chín phân hệ](docs/SCREEN-SPECIFICATIONS.md) và [bảng bao phủ màn hình](docs/SCREEN-COVERAGE.md). Repo chưa chứa bản vẽ chi tiết ngoài dashboard; bộ Figma bên ngoài được theo dõi riêng ở FIGMA-HANDOFF.
