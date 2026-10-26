@@ -4,6 +4,8 @@ Bộ tài liệu dự án trong repository `utne1991/utne1991`, thư mục `reso
 
 ## Bắt đầu
 
+- **Đề xuất OwnerOps vừa đánh giá:** [kết luận và điều cần chỉnh](docs/OWNEROPS-ASSESSMENT.md), [báo cáo đầy đủ](docs/research/OWNEROPS-PROPOSAL-2026-10-26.md). Có thể dùng làm ứng viên MVP trong control layer; chưa là baseline code/giá đã duyệt.
+
 - **Căn cứ làm việc mới nhất:** [tóm tắt nghiên cứu thị trường](docs/research/MARKET-RESEARCH-WORKING-SUMMARY.md) → [báo cáo đầy đủ](docs/research/MARKET-RESEARCH-2026-10-26.md) → [nguồn/giả thuyết cần xác thực](docs/research/MARKET-RESEARCH-SOURCE-REGISTER.md). Ưu tiên kế hoạch v1 kết nối PMS/CM và đối soát/vận hành/revenue; bộ full PMS được giữ làm tham chiếu, chưa tự thành scope triển khai.
 
 - **Audit 002:** [Task và điểm còn chặn](docs/TASK-RESORT-DESIGN-AUDIT-002.md), [wireframe chín phân hệ + bốn mobile view](design/pms-wireframes.html), [bảy sơ đồ nghiệp vụ](docs/blueprints/README.md), [benchmark ba PMS](docs/research/PMS-BENCHMARK.md). Mở HTML local để xem, không phải app hay export Figma.

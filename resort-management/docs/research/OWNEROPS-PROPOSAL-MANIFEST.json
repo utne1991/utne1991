@@ -1,0 +1,14 @@
+{
+  "received_date": "2026-10-26",
+  "source_type": "user_supplied_proposal",
+  "author_attribution_as_supplied": "MrAiTiNiuBi",
+  "original_file_name": "Văn bản đã dán.txt",
+  "original_path": "OWNEROPS-PROPOSAL-2026-10-26.raw.txt",
+  "readable_path": "OWNEROPS-PROPOSAL-2026-10-26.md",
+  "byte_count": 22087,
+  "sha256": "0000aa1d46dee728019ef65b1dd1633deaf1ea198ae23841c18d176abb445a37",
+  "repository_snapshot_claimed_by_author": "b6397d8",
+  "project_head_at_intake": "ce8710adc906cf89e4ba36c1e399f94995a03a97",
+  "verification_scope": "proposal review and file integrity; no independent vendor pricing, deployment, source access or financial validation",
+  "implementation_authorized_by_this_request": false
+}

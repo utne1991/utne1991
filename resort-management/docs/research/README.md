@@ -10,6 +10,11 @@
 
 Người dùng đã yêu cầu dựa vào nghiên cứu để làm việc. Nó là nguồn tham chiếu chính cho discovery/backlog, chưa phải phê duyệt giá, API entitlement, provider hoặc baseline code.
 
-## Nguồn kỹ thuật
+## Đề xuất OwnerOps để xem xét MVP
+
+- [Báo cáo dễ đọc](OWNEROPS-PROPOSAL-2026-10-26.md), [bản nguyên văn](OWNEROPS-PROPOSAL-2026-10-26.raw.txt), [manifest/hash](OWNEROPS-PROPOSAL-MANIFEST.json).
+- [Đánh giá và điểm cần chỉnh](../OWNEROPS-ASSESSMENT.md): phù hợp như ứng viên trong control layer, chưa thay quyết định scope/giá/pilot. Các giá/chi phí và claim repo được ghi theo snapshot và nguồn cung cấp, chưa kiểm tra thị trường mới.
+
+## Nguồn kỹ thuật đã đọc
 
 [Đối chiếu ba PMS mã nguồn mở](PMS-BENCHMARK.md): snapshot và source/license đã đọc có chọn lọc. Không dùng benchmark kỹ thuật thay thế bằng chứng nhu cầu thị trường hoặc kết quả triển khai thực.

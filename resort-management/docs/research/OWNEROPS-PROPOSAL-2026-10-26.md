@@ -1,0 +1,314 @@
+# Đề xuất OwnerOps — báo cáo người dùng cung cấp
+
+> Ngày tiếp nhận: 26/10/2026. Tác giả ghi trong nội dung: MrAiTiNiuBi. Đây là đề xuất được người dùng yêu cầu đánh giá và lưu, chưa phải quyết định chốt sản phẩm hoặc lệnh triển khai.
+
+Xem [đánh giá của dự án](../OWNEROPS-ASSESSMENT.md), [bản nguyên văn](OWNEROPS-PROPOSAL-2026-10-26.raw.txt) và [manifest](OWNEROPS-PROPOSAL-MANIFEST.json). Báo cáo đối chiếu repo ở commit `b6397d8`, trước commit `ce8710a` lưu nghiên cứu thị trường. Giá/chi phí là số liệu dẫn lại hoặc giả định, chưa được xác minh độc lập trong phiên tiếp nhận. Link favicon trong bản dán không thay URL bảng giá hoặc tài liệu tính năng.
+
+---
+
+MrAiTiNiuBi:
+
+# BeeSmart HotelOS — Xây phần mềm để chủ khách sạn kiểm soát toàn bộ hoạt động
+
+Boss man, mô hình anh vừa đề xuất chính là hướng nên phát triển: Chủ khách sạn không cần quản lý từng thao tác; quản lý điều hành và giao việc; nhân viên chỉ thấy công việc của mình, hoàn thành rồi gửi báo cáo; quản lý kiểm tra và chịu trách nhiệm về kết quả.
+
+Em đề xuất định vị BeeSmart HotelOS là:
+
+Hệ thống quản lý vận hành và hiệu quả kinh doanh khách sạn, kết hợp quản lý phòng, nhân sự, công việc, doanh thu, chi phí và hỗ trợ tăng doanh thu.
+
+Không chỉ là phần mềm xem phòng trống.
+
+## 1. Hệ thống sẽ vận hành theo 3 cấp
+
+Cấp 1 — Chủ khách sạn
+
+Xem tổng quan doanh thu, chi phí, lợi nhuận, công suất phòng, chất lượng vận hành. Chỉ duyệt ngân sách, chi phí lớn và vấn đề vượt thẩm quyền quản lý.
+
+Cấp 2 — Quản lý khách sạn / trưởng bộ phận
+
+Giao việc, đặt hạn hoàn thành, điều phối nhân sự, kiểm tra minh chứng, yêu cầu làm lại và báo cáo kết quả.
+
+Cấp 3 — Nhân viên
+
+Mở điện thoại, xem việc được giao, đánh dấu hoàn thành hoặc báo sự cố, chụp ảnh khi cần và nộp cho quản lý kiểm tra.
+
+### Ví dụ: Quy trình dọn phòng 305
+
+1. Khách trả phòng 305. Hệ thống tự tạo công việc Dọn phòng 305.
+2. Trưởng buồng phòng giao cho nhân viên Lan, hạn hoàn thành trước giờ khách mới đến.
+3. Lan mở điện thoại, tích checklist vệ sinh, bổ sung ảnh hoặc báo hư hỏng và chọn Gửi kiểm tra.
+4. Trưởng bộ phận kiểm tra: Chấp nhận hoặc Yêu cầu làm lại. Nếu đạt, phòng mới chuyển sang trạng thái đủ điều kiện sẵn sàng theo quy trình.
+5. Dashboard quản lý cập nhật tự động. Chủ khách sạn chỉ thấy tình trạng chung và những phòng có nguy cơ làm chậm khách nhận phòng.
+
+Điểm rất quan trọng: Nhân viên tích "đã xong" không đồng nghĩa công việc đã được nghiệm thu. Một phòng vừa dọn xong chưa chắc đủ điều kiện giao cho khách. Những việc thông thường có thể phê duyệt nhanh theo quy định; các việc liên quan tiền, an toàn hoặc sự cố khách phải có kiểm tra riêng.
+
+Chủ khách sạn cũng không nên nhận hàng trăm báo cáo mỗi ngày. Chủ chỉ nhận báo cáo tổng hợp và cảnh báo ngoại lệ; người quản lý chịu trách nhiệm xác nhận tính chính xác.
+
+## 2. Màn hình chủ khách sạn phải trả lời được 5 câu hỏi trong khoảng 30 giây
+
+1. Hôm nay khách sạn kiếm được bao nhiêu tiền?
+2. Đã phát sinh bao nhiêu chi phí, còn phải thanh toán bao nhiêu?
+3. Lãi vận hành ước tính hay thực tế là bao nhiêu, và số liệu đã đầy đủ chưa?
+4. Phòng, nhân viên và bộ phận nào đang hoạt động tốt hoặc chậm?
+5. Có vấn đề nào cần chủ khách sạn trực tiếp quyết định?
+
+Dưới đây là cấu trúc màn hình chủ mà em đề xuất. Số liệu chỉ để minh họa giao diện, không phải dữ liệu khách sạn thật.
+
+BeeSmart HotelOS
+
+Tổng quan chủ khách sạn · Dữ liệu minh họa
+
+Hôm nay
+
+Doanh thu ghi nhận
+
+## 84,5 triệu
+
+Phòng + dịch vụ
+
+Chi phí đã ghi
+
+## 49,2 triệu
+
+Chưa bao gồm chi phí thiếu
+
+Phòng đang có khách
+
+## 68/100
+
+Công suất hiện tại 68%
+
+Công việc đạt kiểm tra
+
+## 92%
+
+Đúng hạn theo quy trình
+
+Tình hình vận hành
+
+68 phòng có khách12 phòng cần xử lý20 phòng còn lại
+
+Việc cần chủ chú ý
+
+2 phòng có nguy cơ chậm nhận khách
+
+Quản lý buồng phòng đang xử lý · Xem nguyên nhân và người phụ trách
+
+1 khoản chi đang chờ duyệt
+
+Đề xuất sửa điều hòa · Xem báo giá và hạn mức
+
+Báo cáo chi tiết
+
+7 ngày
+
+30 ngày
+
+Theo bộ phận
+
+Lưu ý thiết kế tài chính: Không lấy doanh thu trừ chi phí đang ghi rồi gọi ngay là lợi nhuận ròng. Khi chưa có đủ lương, điện nước, hoa hồng OTA, thuế, khấu hao và các chi phí liên quan, hệ thống phải ghi rõ "ước tính/chưa đủ dữ liệu". Đây là yếu tố quyết định độ tin cậy của sản phẩm.
+
+## 3. Repo hiện có đủ để bắt đầu làm sản phẩm chưa?
+
+Đủ để bắt đầu phát triển bản demo và phân hệ giao việc. Chưa đủ để triển khai khách sạn thật hoặc mở bán SaaS.
+
+Em đã kiểm tra repo [utne1991/utne1991 — resort-management](https://github.com/utne1991/utne1991/tree/main/resort-management?utm_source=chatgpt.com) đến commit `b6397d8` ngày 26/10/2026.
+
+| Hạng mục                     | Trạng thái đã kiểm tra | Việc cần hoàn thiện                               |
+| ---------------------------- | ---------------------- | ------------------------------------------------- |
+| Thiết kế 9 phân hệ PMS       | Có đặc tả và wireframe | Duyệt giao diện, hành trình và trạng thái         |
+| Giao diện mobile nhân viên   | Có 4 bản phác thảo     | Làm app web di động/PWA dùng thật                 |
+| Quy trình booking, tài chính | Có blueprint           | Schema, API, giao dịch và kiểm thử                |
+| Giao việc và nghiệm thu      | Có ý tưởng, form mẫu   | Cần phát triển thành module cốt lõi               |
+| Dashboard chủ khách sạn      | Có bản HTML minh họa   | Thiết kế lại theo kết quả kinh doanh              |
+| SaaS nhiều khách sạn         | Có phương án           | Chưa có backend cô lập khách hàng, thanh toán gói |
+| Đồng bộ PMS/OTA              | Chưa tích hợp          | Chọn hệ thống gốc và phương thức kết nối          |
+| AI, quảng cáo, tối ưu giá    | Chưa triển khai        | Chờ dữ liệu đáng tin cậy và cơ chế phê duyệt      |
+| Production, backup, bảo mật  | Chưa nghiệm thu        | Cần kiểm thử thực tế trước khi bán                |
+
+Hai tài liệu đáng chú ý đã được bổ sung là [Audit 002](https://github.com/utne1991/utne1991/blob/main/resort-management/docs/TASK-RESORT-DESIGN-AUDIT-002.md?utm_source=chatgpt.com) và [ma trận chức năng theo vai trò](https://github.com/utne1991/utne1991/blob/main/resort-management/docs/FEATURE-ROLE-PROFILE-RELEASE.md?utm_source=chatgpt.com).
+
+Khoảng trống quan trọng nhất: Hiện các tài liệu vẫn thiên về quản lý nghiệp vụ khách sạn. Chưa định nghĩa đầy đủ chuỗi trách nhiệm Chủ → Quản lý → Nhân viên → Kiểm tra → Tổng hợp hiệu quả như yêu cầu mới của anh.
+
+## 4. Các bộ phận sẽ dùng ứng dụng như thế nào?
+
+| Người dùng    | Giao diện tối giản                       | Kết quả gửi lên hệ thống          |
+| ------------- | ---------------------------------------- | --------------------------------- |
+| Chủ khách sạn | Dashboard, chi phí, lợi nhuận, cảnh báo  | Duyệt quyết định vượt hạn mức     |
+| Tổng quản lý  | Bảng việc, bộ phận, phân công, ngân sách | Báo cáo ngày và việc tồn đọng     |
+| Lễ tân        | Khách đến/trả, booking, công nợ          | Xác nhận nhận/trả, báo vấn đề     |
+| Buồng phòng   | Danh sách phòng, checklist, camera       | Gửi hoàn thành và minh chứng      |
+| Bảo trì       | Danh sách sự cố, ảnh trước/sau, vật tư   | Báo sửa xong và chi phí           |
+| Nhà hàng/spa  | Công việc phục vụ, ghi nhận dịch vụ      | Xác nhận dịch vụ và khoản thu     |
+| Kế toán       | Thu, chi, hóa đơn, đối soát              | Xác nhận số liệu và chênh lệch    |
+| Kinh doanh    | Ngày phòng trống, kênh bán, giá          | Đề xuất chương trình và ngân sách |
+
+Nhân viên không cần nhìn thấy 9 phân hệ. Ví dụ nhân viên buồng phòng chỉ cần ba mục: Việc của tôi — Báo sự cố — Lịch sử công việc.
+
+Mỗi việc cần lưu ai giao, ai làm, hạn hoàn thành, thời điểm nộp, kết quả kiểm tra và lịch sử thay đổi. Ảnh chỉ bắt buộc khi thực sự cần chứng minh; tránh biến công việc thường ngày thành thủ tục chụp ảnh liên tục.
+
+Cần một cơ chế chống nghẽn: việc đơn giản có thể được trưởng bộ phận nghiệm thu theo quy tắc; việc ảnh hưởng phòng sẵn sàng, tiền bạc, an toàn hoặc khách hàng phải được xác minh chặt chẽ hơn.
+
+## 5. Điểm yếu lớn nhất của dự án và cách khắc phục
+
+| Ưu tiên | Điểm yếu                                                    | Cách hoàn thiện                                                 |
+| ------- | ----------------------------------------------------------- | --------------------------------------------------------------- |
+| P0      | Dashboard có thể đẹp nhưng doanh thu/chi phí chưa đáng tin  | Làm nguồn dữ liệu tài chính, kỳ báo cáo và đối soát trước       |
+| P0      | Nhân viên tự đánh dấu xong có thể không phản ánh chất lượng | Có trạng thái Đã nộp → Đạt / Làm lại và người kiểm tra          |
+| P0      | Chưa biết PMS nào nắm quyền đặt phòng/tồn phòng             | Chọn một nguồn chính; không bán hai lần cùng phòng              |
+| P0      | Chưa có SaaS tenant và phân quyền thực thi                  | Cô lập dữ liệu khách sạn, ảnh, export và AI ở backend           |
+| P0      | Chưa kiểm thử nghiệp vụ tiền và chốt ngày                   | Chống thu trùng, hoàn trùng, ghi doanh thu hai lần              |
+| P1      | Quản lý dễ bị quá tải vì duyệt mọi thao tác                 | Duyệt theo rủi ro, hàng đợi ưu tiên và phân cấp                 |
+| P1      | Mobile mới là wireframe                                     | Tối ưu màn hình nhỏ, camera, mạng yếu và gửi lại an toàn        |
+| P1      | Ảnh minh chứng có thể sai phòng hoặc chứa thông tin khách   | Gắn mã phòng/QR, quyền riêng tư, nhật ký và lưu trữ có hạn      |
+| P1      | Chi phí vận hành khách sạn khó có dữ liệu đầy đủ            | Nhập chi phí đơn giản trước, tích hợp kế toán/POS sau           |
+| P2      | AI và quảng cáo được đề xuất quá sớm                        | Chỉ dùng AI đọc, giải thích và đề xuất trước; không tự chi tiền |
+
+Đặc biệt, quy trình giao việc và xem dashboard không phải lợi thế độc quyền. ezCloud công bố chức năng giao việc, Cloudbeds có buồng phòng và phân công, đồng thời có ứng dụng tích hợp cho vận hành. BeeSmart cần thắng bằng độ đơn giản, khả năng tổng hợp chi phí thực và độ tin cậy của kết quả — không chỉ bằng số lượng tính năng.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://ezcloud.vn\&sz=32)
+
+2 sao)
+
++2
+
+
+
+## 6. Giá bán ở Việt Nam nên như thế nào?
+
+### Mức giá tham khảo trên thị trường
+
+| Sản phẩm            | Giá công khai                              | Quy đổi cho 100 phòng                         |
+| ------------------- | ------------------------------------------ | --------------------------------------------- |
+| Skyhotel tiêu chuẩn | 1.000.000đ/tháng với kỳ thanh toán 3 tháng | 1 triệu/tháng; housekeeping và OTA tính riêng |
+| ezCloud Cơ bản      | 18.000đ/phòng/tháng                        | 1,8 triệu/tháng                               |
+| ezCloud Nâng cao    | 48.000đ/phòng/tháng                        | 4,8 triệu/tháng                               |
+| ezCloud Cao cấp     | 66.000đ/phòng/tháng                        | 6,6 triệu/tháng                               |
+
+Giá niêm yết tham khảo, chưa phải báo giá cuối cùng; các gói khác nhau về tính năng và điều kiện thanh toán.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://skyhotel.vn\&sz=32)
+
+skyhotel.vn
+
++1
+
+### Bảng giá BeeSmart em đề xuất để thử nghiệm thị trường
+
+| Gói             | Giá đề xuất/tháng  | Sản phẩm bán                                                                 |
+| --------------- | ------------------ | ---------------------------------------------------------------------------- |
+| OwnerOps        | 990.000–1.990.000đ | Dashboard chủ, giao việc, ảnh, nghiệm thu, nhập chi phí, dùng kèm PMS có sẵn |
+| HotelOS Starter | 1.490.000đ         | Đến 30 phòng; vận hành, công việc và báo cáo cơ bản                          |
+| HotelOS Growth  | 3.490.000đ         | Đến 100 phòng; các bộ phận, quản lý doanh thu/chi phí và đối soát            |
+| HotelOS Premium | 6.990.000đ         | Đến 200 phòng; báo cáo nâng cao, nhiều bộ phận và quy trình phê duyệt        |
+| Enterprise      | Báo giá riêng      | Nhiều cơ sở, tích hợp đặc thù, yêu cầu hỗ trợ riêng                          |
+
+Đây là giá giả định để kiểm chứng, chưa phải sản phẩm đã có thể ký hợp đồng. Riêng ba mức Starter/Growth/Premium cũng đã xuất hiện trong tài liệu phương án của repo; em bổ sung OwnerOps làm cửa vào thị trường.
+
+Em ưu tiên bán OwnerOps cho khách sạn đã có PMS trước. Họ có thể thử giao việc, kiểm tra chất lượng và báo cáo chủ mà không phải thay toàn bộ hệ thống lễ tân.
+
+Phí thiết lập/đào tạo có thể thử ở khoảng 2–10 triệu đồng/cơ sở, tùy quy mô; kết nối OTA/PMS có phí riêng nếu nhà cung cấp yêu cầu. Quảng cáo, SMS, AI dùng nhiều và cổng thanh toán không mặc định nằm trong giá thuê bao.
+
+## 7. Chi phí để công ty vận hành SaaS
+
+Chi phí thuê server thực ra không phải khoản lớn nhất. Hỗ trợ khách hàng, xử lý sự cố và duy trì tích hợp mới quyết định biên lợi nhuận.
+
+| Khoản chi                                     | Cơ sở lập dự toán                                         |
+| --------------------------------------------- | --------------------------------------------------------- |
+| Vercel Pro                                    | Từ 20 USD/tháng, phát sinh thêm khi vượt mức sử dụng      |
+| Supabase Pro                                  | Từ 25 USD/tháng, compute/dung lượng tăng có thể phát sinh |
+| Lưu ảnh, thông báo, giám sát, sao lưu bổ sung | Tùy số khách và lượng minh chứng                          |
+| Hỗ trợ/đào tạo khách sạn                      | Tùy số giờ xử lý yêu cầu                                  |
+| AI, SMS, tích hợp PMS/OTA                     | Theo sử dụng, hợp đồng và nhà cung cấp                    |
+| Nhân sự phát triển, bán hàng, kế toán, thuế   | Phải dự toán riêng, không nằm trong phí server            |
+
+[image](https://www.google.com/s2/favicons?domain=https://vercel-docs.vercel.sh\&sz=32)
+
+vercel-docs.vercel.sh
+
++2
+
+Với một môi trường pilot, em sẽ dự trù sơ bộ khoảng 2–6 triệu đồng/tháng cho hạ tầng và dịch vụ kỹ thuật, chưa gồm nhân sự; có thể thấp hoặc cao hơn tùy tải và phương án triển khai. Số này là ngân sách kế hoạch, không phải hóa đơn đã xác minh.
+
+## Mô phỏng kinh tế SaaS
+
+Giả định bán gói Growth 3,49 triệu/khách sạn/tháng, chi phí hạ tầng chung 4 triệu/tháng và chi phí biến đổi/hỗ trợ 0,8 triệu/khách sạn/tháng.
+
+Số khách sạn trả phí
+
+# 5
+
+Doanh thu
+
+## 17.45
+
+triệu/tháng
+
+Chi phí giả định
+
+## 8.00
+
+triệu/tháng
+
+Chênh lệch
+
+## 9.45
+
+triệu/tháng
+
+Chênh lệch chưa trừ chi phí phát triển phần mềm, bán hàng, quản lý công ty, thuế và các đợt nâng cấp hạ tầng. Hạ tầng chung giả định chưa được kiểm chứng có đáp ứng được mọi số lượng khách sạn trên hay không.
+
+Kết luận thương mại: Không nên kỳ vọng một khách sạn trả 3,49 triệu sẽ đủ nuôi toàn bộ nền tảng. Cần dùng chung hạ tầng hợp lý giữa nhiều khách hàng, nhưng phải cô lập dữ liệu nghiêm ngặt.
+
+## 8. Khách sạn được dùng thử những gì?
+
+Em đề xuất hai trải nghiệm khác nhau.
+
+Demo tự trải nghiệm — 14 ngày
+
+Dữ liệu khách sạn giả lập 30–100 phòng, miễn phí, không cần thẻ thanh toán.
+
+Có chủ, quản lý, nhân viên; giao việc, tích hoàn thành, gửi ảnh, kiểm tra, báo cáo doanh thu/chi phí mẫu.
+
+Pilot thực tế — 30 đến 45 ngày
+
+Áp dụng thử tại một khách sạn độc lập, một hoặc hai bộ phận trước.
+
+Dùng dữ liệu được cấp quyền, ghi việc thật, đối chiếu PMS hiện tại; chưa tự động đổi giá, đặt phòng OTA hay thu tiền.
+
+Hành trình demo nên cho khách hàng tự thử đúng một chuỗi: Chủ giao mục tiêu → Quản lý phân công → Nhân viên hoàn thành → Quản lý xác minh → Chủ xem kết quả.
+
+Một khách sạn pilot sẽ được đánh giá bằng số liệu trước/sau: thời gian từ khách trả đến phòng sẵn sàng, tỷ lệ việc trễ hạn, tỷ lệ bị yêu cầu làm lại, thời gian xử lý sự cố, chênh lệch đối soát và thời gian quản lý dành cho tổng hợp báo cáo.
+
+Không nên hứa phần mềm làm tăng lợi nhuận 10–20% khi chưa có dữ liệu chứng minh.
+
+## 9. Lộ trình code để hoàn thiện mục tiêu
+
+| TASK               | Phạm vi giao phát triển                                    | Điều kiện nghiệm thu                                  |
+| ------------------ | ---------------------------------------------------------- | ----------------------------------------------------- |
+| `HOTEL-OWNER-001`  | Dashboard chủ khách sạn, KPI và cảnh báo                   | Số liệu giải thích được, bấm xem tới nguồn            |
+| `HOTEL-WORK-002`   | Giao việc theo vai trò, checklist, ảnh, nghiệm thu/làm lại | Đầy đủ lịch sử, không thể tự duyệt trái quyền         |
+| `HOTEL-MOBILE-003` | Mobile web/PWA cho lễ tân, buồng phòng, bảo trì            | Dùng tốt trên điện thoại, xử lý mạng yếu              |
+| `HOTEL-FIN-004`    | Doanh thu, chi phí, ngân sách, thu tiền, đối soát          | Tách đúng tiền thu với doanh thu và lợi nhuận         |
+| `HOTEL-CORE-005`   | Booking/phòng hoặc connector PMS hiện có                   | Không trùng phòng, không mất booking, có đối soát     |
+| `HOTEL-SAAS-006`   | Nhiều khách hàng, phân quyền, gói dịch vụ, backup          | Không đọc chéo dữ liệu, có khôi phục và xuất dữ liệu  |
+| `HOTEL-PILOT-007`  | Onboarding, demo và pilot                                  | Khách sạn dùng được với quy trình đã nghiệm thu       |
+| `HOTEL-AI-008`     | AI phân tích bất thường, gợi ý giá và marketing            | Gợi ý có căn cứ, chi tiền hay đổi giá phải được duyệt |
+
+Thứ tự ưu tiên thực tế: Bắt đầu Owner Dashboard + Giao việc + Mobile, nhưng thiết kế dữ liệu booking, tài chính và tenant từ đầu để không phải đập đi xây lại. Sau đó kết nối nguồn dữ liệu thật, nghiệm thu bảo mật và vận hành pilot. AI và quảng cáo triển khai cuối cùng.
+
+Với hệ sinh thái BeeSmart hiện có, có thể nghiên cứu tái sử dụng Tool GG cho phân tích quảng cáo và Social Go cho sản xuất nội dung marketing; đó là cơ hội giảm công phát triển sau này, chưa phải tích hợp đã hoàn thành.
+
+Với kế hoạch thử dự án trên một VPS, môi trường đó phù hợp cho phát triển và demo. Khi nhận dữ liệu vận hành thật của khách sạn, cần bổ sung sao lưu độc lập, giám sát, kiểm thử khôi phục và phương án xử lý nếu VPS ngừng hoạt động.
+
+## 10. Em đề xuất chốt hướng sản phẩm
+
+Tên sản phẩm: BeeSmart HotelOS.
+
+Điểm bán hàng chính: Chủ khách sạn biết khách sạn đang kiếm bao nhiêu, tiêu bao nhiêu, đang gặp vấn đề gì và ai chịu trách nhiệm — ngay trên điện thoại.
+
+Sản phẩm đầu tiên nên đưa ra thị trường: OwnerOps, hoạt động cùng PMS sẵn có, để giảm rủi ro chuyển đổi và sớm có khách hàng thử.
+
+Mục tiêu dài hạn: Phát triển thành HotelOS đầy đủ với PMS, vận hành, tài chính, kết nối kênh bán và AI hỗ trợ kinh doanh, chỉ sau khi các mô-đun cốt lõi đạt điều kiện nghiệm thu.
+
+Status: Đã kiểm tra repo mới nhất, xác định khoảng trống triển khai, xây dựng mô hình 3 cấp người dùng, phương án dashboard, thử nghiệm khách hàng, giá bán Việt Nam và dự toán chi phí. Dự án chưa sẵn sàng để bán hoặc vận hành khách sạn thật. Chưa chỉnh sửa repo, triển khai production hay thực hiện chi tiêu.&#x20;

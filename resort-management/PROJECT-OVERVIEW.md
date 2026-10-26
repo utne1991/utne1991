@@ -8,6 +8,8 @@
 
 ## Căn cứ lập kế hoạch mới nhất
 
+Đã nhận thêm [đề xuất OwnerOps](docs/research/OWNEROPS-PROPOSAL-2026-10-26.md) và lưu [đánh giá](docs/OWNEROPS-ASSESSMENT.md): phù hợp như ứng viên MVP thu hẹp vào dashboard chủ, work engine, nghiệm thu và mobile, hoạt động cùng PMS. Đề xuất chưa thay căn cứ thị trường hoặc khóa scope/giá/lịch pilot; các task HOTEL-* chưa được giao thực hiện.
+
 Người dùng yêu cầu lưu nghiên cứu thị trường ngày 26/10/2026 và dựa vào đó làm việc. [Tóm tắt định hướng](docs/research/MARKET-RESEARCH-WORKING-SUMMARY.md) là điểm bắt đầu, kèm [báo cáo đầy đủ](docs/research/MARKET-RESEARCH-2026-10-26.md), [bản nguyên văn](docs/research/MARKET-RESEARCH-2026-10-26.raw.txt) và [tình trạng bằng chứng](docs/research/MARKET-RESEARCH-SOURCE-REGISTER.md).
 
 Ưu tiên lập kế hoạch **Operations & Revenue Control Layer kết nối PMS/channel manager hiện có**, pilot một resort, một nguồn booking/tồn chính và một connector. Luồng discovery/baseline → đọc/đối soát → ops/agency → revenue có duyệt → ghi có kiểm soát khi đủ điều kiện. Chưa chọn nhà cung cấp hoặc khẳng định resort đã có PMS; chưa phê duyệt giá, entitlement API, ngân sách hoặc baseline triển khai.

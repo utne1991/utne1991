@@ -27,6 +27,7 @@
 | D11 | BeeSmart và phạm vi SaaS | Audit 002 đề xuất pilot một resort, thiết kế tenant/property/membership từ đầu nhưng chưa làm SaaS billing/portfolio. Đã có ERD/quyền nháp theo phương án đó; chưa được chủ dự án xác nhận hoặc chọn topology DB. | Trước backend và mở rộng phạm vi |
 | D12 | Profile dịch vụ 2–5 sao | Chọn checklist/năng lực nào, tiêu chuẩn/loại hình/quốc gia áp dụng và phân quyền; không coi phần mềm tự cấp sao hoặc hạng sao quyết định giá phần mềm. | Trước đưa profile vào scope |
 | D13 | Nguồn thiết kế được duyệt | Audit mới sửa thành 16 khung/4 trang và báo cáo đã đọc trực tiếp; chưa kèm node/version/export. Cần ánh xạ, mở rộng form/mobile/states và ghi baseline; chưa nghiệm thu. | Trước chốt UI/giao code theo Figma |
+| D14 | OwnerOps làm ứng viên MVP | Đề xuất mới đã được người dùng yêu cầu đánh giá/lưu: dashboard chủ + giao việc/nghiệm thu + mobile, dùng cùng PMS. Cần chốt scope, policy review/ownership, financial coverage, gói giá và lịch pilot; chưa cho phép code HOTEL-* hoặc ghi tiền/booking thật. Xem [đánh giá](OWNEROPS-ASSESSMENT.md). | Trước chốt scope OwnerOps hoặc dùng làm báo giá/kế hoạch triển khai |
 
 D01 đã được hỏi trong cuộc trò chuyện; chưa nhận thông tin thì tiếp tục làm tài liệu và giao diện mẫu, giữ câu trả lời là chưa biết. Không suy từ README hồ sơ GitHub rằng resort chưa có PMS.
 

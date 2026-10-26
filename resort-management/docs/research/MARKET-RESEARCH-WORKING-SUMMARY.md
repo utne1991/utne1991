@@ -75,6 +75,8 @@ Báo cáo đề xuất pilot **8–12 tuần vận hành**; đây không phải 
 
 ## 7. Cách sử dụng từ phiên sau
 
+Đã nhận thêm [đề xuất OwnerOps](OWNEROPS-PROPOSAL-2026-10-26.md) và [đánh giá](../OWNEROPS-ASSESSMENT.md). Nó có thể là một lát cắt MVP nhỏ hơn cho ops control, không phủ định hướng kết nối PMS. Người dùng mới yêu cầu đánh giá/lưu; chưa tự thay giá Connect/Revenue, lịch pilot 8–12 tuần hoặc baseline v1 bằng giá/lịch OwnerOps mới.
+
 Agent đọc file này trước khi đề xuất backlog, API/schema hoặc sửa thiết kế v1; đọc báo cáo đầy đủ khi cần bối cảnh/số liệu. Ghi rõ điều nào là recommendation, assumption, quote/vendor claim hoặc observed pilot result. Các xung đột về scope/ownership phải được ghi ở DECISIONS, không âm thầm biến prototype PMS đầy đủ thành code v1.
 
 Người dùng đã yêu cầu dùng nghiên cứu làm căn cứ làm việc; không cần hỏi lại việc lưu/đọc tài liệu. Những quyết định còn thiếu dữ liệu thực tế vẫn được giữ mở. Chưa giao việc cho agent khác hoặc bắt đầu backend từ việc lưu báo cáo.

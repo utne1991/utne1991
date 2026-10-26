@@ -47,4 +47,6 @@ Concierge, pre-arrival, đưa đón, spa/nhà hàng, room service, yêu cầu VI
 
 ## 5. Việc tiếp theo
 
+Đề xuất mới bổ sung **OwnerOps 990.000–1.990.000 VND/tháng** và onboarding 2–10 triệu như giả thuyết thị trường. Xem [báo cáo](research/OWNEROPS-PROPOSAL-2026-10-26.md) và [đánh giá](OWNEROPS-ASSESSMENT.md): scope/support/quota khác Connect/Revenue, chưa xác minh cost-to-serve/WTP hoặc thay bảng giá cũ. Mọi mức giá vẫn là phương án nghiên cứu, không phải price list hoặc quyền thu tiền.
+
 Đối chiếu [Figma với đặc tả](FIGMA-HANDOFF.md), rồi chốt riêng D11–D13 trong [sổ quyết định](DECISIONS.md). Chưa đổi kiến trúc PMS hiện tại theo phương án thương mại chưa được xác nhận. Nếu phê duyệt mở rộng, cập nhật tổng quan, sơ đồ dữ liệu/quyền, kế hoạch triển khai và nghiệm thu trong cùng baseline.
