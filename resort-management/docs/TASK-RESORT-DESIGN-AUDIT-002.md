@@ -4,6 +4,8 @@ Ngày: 26/10/2026. **Trạng thái: có gói thiết kế bổ sung, chưa đủ
 
 ## 1. Nguồn đầu vào
 
+Đã bổ sung lưu [bản upload nguyên văn](research/DESIGN-AUDIT-002-2026-10-26.raw.txt) và [manifest](research/DESIGN-AUDIT-002-MANIFEST.json) trong lần rà tính đầy đủ; hai upload có cùng bytes được lưu một bản.
+
 Người dùng chuyển tiếp báo cáo MrAiTiNiuBi: kiểm tra trực tiếp 4 trang Figma, tổng 16 khung (9 UI + 7 bổ sung), sửa số 13 trước đó; trên các node đã kiểm tra không phát hiện prototype links, reusable components, Auto Layout hoặc mobile frames. Theo báo cáo có 2 sơ đồ FigJam và chưa duyệt cảm quan toàn bộ.
 
 Báo cáo không đính kèm node IDs, danh mục frame/version hoặc snapshot cấu trúc. Phiên Codex này vẫn không có tool Figma/FigJam; không đổi thông tin người khác báo thành kết quả kiểm tra trực tiếp của Codex. Xem [FIGMA-HANDOFF](FIGMA-HANDOFF.md).

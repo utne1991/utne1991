@@ -1,0 +1,12 @@
+{
+  "received_date": "2026-10-26",
+  "archived_during": "project completeness review",
+  "source_type": "user_supplied_external_design_audit",
+  "author_attribution_as_supplied": "MrAiTiNiuBi",
+  "original_file_name": "Văn bản đã dán.txt",
+  "original_path": "DESIGN-AUDIT-002-2026-10-26.raw.txt",
+  "byte_count": 14028,
+  "sha256": "11d7d39e83940708b329fe4847faedfac1e8ad5dc2a22fb8d9b0ffe2a91044ba",
+  "identical_uploads_observed": 2,
+  "verification_scope": "exact source preservation and comparison; not a direct Figma inspection or acceptance of every external audit claim"
+}

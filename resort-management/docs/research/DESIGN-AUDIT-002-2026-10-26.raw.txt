@@ -1,0 +1,206 @@
+MrAiTiNiuBi:
+
+Title: Kiểm toán Figma và so sánh PMS mã nguồn mở trên GitHub
+
+Boss man, dự án BeeSmart HotelOS đã có thiết kế tổng thể tốt, nhưng chưa đủ chi tiết để khóa triển khai toàn bộ phần mềm quản lý khách sạn 2–5 sao. Em đã kiểm tra trực tiếp Figma, FigJam, tài liệu GitHub mới và tìm được những repository đáng tham khảo.
+
+## 1. Kết quả kiểm toán Figma thực tế
+
+BEESMART HOTELOS — DESIGN AUDIT
+
+Cần bổ sung
+
+# 4
+
+Trang Figma
+
+# 16
+
+Khung thiết kế
+
+# 9/9
+
+Màn hình PMS tổng quan
+
+Nội dung có thể chỉnh sửa
+
+2 sơ đồ FigJam có nút và đường nối
+
+Prototype tương tác trong Figma
+
+0 liên kết được phát hiện
+
+Reusable components / Auto Layout
+
+0 / 0
+
+Khung mobile riêng
+
+Chưa có
+
+Kiểm tra cấu trúc trực tiếp trên 4 trang Figma. Có 9 khung UI01–UI09 và 7 khung dịch vụ, tính khả thi, kinh doanh; như vậy tổng thực tế là 16 khung, không phải 13. Không phát hiện liên kết prototype trên các node đã kiểm tra. Chưa hoàn thành nghiệm thu cảm quan đầy đủ mọi màn hình.[Xem bản Figma đang đánh giá](https://www.figma.com/design/tqj8gIVcaEPR8tyJiRZx3W?utm_source=chatgpt.com)
+
+### Phần đã đủ và phần cần bổ sung
+
+| Phân hệ               | Thiết kế hiện tại                 | Cần làm tiếp                                          |
+| --------------------- | --------------------------------- | ----------------------------------------------------- |
+| UI01 — Dashboard      | Có màn tổng quan 100 phòng        | Bộ lọc thực tế, cảnh báo, drill-down, theo vai trò    |
+| UI02 — Lịch phòng     | Có mẫu lịch 7 ngày                | Lịch 30/90 ngày, booking chưa gán, form đổi phòng     |
+| UI03 — Lễ tân         | Có hàng đợi booking               | Wizard đặt phòng, check-in/out, hủy một phần, no-show |
+| UI04 — Buồng phòng    | Có danh sách công việc và bảo trì | Mobile PWA, checklist, kiểm tra QA, báo hỏng          |
+| UI05 — Chăm sóc khách | Có service desk                   | Hồ sơ khách, concierge, SLA, khiếu nại                |
+| UI06 — Thu chi        | Có mẫu folio và bàn giao          | Form thu/hoàn, thanh toán chia khoản, night audit     |
+| UI07 — Revenue & Ads  | Có đề xuất giá/chiến dịch         | Calendar giá, khuyến mãi, phê duyệt, kết quả thực thi |
+| UI08 — Báo cáo        | Có KPI và chi phí kênh            | Bộ lọc, drill-down, đối soát, báo cáo tài chính       |
+| UI09 — Cấu hình       | Có danh mục và tích hợp           | Quản lý nhân sự, role/permission, trạng thái kết nối  |
+
+Kết luận: 9 khung hiện tại là high-level screen concepts, chưa phải toàn bộ trang con, popup, form và trạng thái cần cho lập trình.
+
+Em cũng đã kiểm tra [FIGMA-HANDOFF.md](https://github.com/utne1991/utne1991/blob/main/resort-management/docs/FIGMA-HANDOFF.md?utm_source=chatgpt.com). Báo cáo của Codex đúng ở chỗ chưa đủ điều kiện nghiệm thu; tuy nhiên hiện nay có thể cập nhật thêm bằng chứng Figma đã được đọc trực tiếp.
+
+## 2. So sánh với các PMS đang có trên GitHub
+
+Em chọn ba repository phù hợp nhất để nghiên cứu, thay vì các project quản lý khách sạn chỉ làm CRUD để học lập trình.
+
+[E-PMS - Modern & Intuitive Hotel Management Dashboard by Akbar Taufiq on Dribbble](https://images.openai.com/static-rsc-4/E0IUS28zBLAEBS5jgQGUNPU8i-HPUYpAu19JH9DNZUzFAPnicX3Iw50VV_sTV53KIrsZYuXQ9tnjNHXRDQyMsmQKTGSbWnwdWqA-jLL-NsanKGRbqr22f_PDLSQq2xvAG52HwowWldvb2-y8UqJSJqUH_eZ-qCS8DQ40_mVVqzQ?purpose=inline)
+
+1\. [Open Hotel PMS](https://github.com/peeraseepat-cell/open-hotel-pms?utm_source=chatgpt.com)
+
+Next.js · TypeScript · Supabase · MIT
+
+Gần BeeSmart HotelOS nhất về công nghệ. Repository công bố các module lễ tân, đặt phòng, housekeeping, night audit, hồ sơ khách và các migration PostgreSQL. Em cũng kiểm tra được file SQL xử lý capacity theo từng đêm.
+
+Đây là nguồn nên nghiên cứu đầu tiên để xây backend và quy trình hoạt động. Tác giả cho biết đã dùng ở một khách sạn từ tháng 3/2026; em chưa kiểm thử độc lập hệ thống này.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://github.com\&sz=32)
+
+GitHub
+
+
+
+[Hospitality Property Management System | Hotel Front Desk Software](https://images.openai.com/static-rsc-4/DLgIEkViL1Xbn2Cce1IVNRy4CvfXtkuXacYAV-tjd1Wk9MPl5vctjmBT-aJfCM2n_EH4XJE0G3c_uvutktTor4tkas6dMqSBk_TZ7Tg3ZyNZ2MvdFt2l-0Nbj8QWQF3X9S39k6FMp8vV-nC3Y8LzBJ7k7w5wzV6ByZLGlsHld_4?purpose=inline)
+
+2\. [Kamra PMS](https://github.com/Kamra-PMS/kamra-pms?utm_source=chatgpt.com)
+
+Frappe / Python · POS · AI/MCP · AGPL-3.0
+
+Rất đáng học về độ sâu nghiệp vụ. Tài liệu dự án mô tả group booking, folio, night audit, POS nhà hàng, housekeeping, concierge, ticket SLA, nhiều cơ sở và AI có kiểm soát quyền.
+
+Nên nghiên cứu cách tổ chức service operations và kiểm soát AI. Tuy nhiên AGPL-3.0 có nghĩa vụ công bố mã nguồn tương ứng khi sửa đổi phần mềm và cung cấp nó qua mạng theo điều kiện giấy phép.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://github.com\&sz=32)
+
+GitHub
+
+
+
+[QloApps Front Desk System - QloApps Hotel Booking System - WebKul](https://images.openai.com/static-rsc-4/uwjSxlKv9c7xfwAniWmNzfsdyv4ewfIHCY85M4xtgDxUWzGwZLlbC4S93waukFHvyVaovtYWEGvVxPG1YKAl4mTatA-yPKnOYs7is6zUjdjLQ80RbXTlcGHFp9b05V_7o7Y-si4wY7LmYoC3f72l0YZKFB3yq0Fw3lfIblW8d88?purpose=inline)
+
+3\. [QloApps](https://github.com/Qloapps/QloApps?utm_source=chatgpt.com)
+
+PHP · MySQL · OSL-3.0 (core)
+
+Đáng nghiên cứu về booking engine và kênh bán phòng trực tiếp. Repository có phần quản lý đặt phòng, website khách sạn, giao diện chọn phòng và hệ thống mở rộng bằng module.
+
+Có lịch sử phát triển lớn, nhưng stack khác BeeSmart. Em khuyên dùng làm benchmark sản phẩm, không ghép trực tiếp vào lõi Next.js/Supabase. Giấy phép các module phải kiểm tra riêng.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://github.com\&sz=32)
+
+GitHub
+
+
+
+### Đối chiếu nhanh
+
+| Tiêu chí               | BeeSmart hiện tại | Open Hotel PMS       | Kamra PMS          | QloApps                             |
+| ---------------------- | ----------------- | -------------------- | ------------------ | ----------------------------------- |
+| Lễ tân / Booking       | Thiết kế          | Có                   | Có                 | Có                                  |
+| Buồng phòng            | Thiết kế          | Có                   | Có                 | Tùy phạm vi/module                  |
+| Night Audit / Folio    | Thiết kế          | Có                   | Có                 | Cần rà sâu                          |
+| POS nhà hàng / Spa     | Chưa thiết kế kỹ  | Có một số luồng POS  | POS tích hợp       | Tùy module                          |
+| AI Agent / MCP         | Dự kiến           | Chưa là trọng tâm    | Có thiết kế AI/MCP | Không phải trọng tâm                |
+| Revenue + BeeSmart Ads | Ý tưởng khác biệt | Cần bổ sung          | Có pricing         | Có giá/booking                      |
+| SaaS đa khách sạn      | Chưa khóa         | Chưa xác minh đầy đủ | Có multi-property  | Có khả năng quản lý nhiều khách sạn |
+| Mức độ có thể chạy     | Chưa có app       | Có source            | Có source          | Có source                           |
+
+Các khả năng trong bảng của những dự án tham khảo dựa vào code, tài liệu và mô tả repository; không đồng nghĩa em đã cài, chạy test hay kiểm toán bảo mật từng sản phẩm.
+
+Quyết định kỹ thuật em chọn: nghiên cứu `open-hotel-pms` làm tài liệu tham chiếu gần nhất cho Next.js/Supabase, dùng Kamra làm benchmark nghiệp vụ và QloApps làm benchmark booking engine. Không nên sao chép toàn bộ một repo rồi đổi tên thương hiệu.
+
+## 3. Cần vẽ bổ sung những sơ đồ nào?
+
+Đây là phần quan trọng nhất trước khi Codex bắt đầu xây hệ thống thật.
+
+| Ưu tiên | Sơ đồ / thiết kế phải bổ sung                           | Mục đích                                |
+| ------- | ------------------------------------------------------- | --------------------------------------- |
+| P0      | ERD chi tiết Tenant → Property → Room → Booking → Guest | Cố định ranh giới dữ liệu               |
+| P0      | Booking State Machine + Room Inventory                  | Ngăn trùng phòng, hold quá hạn, đổi/hủy |
+| P0      | Finance / Folio / Payment / Night Audit                 | Tránh sai tiền và doanh thu             |
+| P0      | PMS/OTA Sync + Retry + Reconciliation                   | Không mất/trùng booking                 |
+| P0      | RBAC và cô lập tenant                                   | Không rò dữ liệu giữa khách sạn         |
+| P1      | Guest Service + Housekeeping + Maintenance              | Phân công, SLA và bàn giao              |
+| P1      | Pricing → Promotion → Ads Approval                      | Kiểm soát giá và ngân sách              |
+
+Bản FigJam hiện có luồng tổng quan tốt, nhưng chưa thể hiện đủ các đường lỗi: OTA mất kết nối, thanh toán đến muộn, hai nhân viên đặt cùng phòng, hoàn một phần, check-in khi phòng chưa đủ điều kiện, hoặc dữ liệu của hai khách sạn khác nhau.
+
+Mỗi sơ đồ nên có trạng thái thành công, thất bại, quyền thực hiện, dữ liệu thay đổi, người chịu trách nhiệm và cơ chế quay lui.
+
+## 4. Bổ sung giao diện cho khách sạn 2–5 sao
+
+Em khuyên xây một PMS có module cấu hình, không làm bốn phần mềm khác nhau theo số sao. Hạng sao là đặc tính dịch vụ của khách sạn, không phải định nghĩa đầy đủ quyền truy cập hoặc chức năng phần mềm.
+
+2–3 sao — PMS Essential
+
+Lễ tân, booking, nhận/trả phòng, buồng phòng, sổ tiền, bàn giao ca, bảo trì cơ bản và báo cáo. Ưu tiên thao tác nhanh, dễ đào tạo và chi phí hợp lý.
+
+4 sao — Guest Service Professional
+
+Bổ sung CRM chăm sóc khách, SLA dịch vụ, xử lý khiếu nại, room service, POS nhà hàng/spa, công việc bảo trì và kiểm soát chất lượng buồng phòng.
+
+5 sao — Luxury Operations
+
+Concierge, lịch trình VIP, yêu cầu đặc biệt, phân công nhiều bộ phận, quản lý sự kiện/MICE, lost & found, QA nhiều cấp, guest experience analytics và báo cáo quản trị chi tiết.
+
+Riêng resort 100 phòng, em còn muốn đưa quản lý tài sản và cơ sở vật chất vào thiết kế tổng thể: hệ thống điện nước, hồ bơi, khu spa, giặt là, vật tư phòng, bảo trì định kỳ và chi phí vận hành từng khu. Các phân hệ này không bắt buộc phải tự phát triển trong v1; có thể tích hợp POS/ERP và hệ thống bảo trì hiện có.
+
+## 5. Đề xuất hướng triển khai
+
+Em chọn mô hình một khách sạn pilot trước, nhưng schema và phân quyền sẵn sàng cho nhiều tenant ngay từ đầu.
+
+Điều này có nghĩa phiên bản đầu chỉ cần vận hành một resort 100 phòng, không cần lập tức xây hệ thống thu tiền SaaS, quản lý hàng trăm khách hàng hoặc multi-property dashboard. Tuy nhiên `tenant_id`, `property_id`, membership và quy tắc cô lập dữ liệu phải được xác định trước khi tạo backend.
+
+Để chốt thiết kế, em đề xuất task:
+
+TASK-RESORT-DESIGN-AUDIT-002
+
+Checklist thiết kế trước khi giao code
+
+7/7
+
+Cập nhật FIGMA-HANDOFF với 16 frame và node ID đã xác minh
+
+Lập ma trận Feature × Role × Star Profile × Release
+
+Vẽ form, popup, trạng thái loading/empty/error/stale/denied cho UI01–UI09
+
+Vẽ riêng mobile housekeeping, maintenance, concierge và quản lý
+
+Bổ sung 7 sơ đồ nghiệp vụ và hệ thống ưu tiên
+
+Đối chiếu Open Hotel PMS, Kamra, QloApps: code, giấy phép và khả năng tái sử dụng
+
+Chốt D01/D02/D11/D12/D13 và tiêu chí nghiệm thu từng giai đoạn
+
+&#x20;Sao chép checklist cho Codex/Claude
+
+Tiêu chí hoàn thành: không phải chỉ có thêm ảnh giao diện. Mỗi chức năng phải có màn hình, hành động, quyền, trạng thái lỗi, dữ liệu đầu vào/đầu ra và bài kiểm thử nghiệm thu tương ứng.
+
+### Kết luận
+
+BeeSmart HotelOS có thể phát triển thành SaaS cạnh tranh, nhưng lý do khách hàng chọn chúng ta không thể chỉ là “có AI”. Điểm đáng xây dựng là vận hành dễ hơn, dữ liệu chính xác, chăm sóc khách tốt hơn và lợi nhuận sau chi phí được đo rõ ràng.
+
+Em không khuyên khóa toàn bộ thiết kế ngay. Nên hoàn thiện các sơ đồ P0, form nghiệp vụ và mobile trước; sau đó khóa baseline từng giai đoạn để Codex lập trình. Không cần viết lại 9 khung Figma hiện có — chỉ cần mở rộng chúng thành thiết kế đủ để triển khai.
+
+Chưa có thay đổi nào được ghi lên GitHub hay Figma trong lượt kiểm toán này.
+
+Status: Đã kiểm toán cấu trúc Figma/FigJam và đối chiếu 3 repository PMS; xác định các hạng mục thiết kế còn thiếu trước khi khóa triển khai.

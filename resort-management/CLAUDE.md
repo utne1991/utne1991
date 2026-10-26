@@ -1,5 +1,7 @@
 # Điểm bắt đầu cho Claude — Resort 100
 
+Đọc [PROJECT-STATUS](PROJECT-STATUS.md) để nắm inventory tài liệu, giới hạn bằng chứng và NEXT-01/02/03 trước khi đọc báo cáo dài. Trang này không thay DECISIONS hoặc biến các task đề xuất thành lệnh code.
+
 **Đọc căn cứ mới nhất trước:** [tóm tắt nghiên cứu thị trường dùng khi làm việc](docs/research/MARKET-RESEARCH-WORKING-SUMMARY.md), [báo cáo đầy đủ](docs/research/MARKET-RESEARCH-2026-10-26.md) và [tình trạng nguồn/bằng chứng](docs/research/MARKET-RESEARCH-SOURCE-REGISTER.md). Người dùng đã giao lưu và dùng làm căn cứ lập kế hoạch. Ưu tiên một PMS/CM connector, read/reconcile → ops → revenue có duyệt; không tự triển khai full PMS/CM hoặc direct OTA từ prototype cũ. Giá/ICP/cost/gate chưa là kết quả thị trường hoặc baseline đã chốt.
 
 **Đề xuất mới để đánh giá scope:** [OwnerOps assessment](docs/OWNEROPS-ASSESSMENT.md) và [báo cáo nguồn](docs/research/OWNEROPS-PROPOSAL-2026-10-26.md). Chuỗi Chủ → Quản lý → Nhân viên → Nghiệm thu là ứng viên cho MVP nhỏ hơn. Chưa tự duyệt gói/giá/pilot, sửa hệ thống nguồn chính hoặc bắt đầu các task HOTEL-*. “Nộp việc” khác “nghiệm thu”, task accepted khác room-ready; tenant/quyền/nguồn số cần thiết kế trước khi có dữ liệu thật.

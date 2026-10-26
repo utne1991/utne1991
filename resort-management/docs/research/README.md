@@ -18,3 +18,7 @@ Người dùng đã yêu cầu dựa vào nghiên cứu để làm việc. Nó l
 ## Nguồn kỹ thuật đã đọc
 
 [Đối chiếu ba PMS mã nguồn mở](PMS-BENCHMARK.md): snapshot và source/license đã đọc có chọn lọc. Không dùng benchmark kỹ thuật thay thế bằng chứng nhu cầu thị trường hoặc kết quả triển khai thực.
+
+## Báo cáo kiểm toán thiết kế gốc
+
+[Nguyên văn audit 002](DESIGN-AUDIT-002-2026-10-26.raw.txt) và [manifest/hash](DESIGN-AUDIT-002-MANIFEST.json) được bổ sung khi rà tính đầy đủ. Hai bản upload giống nhau nên lưu một bản. Nội dung đã được xử lý trước đó ở [TASK-RESORT-DESIGN-AUDIT-002](../TASK-RESORT-DESIGN-AUDIT-002.md); bản gốc được lưu không biến claim đọc Figma của người báo cáo thành kiểm tra trực tiếp của Codex.

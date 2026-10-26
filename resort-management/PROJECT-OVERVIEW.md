@@ -6,6 +6,8 @@
 
 **Chủ dự án:** utne1991. **Nơi lưu:** repository `utne1991/utne1991`, thư mục `resort-management/`.
 
+Tra cứu [trạng thái tài liệu, phần còn thiếu và ba bước tiếp theo](PROJECT-STATUS.md) trước khi đọc chi tiết. Đã lưu nguồn nghiên cứu/đề xuất không đồng nghĩa có baseline code, đã đồng bộ file Figma hoặc sẵn sàng vận hành thật.
+
 ## Căn cứ lập kế hoạch mới nhất
 
 Đã nhận thêm [đề xuất OwnerOps](docs/research/OWNEROPS-PROPOSAL-2026-10-26.md) và lưu [đánh giá](docs/OWNEROPS-ASSESSMENT.md): phù hợp như ứng viên MVP thu hẹp vào dashboard chủ, work engine, nghiệm thu và mobile, hoạt động cùng PMS. Đề xuất chưa thay căn cứ thị trường hoặc khóa scope/giá/lịch pilot; các task HOTEL-* chưa được giao thực hiện.
