@@ -22,3 +22,10 @@ Người dùng đã yêu cầu dựa vào nghiên cứu để làm việc. Nó l
 ## Báo cáo kiểm toán thiết kế gốc
 
 [Nguyên văn audit 002](DESIGN-AUDIT-002-2026-10-26.raw.txt) và [manifest/hash](DESIGN-AUDIT-002-MANIFEST.json) được bổ sung khi rà tính đầy đủ. Hai bản upload giống nhau nên lưu một bản. Nội dung đã được xử lý trước đó ở [TASK-RESORT-DESIGN-AUDIT-002](../TASK-RESORT-DESIGN-AUDIT-002.md); bản gốc được lưu không biến claim đọc Figma của người báo cáo thành kiểm tra trực tiếp của Codex.
+
+## VPS, observability và kiểm toán GitHub
+
+- [Đề xuất server/pilot](SERVER-PILOT-PROPOSAL-2026-10-26.md), [bản gốc](SERVER-PILOT-PROPOSAL-2026-10-26.raw.txt).
+- [Báo cáo kiểm toán GitHub](PROJECT-AUDIT-2026-10-26.md), [bản gốc](PROJECT-AUDIT-2026-10-26.raw.txt).
+- [Task PR #1 ở head 7577c9c](PR-1-TASK-7577c9c.raw.txt), [manifest các nguồn](PILOT-OBS-INTAKE-MANIFEST.json).
+- [Review và backlog triển khai đề xuất](../PILOT-OBSERVABILITY-REVIEW.md). Người dùng xác nhận chỉ đánh giá/lưu, chưa bắt đầu code; snapshot task ở main không có nghĩa PR đã merge hoặc được duyệt.

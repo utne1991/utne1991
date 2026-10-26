@@ -1,0 +1,130 @@
+# Báo cáo kiểm toán GitHub và phạm vi triển khai
+
+> Báo cáo do người dùng chuyển tiếp ngày 26/10/2026, tác giả được ghi là MrAiTiNiuBi. Chưa phải xác nhận triển khai, quyền VPS/DNS hoặc scope đã được chủ dự án phê duyệt.
+
+Xem [đối chiếu PR #1 và kế hoạch thực hiện](../PILOT-OBSERVABILITY-REVIEW.md), [bản nguyên văn](PROJECT-AUDIT-2026-10-26.raw.txt) và [manifest](PILOT-OBS-INTAKE-MANIFEST.json).
+
+---
+
+MrAiTiNiuBi:
+
+Title: Kiểm toán GitHub BeeSmart HotelOS — Đã lưu những gì và còn thiếu gì?
+
+Boss man, em đã kiểm tra trực tiếp repository [utne1991/utne1991](https://github.com/utne1991/utne1991/?utm_source=chatgpt.com) đến commit `0c6b9bf` ngày 26/10/2026.
+
+Kết luận: Hồ sơ nghiên cứu và thiết kế đã được lưu khá đầy đủ. Nhưng chưa đủ để triển khai cho khách sạn sử dụng thật. Em không khuyến nghị tiếp tục viết thêm nhiều báo cáo tổng quát; nên chuyển sang chốt MVP, phát triển ứng dụng và kiểm chứng với khách hàng.
+
+## 1. Trạng thái GitHub đã xác minh
+
+BeeSmart HotelOS — Project Audit
+
+# 114
+
+Mục file/thư mục trong cây dự án `main`
+
+# 1
+
+PR kế hoạch đang mở, chưa merge
+
+114 là số mục trong cây thư mục, bao gồm cả thư mục và artifact; không phải 114 chức năng đã xây.
+
+Nghiên cứu thị trường
+
+Đặc tả PMS, OwnerOps và wireframe
+
+Blueprint dữ liệu, quyền, booking, tài chính
+
+TASK VPS và tự động thu lỗi
+
+Trên nhánh PR
+
+Backend và ứng dụng dùng thật
+
+Chưa có
+
+Codex vừa bổ sung một tài liệu tổng hợp rất hữu ích: [PROJECT-STATUS.md](https://github.com/utne1991/utne1991/blob/main/resort-management/PROJECT-STATUS.md?utm_source=chatgpt.com). Tài liệu này ghi rõ những phần đã lưu, giới hạn kiểm chứng và ba công việc tiếp theo.
+
+Một điểm cần lưu ý: Tài liệu `TASK-HOTEL-PILOT-OBS-001.md` về VPS, ghi lỗi tự động và pilot đang nằm trong [PR #1](https://github.com/utne1991/utne1991/pull/1?utm_source=chatgpt.com) ở trạng thái Draft. Nó đã được lưu trên GitHub nhưng chưa nằm trong nhánh `main`. Nhánh PR cũng đã tách khỏi một commit `main` mới hơn; khi review cần cập nhật nhánh để giữ đúng bản tài liệu mới nhất.
+
+## 2. Những thông tin đã lưu và những thông tin chưa lưu đầy đủ
+
+| Nhóm                                       | Đánh giá                                                                |
+| ------------------------------------------ | ----------------------------------------------------------------------- |
+| Nghiên cứu thị trường, đối thủ             | Đã lưu báo cáo, bản nguyên văn, tóm tắt                                 |
+| Định vị và phương án giá                   | Đã lưu dưới dạng giả thuyết                                             |
+| Figma/FigJam                               | Mới lưu liên kết, báo cáo kiểm toán; chưa có bản export/version cố định |
+| PMS 2–5 sao, 9 phân hệ                     | Đã lưu đặc tả, wireframe và sơ đồ                                       |
+| Owner Dashboard và giao việc               | Đã lưu phương án, chưa có ứng dụng hoạt động                            |
+| VPS, giám sát lỗi, cải tiến                | Có tài liệu trong PR #1, chưa merge                                     |
+| Phần mềm nguồn chạy thật                   | Chưa có                                                                 |
+| Tài liệu API từ PMS cụ thể                 | Chưa có hợp đồng/quyền kết nối xác nhận                                 |
+| Kết quả người dùng thử, giá khách chịu trả | Chưa có bằng chứng thực tế                                              |
+
+Vì vậy câu trả lời cho “đã lưu hết chưa?” là: Đã lưu được phần lớn tài liệu nghiên cứu và thiết kế có liên quan, nhưng chưa lưu đầy đủ bản thiết kế gốc vào repo, chưa chốt tài liệu triển khai cuối cùng và chưa có code ứng dụng.
+
+## 3. Sáu điểm cần bổ sung trước khi phát triển
+
+| Ưu tiên | Điểm còn thiếu                                | Đề xuất                                                                                |
+| ------- | --------------------------------------------- | -------------------------------------------------------------------------------------- |
+| P0      | Chưa có phạm vi MVP được chủ dự án khóa       | Chốt OwnerOps v1, không xây toàn bộ PMS ngay                                           |
+| P0      | Một số hướng dẫn vẫn nói “giao lập trình sau” | Đồng bộ README, CLAUDE.md, roadmap theo chủ trương xây demo trước                      |
+| P0      | Chưa biết PMS resort dùng gì                  | Tạo hợp đồng adapter, dữ liệu giả trước; API thật sau xác minh                         |
+| P0      | Chưa có triển khai phần mềm độc lập           | Tạo repo ứng dụng riêng ở chế độ private, CI/CD, staging, VPS và database tách ToolAds |
+| P0      | Chưa định nghĩa nghiệm thu giám sát lỗi       | Bổ sung release gate, phân loại P0–P3, cảnh báo, rollback, kiểm tra không lộ dữ liệu   |
+| P1      | Figma chưa thành baseline giao code           | Export và gắn version/node ID cho các màn Owner, Manager, Staff                        |
+
+Điểm thứ tư đặc biệt quan trọng: repository `utne1991/utne1991` hiện là public. Em khuyên giữ tài liệu không nhạy cảm ở đây, nhưng đặt mã nguồn SaaS, cấu hình triển khai và kiểm soát sản phẩm trong một repo private riêng. Không đưa mật khẩu, token, dữ liệu khách hoặc nội dung ảnh minh chứng vào GitHub.
+
+## 4. Có cần nghiên cứu thêm không?
+
+Có, nhưng chỉ nghiên cứu những điểm quyết định khả năng triển khai và bán hàng. Em không khuyên tiếp tục nghiên cứu hàng chục PMS hoặc tạo thêm hàng trăm màn hình.
+
+Nghiên cứu khách sạn pilot
+
+Xác nhận PMS đang sử dụng, phương thức xuất dữ liệu, số nhân viên, quy trình giao việc và cách chủ kiểm soát doanh thu/chi phí. Đây là dữ liệu quan trọng nhất còn thiếu.
+
+Nghiên cứu một PMS connector
+
+Kiểm tra API hoặc xuất CSV được phép, giới hạn dữ liệu, quyền truy cập, chi phí và cơ chế đồng bộ. Không cần xin tích hợp trực tiếp nhiều OTA ở giai đoạn đầu.
+
+Nghiên cứu giá thành và khả năng trả
+
+Lấy báo giá VPS, backup, giám sát, lưu ảnh; thử báo giá OwnerOps với người mua thực tế. Các mức 1,49/3,49/6,99 triệu vẫn là giả định.
+
+Rà soát pháp lý và bảo mật Việt Nam
+
+Quyền sử dụng dữ liệu khách, ảnh minh chứng, thời gian lưu, chuyển dữ liệu tới dịch vụ giám sát, khai báo lưu trú và ranh giới với phần mềm kế toán/hóa đơn. Kiểm tra quy định áp dụng theo ngày triển khai.
+
+Ngoài ra, file [Market Research Source Register](https://github.com/utne1991/utne1991/blob/main/resort-management/docs/research/MARKET-RESEARCH-SOURCE-REGISTER.md?utm_source=chatgpt.com) hiện còn ghi nhận thiếu URL nguồn gốc cho nhiều giá, thông tin API và số liệu thị trường trong bản nghiên cứu đã lưu. Phần này cần hoàn thiện trước khi sử dụng các nhận định đó để chào bán sản phẩm.
+
+## 5. Phương án em đề xuất để đi tiếp
+
+## BeeSmart HotelOS v1 — OwnerOps Pilot
+
+Đề xuất phạm vi đầu tiên, chưa phải sản phẩm đã được triển khai.
+
+Chủ khách sạn: Một màn hình tổng quan doanh thu, chi phí, tình trạng phòng, tiến độ công việc và các cảnh báo quan trọng.
+
+Quản lý: Giao việc, duyệt kết quả, yêu cầu làm lại, bàn giao ca và xác nhận số liệu theo quyền.
+
+Nhân viên: Việc của tôi, checklist, báo sự cố, ảnh minh chứng và trạng thái đã nộp.
+
+BeeSmart vận hành: Theo dõi lỗi, độ ổn định, phản hồi khách dùng thử, chi phí tài nguyên và lịch sử phát hành.
+
+Em đề xuất Codex triển khai theo trình tự: chốt scope và mô hình dữ liệu an toàn → tạo repo private và ứng dụng demo → hoàn thiện ba vai trò → tự động ghi lỗi/CI → kiểm thử phân quyền và khôi phục → mở sandbox dùng thử → kết nối resort pilot khi đủ điều kiện.
+
+Không cần hoàn thiện toàn bộ 9 phân hệ PMS mới được cho khách trải nghiệm bản demo. Nhưng để xử lý booking, tiền hoặc dữ liệu lưu trú thật thì các điều kiện bảo mật, nguồn dữ liệu, quyền và đối soát bắt buộc phải đạt.
+
+### Quyết định nên đưa vào `DECISIONS.md`
+
+Em đề xuất ghi nhận chủ trương mới là:
+
+- Xây OwnerOps demo trước, phát triển theo định hướng Hotel Operations & Revenue Control Layer.
+- Dùng server và database riêng, không ảnh hưởng ToolAds.
+- Có error tracking, feedback và quy trình sửa lỗi qua PR ngay từ bản đầu.
+- Chưa đưa chức năng ghi PMS/OTA, thu tiền, AI tự sửa production hoặc tự chạy quảng cáo vào v1.
+- Mở pilot có dữ liệu thật chỉ sau khi vượt các cổng kiểm thử.
+
+Những quyết định này nên được Codex đối chiếu với D01–D14, rồi mới đánh dấu phạm vi nào đã được anh phê duyệt. PR #1 hiện chỉ chứa tài liệu kế hoạch, không được coi là đã bắt đầu triển khai ứng dụng.
+
+Status: Kiểm toán xong repository `main` và PR #1. Tài liệu nghiên cứu/thiết kế đã có nền tảng tốt; còn thiếu baseline MVP, app thật, hợp đồng dữ liệu, nguồn nghiên cứu xác minh và hạ tầng đã kiểm thử. Không tạo thêm commit hoặc thay đổi sản phẩm trong lượt đánh giá này.

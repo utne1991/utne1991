@@ -1,0 +1,132 @@
+# Đề xuất VPS riêng, dùng thử và observability
+
+> Báo cáo do người dùng chuyển tiếp ngày 26/10/2026, tác giả được ghi là MrAiTiNiuBi. Chưa phải xác nhận triển khai, quyền VPS/DNS hoặc scope đã được chủ dự án phê duyệt.
+
+Xem [đối chiếu PR #1 và kế hoạch thực hiện](../PILOT-OBSERVABILITY-REVIEW.md), [bản nguyên văn](SERVER-PILOT-PROPOSAL-2026-10-26.raw.txt) và [manifest](PILOT-OBS-INTAKE-MANIFEST.json).
+
+---
+
+MrAiTiNiuBi:
+
+Title: BeeSmart HotelOS — Triển khai server riêng, cho khách dùng thử và tự động phát hiện lỗi
+
+Được, boss man. Em đề xuất xây BeeSmart HotelOS OwnerOps trước, đưa lên server riêng và cho khách hàng dùng thử, sau đó cải thiện liên tục dựa trên lỗi và hành vi sử dụng thực tế.
+
+Em đã tạo TASK triển khai trên GitHub dưới dạng Pull Request nháp, để Codex có thể tiếp nhận mà không ảnh hưởng ToolAds.
+
+TASK-HOTEL-PILOT-OBS-001
+
+Kế hoạch triển khai OwnerOps, VPS riêng, ghi nhận lỗi tự động, giám sát, kiểm thử và quy trình cải tiến.
+
+[Mở Pull Request #1 trên GitHub](https://github.com/utne1991/utne1991/pull/1?utm_source=chatgpt.com)Đã tạo tài liệu và PR nháp. Chưa tạo VPS, triển khai ứng dụng hay sửa hệ thống production.
+
+## 1. Mô hình server đề xuất
+
+VPS ToolAds hiện có
+
+`toolads.beesmartads.com`
+
+Giữ nguyên, không chạy HotelOS chung ứng dụng hoặc database.
+
+VPS BeeSmart HotelOS riêng
+
+Tên miền đề xuất: `demo.hotelos.beesmartads.com`
+
+Ứng dụng
+
+Next.js · HTTPS · Mobile/PWA
+
+Cơ sở dữ liệu
+
+PostgreSQL · phân quyền theo khách sạn
+
+Minh chứng
+
+Private object storage
+
+Giám sát
+
+Error tracking · Uptime · Logs
+
+Google Cloud e2-micro dùng cho ToolAds theo hồ sơ trước đây chỉ có khoảng 1 GB RAM. Em không khuyến nghị đặt thêm hệ thống khách sạn vào máy đó. Google xác nhận cấu hình e2-micro có 1 GB RAM và CPU chia sẻ.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://docs.cloud.google.com\&sz=32)
+
+docs.cloud.google.com
+
+
+
+| Môi trường      | Cấu hình đề xuất         | Sử dụng                                         |
+| --------------- | ------------------------ | ----------------------------------------------- |
+| Demo            | 2 vCPU / 4 GB RAM        | Dữ liệu giả, khách tự trải nghiệm               |
+| Pilot           | 4 vCPU / 8 GB RAM        | Một resort có người dùng thật, sau kiểm thử tải |
+| Production SaaS | Mở rộng theo tải thực tế | Khi đã có khách trả phí và kết quả pilot        |
+
+Đây là cấu hình khởi điểm để thử và đo tải, chưa phải yêu cầu tài nguyên đã được benchmark.
+
+## 2. Khách hàng dùng thử những gì?
+
+Bản đầu nên tập trung vào một hành trình hoàn chỉnh thay vì làm tất cả phân hệ PMS.
+
+| Người dùng    | Chức năng                                                                        |
+| ------------- | -------------------------------------------------------------------------------- |
+| Chủ khách sạn | Dashboard doanh thu, chi phí, tình trạng phòng, công việc chậm và việc cần duyệt |
+| Quản lý       | Tạo công việc, phân công, kiểm tra, duyệt hoặc yêu cầu làm lại                   |
+| Nhân viên     | Đăng nhập điện thoại, tích checklist, gửi ảnh, báo lỗi và nộp công việc          |
+
+Khách có thể dùng demo 14 ngày với dữ liệu giả. Sau khi đạt kiểm thử bảo mật và khôi phục, chúng ta mới mời resort thực tế tham gia pilot giới hạn. Không cần tích hợp Booking.com, Agoda hoặc thay PMS đang có ngay từ đầu.
+
+## 3. Thu thập lỗi tự động và cải tiến
+
+Đây là một phần rất đáng đầu tư ngay từ phiên bản đầu tiên.
+
+1. Phần mềm phát hiện lỗi
+
+   Ví dụ nhân viên gửi ảnh thất bại, API trả lỗi, dashboard không tải hoặc dữ liệu PMS quá cũ.
+2. Hệ thống ghi nhận và phân loại
+
+   Lưu mã lỗi, phiên bản phần mềm, loại thiết bị, bước thao tác và mức độ ảnh hưởng. Không đưa dữ liệu cá nhân khách lưu trú hoặc mật khẩu vào báo cáo lỗi.
+3. Tạo nhiệm vụ sửa lỗi
+
+   Các lỗi trùng được gom lại; lỗi nghiêm trọng gửi cảnh báo, lỗi nhỏ vào danh sách cải tiến.
+4. Codex/Claude phân tích và đề xuất sửa
+
+   Tạo nhánh sửa lỗi, chạy kiểm thử và gửi Pull Request để review.
+5. Phê duyệt, phát hành và theo dõi
+
+   Chỉ đưa lên môi trường khách dùng khi kiểm thử đạt. Nếu phiên bản mới làm hệ thống xấu đi, có phương án rollback.
+
+Em đề xuất dùng Sentry hoặc một công cụ tương đương để thu lỗi frontend/backend; bổ sung giám sát uptime và sự cố nghiệp vụ riêng. Sentry có SDK cho Next.js, hỗ trợ tự ghi nhận exception và dùng `beforeSend` để loại bỏ dữ liệu nhạy cảm trước khi gửi.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://sentry.io\&sz=32)
+
+Sentry
+
++1
+
+
+
+Tự động phát hiện lỗi: có thể làm. Tự động cải thiện: có thể hỗ trợ bằng AI và kiểm thử. Nhưng không nên cho AI tự sửa database, cập nhật production hoặc thay đổi tiền/booking khi chưa qua duyệt.
+
+## 4. Chi phí vận hành dự kiến
+
+Với một VPS riêng và lượng khách thử nghiệm nhỏ, ngân sách sơ bộ cần tính:
+
+| Khoản                                | Dự toán lập kế hoạch                           |
+| ------------------------------------ | ---------------------------------------------- |
+| VPS demo                             | 300.000–700.000đ/tháng                         |
+| VPS pilot cấu hình cao hơn           | 700.000–1.500.000đ/tháng                       |
+| Backup, lưu ảnh, giám sát, thông báo | Tùy dung lượng và dịch vụ                      |
+| Nhân sự hỗ trợ và sửa lỗi            | Tách riêng, thường là khoản đáng quan tâm nhất |
+
+Các con số VPS là ngân sách dự kiến, chưa phải báo giá nhà cung cấp. Cần kiểm tra báo giá thực tế, thuế, băng thông, backup và tải ứng dụng trước khi mua.
+
+## 5. Điều kiện trước khi mời khách sạn thật
+
+Phải kiểm tra xong phân quyền giữa khách sạn A và B; dữ liệu/ảnh minh chứng không lộ chéo; công việc không bị duyệt nhầm phiên bản; dashboard tài chính ghi rõ nguồn và mức đầy đủ của dữ liệu; backup có thể khôi phục; hệ thống thông báo lỗi thực sự hoạt động.
+
+Vì Codex đang làm việc trên cùng repository, em đã đặt TASK trong PR nháp riêng, chưa merge vào `main`, chưa mua server hoặc bật tính năng có thu phí.
+
+Hướng em chốt đề xuất: Xây bản dùng thử OwnerOps trên VPS riêng → ghi lỗi và phản hồi tự động → pilot một khách sạn → đo hiệu quả và chi phí hỗ trợ → mới mở rộng SaaS.
+
+Status: Đã tạo PR #1 và đặc tả triển khai. Phần tiếp theo của Codex là xây ứng dụng demo và pipeline giám sát theo các điều kiện trong TASK; hiện chưa có ứng dụng HotelOS chạy thật trên server.&#x20;

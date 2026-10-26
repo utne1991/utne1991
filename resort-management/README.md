@@ -4,6 +4,8 @@ Bộ tài liệu dự án trong repository `utne1991/utne1991`, thư mục `reso
 
 ## Bắt đầu
 
+- **PR #1 / kế hoạch VPS và giám sát:** [kết quả review, backlog và fixture](docs/PILOT-OBSERVABILITY-REVIEW.md). Chỉ đánh giá/lưu theo xác nhận của người dùng; chưa merge PR hoặc bắt đầu code ứng dụng.
+
 - **Đọc nhanh trạng thái hiện tại:** [Đã lưu gì, còn thiếu gì và ba việc tiếp theo](PROJECT-STATUS.md). Đây là trang tổng hợp; các báo cáo dài và thiết kế đầy đủ nằm ở liên kết phía dưới.
 
 - **Đề xuất OwnerOps vừa đánh giá:** [kết luận và điều cần chỉnh](docs/OWNEROPS-ASSESSMENT.md), [báo cáo đầy đủ](docs/research/OWNEROPS-PROPOSAL-2026-10-26.md). Có thể dùng làm ứng viên MVP trong control layer; chưa là baseline code/giá đã duyệt.

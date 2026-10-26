@@ -17,6 +17,7 @@ Xây dựng ứng dụng quản lý phòng, lịch đặt phòng, buồng phòng
 
 - [Tổng quan dự án](resort-management/PROJECT-OVERVIEW.md)
 - [Trạng thái chung: tài liệu đã lưu và việc nên làm tiếp](resort-management/PROJECT-STATUS.md)
+- [Review kế hoạch OwnerOps, VPS riêng và giám sát lỗi — PR #1](resort-management/docs/PILOT-OBSERVABILITY-REVIEW.md)
 - [Nghiên cứu thị trường — căn cứ làm việc tiếp theo](resort-management/docs/research/MARKET-RESEARCH-WORKING-SUMMARY.md)
 - [Đánh giá OwnerOps: chủ, quản lý, nhân viên và nghiệm thu](resort-management/docs/OWNEROPS-ASSESSMENT.md)
 - [Audit 002: Figma, bảy blueprint, mobile và PMS tham khảo](resort-management/docs/TASK-RESORT-DESIGN-AUDIT-002.md)

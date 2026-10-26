@@ -8,6 +8,8 @@
 
 Tra cứu [trạng thái tài liệu, phần còn thiếu và ba bước tiếp theo](PROJECT-STATUS.md) trước khi đọc chi tiết. Đã lưu nguồn nghiên cứu/đề xuất không đồng nghĩa có baseline code, đã đồng bộ file Figma hoặc sẵn sàng vận hành thật.
 
+Đã tiếp nhận [kế hoạch PR #1 về pilot/observability](docs/PILOT-OBSERVABILITY-REVIEW.md) và xác nhận phạm vi của người dùng: chỉ đánh giá/lưu, chưa code ứng dụng. Mã app private, VPS, domain, nguồn dữ liệu thật và go-live vẫn cần chỉ định riêng; chưa có triển khai HotelOS thực hoặc thay đổi ToolAds.
+
 ## Căn cứ lập kế hoạch mới nhất
 
 Đã nhận thêm [đề xuất OwnerOps](docs/research/OWNEROPS-PROPOSAL-2026-10-26.md) và lưu [đánh giá](docs/OWNEROPS-ASSESSMENT.md): phù hợp như ứng viên MVP thu hẹp vào dashboard chủ, work engine, nghiệm thu và mobile, hoạt động cùng PMS. Đề xuất chưa thay căn cứ thị trường hoặc khóa scope/giá/lịch pilot; các task HOTEL-* chưa được giao thực hiện.

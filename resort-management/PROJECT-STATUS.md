@@ -2,6 +2,8 @@
 
 Ngày rà soát: 26/10/2026. Snapshot đối chiếu ban đầu: `f9b004d69f34de0473fa2505d77d6f1c3fd11ab6`, nhánh `main` của `utne1991/utne1991`. Đây là trang tổng hợp để đọc trước, không phải phê duyệt baseline hoặc lệnh bắt đầu code.
 
+**Tiếp nhận kế hoạch PR #1 sau vòng rà soát ban đầu:** đã đọc head `7577c9c`, một file task kế hoạch, và lưu [review + backlog + fixture](docs/PILOT-OBSERVABILITY-REVIEW.md). Main tại thời điểm đọc PR là `0c6b9bf`; task chưa được merge. Người dùng xác nhận chỉ đánh giá/lưu, chưa bắt đầu code. Không có VPS/repo app/DNS/telemetry thực được tạo.
+
 ## 1. Kết luận
 
 **Các báo cáo đã nhận, tài liệu thiết kế và đầu ra local có thể lưu đã được đưa vào repo. Đủ căn cứ để chọn MVP và thử một hành trình demo, chưa đủ để kết luận sản phẩm sẵn sàng vận hành/bán.**
@@ -21,6 +23,7 @@ Thông tin Figma/FigJam hiện mới là liên kết và các báo cáo được
 | Sơ đồ | [Bảy blueprint P0/P1](docs/blueprints/README.md), [Mermaid và sáu HTML Archify](docs/diagrams/README.md) | Bảy blueprint có 9 khối Mermaid đã parse; Archify deterministic gates đạt nhưng browser-check lỗi môi trường; các snapshot chưa đồng bộ mọi bổ sung |
 | Benchmark kỹ thuật | [Open Hotel PMS, Kamra và QloApps](docs/research/PMS-BENCHMARK.md); [Archify/ECC/Hello-Agents](docs/TOOLING-AND-SOURCES.md) | Source/license đọc có chọn lọc, chưa cài/test/audit toàn sản phẩm hoặc quyết định reuse |
 | Hướng dẫn agent và quyết định | CLAUDE.md, [DECISIONS](docs/DECISIONS.md), brief, lộ trình và các đánh giá | Giữ rõ điều được giao, đề xuất và điều chưa chốt; không có baseline backend đã xác nhận |
+| VPS/pilot/observability | [Hai báo cáo và snapshot PR #1](docs/PILOT-OBSERVABILITY-REVIEW.md), manifest, backlog OBS-* và fixture synthetic | Đã đọc diff và task bằng Git; metadata PR qua API bị Forbidden, Draft/open theo báo cáo; chưa merge hoặc triển khai |
 
 Trong lần kiểm tra trước cập nhật này, repo có 100 tệp dự án được theo dõi. Con số này chỉ mô tả snapshot đầu vào, không phải thước đo mức hoàn thành hoặc số tệp sau lần bổ sung. Bản nguyên văn không đồng nghĩa lưu toàn bộ cuộc trò chuyện; các thông điệp không phải upload được phản ánh qua tài liệu/handoff có liên quan.
 

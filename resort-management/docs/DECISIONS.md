@@ -9,6 +9,7 @@
 - Hoàn thiện bản đồ bằng Archify trước; việc giao Claude lập trình để sau. Không có yêu cầu bắt đầu backend hoặc chạy quảng cáo thật.
 - Cập nhật yêu cầu 26/10/2026: thiết kế phải bao quát lịch, booking, buồng phòng, doanh thu/chiến dịch và toàn quy trình PMS, không chỉ dashboard. Đây là yêu cầu phạm vi thiết kế; chưa đồng nghĩa đã duyệt từng bố cục hoặc cho phép code.
 - Sau nghiên cứu thị trường, người dùng yêu cầu lưu báo cáo và dựa vào đó làm việc. Đã tiếp nhận làm căn cứ ưu tiên lập kế hoạch: [Operations & Revenue Control kết nối PMS/CM](research/MARKET-RESEARCH-WORKING-SUMMARY.md). Việc này không tự duyệt mọi số liệu/giá hoặc chọn provider/đóng các quyết định dưới đây.
+- Sau khi gửi kế hoạch VPS/observability và kiểm toán GitHub, người dùng xác nhận **chỉ đánh giá và lưu kế hoạch, chưa bắt đầu code ứng dụng**. Đã đọc task PR #1 và ghi [review/backlog](PILOT-OBSERVABILITY-REVIEW.md); chưa merge PR, cấp quyền mua/triển khai hoặc duyệt scope OBS-*.
 
 ## Các quyết định cần chốt
 
@@ -22,7 +23,7 @@
 | D06 | Giá và tiền | Giá theo đêm, người/giường phụ nếu có; VAT/phí, đặt cọc, hoàn tiền, giảm giá; giao dịch nào qua app, giao dịch nào đối soát từ PMS. | S4 |
 | D07 | Quyền và dữ liệu khách | Xác nhận ma trận quyền, người duyệt, thông tin cần lưu, thời hạn lưu và cách xuất dữ liệu. | S4 |
 | D08 | Kết nối | Mapping phòng/giá, SLA dữ liệu mới, quyền API, lịch đối soát, xử lý khi mất kết nối hoặc OTA bán vượt tồn. Không tự hứa đồng bộ realtime. | S5 |
-| D09 | Vận hành và hosting | Nơi chạy, ngân sách, người trực xử lý, mục tiêu mất dữ liệu tối đa/phục hồi (RPO/RTO), sao lưu, bảo trì và quay lui. | Chạy thử production |
+| D09 | Vận hành và hosting | Kế hoạch PR #1 đề xuất VPS/DB độc lập ToolAds, domain demo/app, telemetry và restore/release gates. Cần repo app đích, quyền hạ tầng/DNS, budget, risk/support owner, RPO/RTO và kết quả đo/restore; chưa xác nhận trạng thái ToolAds hoặc tạo server. Xem [review](PILOT-OBSERVABILITY-REVIEW.md). | Trước sandbox chia sẻ/dữ liệu thật theo mức A/B/C |
 | D10 | Mức tự động hóa | Đề xuất giá/quảng cáo có người duyệt; AI chỉ đọc trước. Ngân sách và giá sàn chưa được cấp. | S6 / S7 |
 | D11 | BeeSmart và phạm vi SaaS | Audit 002 đề xuất pilot một resort, thiết kế tenant/property/membership từ đầu nhưng chưa làm SaaS billing/portfolio. Đã có ERD/quyền nháp theo phương án đó; chưa được chủ dự án xác nhận hoặc chọn topology DB. | Trước backend và mở rộng phạm vi |
 | D12 | Profile dịch vụ 2–5 sao | Chọn checklist/năng lực nào, tiêu chuẩn/loại hình/quốc gia áp dụng và phân quyền; không coi phần mềm tự cấp sao hoặc hạng sao quyết định giá phần mềm. | Trước đưa profile vào scope |

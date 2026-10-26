@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-26",
+  "author_attribution_for_reports": "MrAiTiNiuBi",
+  "base_main_at_review": "0c6b9bfda63f073a14ab9ef3094f42776da67dc1",
+  "sources": [
+    {
+      "source_type": "user_supplied_report",
+      "raw_path": "SERVER-PILOT-PROPOSAL-2026-10-26.raw.txt",
+      "readable_path": "SERVER-PILOT-PROPOSAL-2026-10-26.md",
+      "byte_count": 7122,
+      "sha256": "5402201eb57cd5ff75aa1f53551686eff40e20858c7c74aa7c0258fa926a727e"
+    },
+    {
+      "source_type": "user_supplied_report",
+      "raw_path": "PROJECT-AUDIT-2026-10-26.raw.txt",
+      "readable_path": "PROJECT-AUDIT-2026-10-26.md",
+      "byte_count": 9940,
+      "sha256": "4d0f49babb85feca8f7c2a142d90e3a56e7d915ed73c4254885bf7ae06a43ab6"
+    },
+    {
+      "source_type": "git_pull_request_snapshot",
+      "repository": "utne1991/utne1991",
+      "pull_request": 1,
+      "head_revision": "7577c9c28b9e70f277effcea05cdbffa324239f5",
+      "original_repository_path": "resort-management/docs/TASK-HOTEL-PILOT-OBS-001.md",
+      "raw_path": "PR-1-TASK-7577c9c.raw.txt",
+      "byte_count": 11066,
+      "sha256": "918c5196a4b58da4929a83a2ec75641c27c123f5dd03a671bfba8dc003761911"
+    }
+  ],
+  "git_observation": "PR head ref fetched; diff adds one Markdown plan file; base and head each one commit beyond merge base",
+  "metadata_limit": "GraphQL PR metadata read returned Forbidden; current open/draft/head branch label not independently confirmed",
+  "deployment_status": "not performed; no VPS/DNS/private repository created",
+  "private_or_paid_resources_authorized_by_forwarded_report": false,
+  "user_scope_confirmation": "Chỉ đánh giá và lưu kế hoạch, chưa bắt đầu code ứng dụng",
+  "application_implementation_authorized": false
+}

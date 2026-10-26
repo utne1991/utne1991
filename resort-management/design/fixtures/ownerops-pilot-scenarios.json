@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "purpose": "Design fixtures for future OwnerOps demo and observability tests; not executed test results",
+  "synthetic_only": true,
+  "as_of": "2026-10-26T10:30:00+07:00",
+  "tenant_a": "synthetic-tenant-a",
+  "tenant_b": "synthetic-tenant-b",
+  "property_a": "synthetic-property-a-100",
+  "resource": {"room_number": "105", "occupied": false, "housekeeping": "dirty", "pms_write_enabled": false},
+  "actors": {
+    "owner": {"id": "synthetic-owner-a", "tenant": "synthetic-tenant-a", "role": "owner"},
+    "manager": {"id": "synthetic-manager-a", "tenant": "synthetic-tenant-a", "role": "reviewer"},
+    "staff": {"id": "synthetic-staff-a", "tenant": "synthetic-tenant-a", "role": "assignee"},
+    "other_tenant_manager": {"id": "synthetic-manager-b", "tenant": "synthetic-tenant-b", "role": "reviewer"}
+  },
+  "task": {
+    "id": "synthetic-clean-105",
+    "tenant": "synthetic-tenant-a",
+    "property": "synthetic-property-a-100",
+    "state": "ASSIGNED",
+    "version": 1,
+    "assignee": "synthetic-staff-a",
+    "reviewer": "synthetic-manager-a",
+    "due_at": "2026-10-26T13:00:00+07:00"
+  },
+  "happy_path": [
+    {"action": "start", "actor": "staff", "expected_version": 1, "expected_state": "IN_PROGRESS", "new_version": 2},
+    {"action": "submit", "actor": "staff", "submission_revision": 1, "idempotency_key": "synthetic-submit-1", "expected_version": 2, "expected_state": "SUBMITTED", "new_version": 3},
+    {"action": "review_rework", "actor": "manager", "submission_revision": 1, "reason": "Synthetic checklist item needs rework", "expected_version": 3, "expected_state": "REWORK", "new_version": 4},
+    {"action": "resume", "actor": "staff", "expected_version": 4, "expected_state": "IN_PROGRESS", "new_version": 5},
+    {"action": "submit", "actor": "staff", "submission_revision": 2, "idempotency_key": "synthetic-submit-2", "expected_version": 5, "expected_state": "SUBMITTED", "new_version": 6},
+    {"action": "review_accept", "actor": "manager", "submission_revision": 2, "expected_version": 6, "expected_state": "ACCEPTED", "new_version": 7}
+  ],
+  "scenarios": [
+    {"id": "SCOPE-01", "case": "other_tenant_manager reads or reviews task", "expected": "deny without returning task or evidence data"},
+    {"id": "REVIEW-01", "case": "staff attempts own acceptance", "expected": "deny; role switch in UI cannot grant server permission"},
+    {"id": "REVIEW-02", "case": "manager approves submission revision 1 after revision 2 exists", "expected": "conflict; no acceptance of stale revision"},
+    {"id": "REVIEW-03", "case": "two reviews target the same expected task version", "expected": "at most one commit; second observes conflict or idempotent same result according to contract"},
+    {"id": "RETRY-01", "case": "same submit key and payload retried", "expected": "one submission, one version advance and stable result; key with different payload rejected"},
+    {"id": "READY-01", "case": "task accepted while resource remains occupied or blocked", "expected": "no automatic sell-ready or inventory release"},
+    {"id": "READY-02", "case": "task accepted with PMS write disabled", "expected": "local result may be recorded; no PMS write or false sync-success claim"},
+    {"id": "FRESH-01", "case": "PMS snapshot exceeds configured freshness threshold", "expected": "stale visible, risky actions limited, owner assigned; no invented current inventory"},
+    {"id": "FIN-01", "case": "revenue and some costs provided but payroll, tax and utility coverage missing", "expected": "coverage and estimate label; no claim of verified net profit"},
+    {"id": "MEDIA-01", "case": "tenant B attempts evidence access for task A", "expected": "deny at metadata and bytes/signed URL layers"},
+    {"id": "OBS-01", "case": "exception carries synthetic email guest@example.invalid and synthetic Authorization/Cookie sentinels", "expected": "outbound telemetry/log allowlist excludes PII, auth, cookies and arbitrary request body"},
+    {"id": "OBS-02", "case": "same simulated exception repeats", "expected": "group/deduplicate under configured policy; no issue or notification storm"},
+    {"id": "OBS-03", "case": "feedback requested without screenshot consent", "expected": "no automatic screenshot/replay/evidence upload"},
+    {"id": "OBS-04", "case": "health/readiness dependency fails", "expected": "safe status and correlation ID, no secret, connection string or stack exposed"},
+    {"id": "OPS-01", "case": "backup restore or release rollback drill", "expected": "verify data scope and agreed recovery targets in isolated environment before real pilot"}
+  ],
+  "notes": [
+    "The allowed transition contract is still a design proposal; the happy path permits review directly from SUBMITTED without separately persisting IN_REVIEW.",
+    "No real account, booking, image, password, token or PMS endpoint is included.",
+    "HTTP status details, freshness limits, quotas, RPO/RTO and notification destinations require an implementation contract.",
+    "JSON parsing or fixture consistency checks are not proof that an application enforces these rules."
+  ]
+}
