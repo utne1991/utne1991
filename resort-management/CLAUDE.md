@@ -2,6 +2,8 @@
 
 Đọc [PROJECT-STATUS](PROJECT-STATUS.md) để nắm inventory tài liệu, giới hạn bằng chứng và NEXT-01/02/03 trước khi đọc báo cáo dài. Trang này không thay DECISIONS hoặc biến các task đề xuất thành lệnh code.
 
+Nguồn mới: [Owner Control/high-fidelity/vacancy research](docs/research/OWNER-CONTROL-HIGH-FIDELITY-2026-10-26.md). Đọc [readiness](docs/IMPLEMENTATION-READINESS.md) và [implementation map](docs/IMPLEMENTATION-MAP.md) để phân biệt đủ thiết kế/demo nhỏ với backend/pilot. 46+ frame là đề xuất, chưa có ảnh mới; không tự thay MVP housekeeping bằng revenue/Ads hoặc dùng commercial vacancy = 1 − confirmed occupancy khi có hold.
+
 Lượt tiếp tục hiện tại chỉ hoàn thiện tài liệu: đọc [đặc tả OwnerOps đề xuất](docs/OWNEROPS-MVP-CONTRACT.md) và [handoff hiện hành](docs/CLAUDE-HANDOFF.md). Prompt dashboard S3a đã chuyển sang tài liệu tham chiếu riêng; không mặc định dùng nó để khởi tạo app hoặc coi scope OwnerOps đã chốt.
 
 **Chỉ thị xác nhận mới nhất:** người dùng chọn “Chỉ đánh giá và lưu kế hoạch, chưa bắt đầu code ứng dụng” cho hai báo cáo và PR #1. Xem [review pilot/observability](docs/PILOT-OBSERVABILITY-REVIEW.md). PR task vẫn là đề xuất; chưa merge, chưa có repo app/VPS/DNS/Sentry triển khai. Fixture synthetic là đầu vào kiểm thử tương lai, không phải tests đã chạy hoặc auth/work engine đã có.

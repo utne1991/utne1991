@@ -4,6 +4,8 @@ Ngày: 26/10/2026. **Bản thảo đề xuất, chưa khóa scope hoặc giao co
 
 Tài liệu gom NEXT-01 thành một luồng có thể đánh giá, không thay [DECISIONS](DECISIONS.md), schema/API được duyệt hoặc Figma.
 
+Nghiên cứu Owner Control/vacancy mới được đối chiếu trong [readiness](IMPLEMENTATION-READINESS.md) và [implementation map](IMPLEMENTATION-MAP.md). Đây là hướng mở rộng; chưa tự thay thử đầu housekeeping bên dưới bằng toàn bộ revenue/approval/Ads. Không trộn fixture 52/96 + 3 hold của báo cáo mới với fixture phòng/task cũ.
+
 ## 1. Phạm vi thử đầu đề xuất
 
 Một resort 100 phòng, một bộ phận housekeeping, ba góc nhìn: chủ xem ngoại lệ; quản lý giao/nghiệm thu; nhân viên làm/nộp. Giả thuyết cần thử là giảm bỏ sót/chờ kiểm tra và giúp chủ truy nguyên tình trạng nhanh hơn; chưa có số đo chứng minh.

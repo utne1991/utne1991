@@ -4,6 +4,8 @@ Bộ tài liệu dự án trong repository `utne1991/utne1991`, thư mục `reso
 
 ## Bắt đầu
 
+- **Nghiên cứu Owner Control mới:** [đã lưu đầy đủ](docs/research/OWNER-CONTROL-HIGH-FIDELITY-2026-10-26.md). Xem [đã đủ triển khai mức nào?](docs/IMPLEMENTATION-READINESS.md) và [bản đồ chỉ dẫn thống nhất](docs/IMPLEMENTATION-MAP.md). Có đầu vào để tiếp tục thiết kế/demo nhỏ khi được giao; chưa có high-fidelity mới hoặc app để deploy.
+
 - **Kế hoạch bàn giao đang hoàn thiện:** [đặc tả OwnerOps MVP đề xuất](docs/OWNEROPS-MVP-CONTRACT.md) có bản đồ màn hình, quyền, chuyển trạng thái, nguồn dữ liệu và KPI; [hướng dẫn Claude hiện hành](docs/CLAUDE-HANDOFF.md) thay prompt dashboard cũ. Chỉ lưu kế hoạch, chưa chốt OwnerOps hoặc bắt đầu code.
 
 - **PR #1 / kế hoạch VPS và giám sát:** [kết quả review, backlog và fixture](docs/PILOT-OBSERVABILITY-REVIEW.md). Chỉ đánh giá/lưu theo xác nhận của người dùng; chưa merge PR hoặc bắt đầu code ứng dụng.

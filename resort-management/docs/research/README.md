@@ -1,5 +1,11 @@
 # Thư viện nghiên cứu BeeSmart
 
+## Owner Control, high-fidelity và giảm phòng trống
+
+- [Báo cáo mới đầy đủ](OWNER-CONTROL-HIGH-FIDELITY-2026-10-26.md), [nguyên văn](OWNER-CONTROL-HIGH-FIDELITY-2026-10-26.raw.txt), [manifest/hash](OWNER-CONTROL-HIGH-FIDELITY-MANIFEST.json).
+- [Đánh giá và mức sẵn sàng triển khai](../IMPLEMENTATION-READINESS.md), [bản đồ chỉ dẫn](../IMPLEMENTATION-MAP.md): phân biệt đủ để thiết kế/demo nhỏ với backend/sandbox/pilot; ghi các điểm cần sửa về hold, vacancy, contribution, SLA và guardrails.
+- Đây là nguồn mở rộng Owner/revenue; chưa thay scope MVP đã chọn (hiện chưa khóa), chưa tạo bộ high-fidelity mới. Bản dán không có URL trích dẫn hoặc node/version/export Figma; claim kiểm tra nguồn thuộc tác giả báo cáo, chưa được Codex xác minh độc lập.
+
 ## Nguồn thị trường dùng khi lập kế hoạch
 
 1. [Tóm tắt căn cứ làm việc](MARKET-RESEARCH-WORKING-SUMMARY.md): định vị v1, scope pilot và quan hệ với thiết kế PMS đầy đủ.

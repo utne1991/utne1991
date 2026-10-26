@@ -12,6 +12,8 @@ Tra cứu [trạng thái tài liệu, phần còn thiếu và ba bước tiếp 
 
 ## Căn cứ lập kế hoạch mới nhất
 
+Đã lưu [nghiên cứu Owner Control/high-fidelity và giảm phòng trống](docs/research/OWNER-CONTROL-HIGH-FIDELITY-2026-10-26.md). [Readiness](docs/IMPLEMENTATION-READINESS.md) và [bản đồ chỉ dẫn](docs/IMPLEMENTATION-MAP.md) đối chiếu báo cáo với repo ở `dd90c19`: đủ thiết kế/chọn demo nhỏ, chưa đủ deploy/pilot. Hướng Owner/revenue là mở rộng được đề xuất, chưa thay MVP housekeeping hoặc tạo quyền code. Không coi danh sách 46+ frame là ảnh đã có.
+
 Đã nhận thêm [đề xuất OwnerOps](docs/research/OWNEROPS-PROPOSAL-2026-10-26.md) và lưu [đánh giá](docs/OWNEROPS-ASSESSMENT.md): phù hợp như ứng viên MVP thu hẹp vào dashboard chủ, work engine, nghiệm thu và mobile, hoạt động cùng PMS. Đề xuất chưa thay căn cứ thị trường hoặc khóa scope/giá/lịch pilot; các task HOTEL-* chưa được giao thực hiện.
 
 Người dùng yêu cầu lưu nghiên cứu thị trường ngày 26/10/2026 và dựa vào đó làm việc. [Tóm tắt định hướng](docs/research/MARKET-RESEARCH-WORKING-SUMMARY.md) là điểm bắt đầu, kèm [báo cáo đầy đủ](docs/research/MARKET-RESEARCH-2026-10-26.md), [bản nguyên văn](docs/research/MARKET-RESEARCH-2026-10-26.raw.txt) và [tình trạng bằng chứng](docs/research/MARKET-RESEARCH-SOURCE-REGISTER.md).

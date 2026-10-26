@@ -2,6 +2,8 @@
 
 Ngày tiếp nhận báo cáo: 26/10/2026. Nguồn là nội dung người dùng chuyển tiếp từ MrAiTiNiuBi trong cuộc trò chuyện. Tài liệu này ghi nhận nguồn thiết kế bên ngoài và công việc đối chiếu; **không phải biên bản nghiệm thu thiết kế**.
 
+**Nghiên cứu Owner Control mới:** [báo cáo high-fidelity](research/OWNER-CONTROL-HIGH-FIDELITY-2026-10-26.md) nói đã đọc metadata UI01–09 ở 1440×970, đề xuất page OWNER mới, 30 Owner + 16 Manager/Staff và các biến thể mobile/export. Báo cáo tự ghi chưa tạo PNG/frame high-fidelity mới; không cung cấp node/version/export để Codex kiểm chứng. Vì vậy chưa cộng các ID OWN-/MGR-/HK-/MNT-/FD- vào frame đã xác minh, chưa thay số khung audit 002 hoặc D13. [Readiness](IMPLEMENTATION-READINESS.md) ghi điểm cần sửa trước khóa.
+
 ## Cập nhật audit 002
 
 Báo cáo kiểm toán mới của MrAiTiNiuBi nói đã đọc trực tiếp 4 trang và sửa tổng số từ **13 thành 16 khung: 9 UI + 7 bổ sung**. Đồng thời báo cáo 0 prototype links trên node đã kiểm tra, 0 reusable components/Auto Layout được phát hiện, chưa có frame mobile và chưa hoàn tất kiểm tra cảm quan. Đây là **kết quả do người kiểm toán bên ngoài báo cáo**, không phải Codex vừa đọc được Figma. Không suy quan sát “không phát hiện” thành chứng minh mọi node/file hoặc phiên bản đều không có khả năng đó.

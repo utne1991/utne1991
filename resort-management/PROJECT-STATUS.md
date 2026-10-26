@@ -2,6 +2,8 @@
 
 Ngày rà soát: 26/10/2026. Snapshot đối chiếu ban đầu: `f9b004d69f34de0473fa2505d77d6f1c3fd11ab6`, nhánh `main` của `utne1991/utne1991`. Đây là trang tổng hợp để đọc trước, không phải phê duyệt baseline hoặc lệnh bắt đầu code.
 
+**Rà soát mới theo nghiên cứu Owner Control, đầu vào `dd90c19`:** đã lưu [nghiên cứu high-fidelity/vacancy](docs/research/OWNER-CONTROL-HIGH-FIDELITY-2026-10-26.md), lập [bảng sẵn sàng triển khai](docs/IMPLEMENTATION-READINESS.md) và [bản đồ chỉ dẫn thống nhất](docs/IMPLEMENTATION-MAP.md). Đủ đầu vào để thiết kế/chọn một demo nhỏ; chưa đủ code toàn bộ sản phẩm hoặc deploy/pilot. Các frame OWN-/MGR-/HK-/MNT-/FD- mới là ID đề xuất; chưa có high-fidelity/export được tạo trong lần nghiên cứu này. Chỉ đánh giá/lưu, chưa bắt đầu app.
+
 **Tiếp nhận kế hoạch PR #1 sau vòng rà soát ban đầu:** đã đọc head `7577c9c`, một file task kế hoạch, và lưu [review + backlog + fixture](docs/PILOT-OBSERVABILITY-REVIEW.md). Main tại thời điểm đọc PR là `0c6b9bf`; task chưa được merge. Người dùng xác nhận chỉ đánh giá/lưu, chưa bắt đầu code. Không có VPS/repo app/DNS/telemetry thực được tạo.
 
 **Lượt tiếp tục sau commit `ceb5e95`:** đã gom NEXT-01 thành [đặc tả OwnerOps đề xuất](docs/OWNEROPS-MVP-CONTRACT.md) và sửa [handoff Claude](docs/CLAUDE-HANDOFF.md) để không mặc định giao dashboard S3a cũ. Bổ sung luồng sáu view, ma trận quyền, state/revision, source ownership và mẫu số KPI. Đây là kế hoạch chưa duyệt; không phải prototype mới, backend, test nghiệp vụ hoặc tiến độ OBS-01–08.
@@ -21,6 +23,7 @@ Thông tin Figma/FigJam hiện mới là liên kết và các báo cáo được
 | Báo cáo kiểm toán Figma/PMS | [Nguyên văn](docs/research/DESIGN-AUDIT-002-2026-10-26.raw.txt), [manifest](docs/research/DESIGN-AUDIT-002-MANIFEST.json), [task xử lý](docs/TASK-RESORT-DESIGN-AUDIT-002.md) | Hai lần upload cùng nội dung được lưu một bản; không nhận là Codex đã đọc trực tiếp Figma |
 | Figma/FigJam | [Hai liên kết, số khung theo báo cáo và bảng mapping cần kiểm tra](docs/FIGMA-HANDOFF.md) | Báo cáo mới ghi 16 frame/4 page; chưa có node/version/export hoặc visual acceptance |
 | Thiết kế sản phẩm | [Chín đặc tả](docs/SCREEN-SPECIFICATIONS.md), [coverage](docs/SCREEN-COVERAGE.md), [quy tắc vận hành](docs/OPERATING-RULES.md), [vai trò/profile/release](docs/FEATURE-ROLE-PROFILE-RELEASE.md) | Bản nháp và điều kiện nghiệm thu, chưa duyệt mọi hành vi |
+| Owner Control & Revenue | [Nghiên cứu mới/nguyên văn/manifest](docs/research/README.md), [readiness](docs/IMPLEMENTATION-READINESS.md), [implementation map](docs/IMPLEMENTATION-MAP.md) | Kiểm tra repo/số học và source integrity; chưa xác minh claim Figma/web, chưa tạo 46+ ảnh hoặc đổi scope/giá |
 | Wireframe local | [Chín phân hệ và bốn mobile view](design/pms-wireframes.html), [form/state matrix](docs/FORM-STATE-MATRIX.md), dashboard cũ | DOM check 9+4 view, 65 state cases, 13 form và lịch 7/30/90 đã đạt; hash còn khớp, chưa browser/visual/PMS test |
 | Sơ đồ | [Bảy blueprint P0/P1](docs/blueprints/README.md), [Mermaid và sáu HTML Archify](docs/diagrams/README.md) | Bảy blueprint có 9 khối Mermaid đã parse; Archify deterministic gates đạt nhưng browser-check lỗi môi trường; các snapshot chưa đồng bộ mọi bổ sung |
 | Benchmark kỹ thuật | [Open Hotel PMS, Kamra và QloApps](docs/research/PMS-BENCHMARK.md); [Archify/ECC/Hello-Agents](docs/TOOLING-AND-SOURCES.md) | Source/license đọc có chọn lọc, chưa cài/test/audit toàn sản phẩm hoặc quyết định reuse |
@@ -82,6 +85,7 @@ AI không thể tự tạo lời phỏng vấn, API entitlement, quote thương 
 - Các đề xuất giá Figma/Connect-Revenue/OwnerOps đều còn giả thuyết; pilot 30–45 ngày và 8–12 tuần chưa được quy về một lịch đã chốt.
 - Sau khi chọn baseline, cập nhật các sơ đồ/prototype liên quan và lưu node/version hoặc source commit. Không sửa receipt cũ hoặc gọi các sơ đồ cũ là đã chứa phạm vi mới.
 - Các task HOTEL-* trong báo cáo là gợi ý phân rã, không phải việc đã được giao hoặc triển khai. Không cần tạo thêm báo cáo dài cho cùng các câu hỏi đã biết là còn mở.
+- Nghiên cứu Owner Control mở rộng vacancy/revenue vượt phép thử housekeeping nhỏ. Bản đồ chỉ dẫn mới giữ hai nhánh để chọn, không tự đưa toàn bộ approval/execution/Ads vào MVP. Thống nhất mẫu số confirmed/hold/open và source fixture trước khóa UI; các ngưỡng GO/SLA/giá mới vẫn chưa được duyệt.
 
 ## 7. Bằng chứng của lần rà soát
 

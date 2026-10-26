@@ -5,6 +5,7 @@ Ngày cập nhật: 26/10/2026. **Hiện chỉ đánh giá và lưu kế hoạch
 ## Thứ tự đọc
 
 1. [CLAUDE.md](../CLAUDE.md) và [PROJECT-STATUS](../PROJECT-STATUS.md): chỉ thị và bằng chứng hiện có.
+   Đọc [implementation map](IMPLEMENTATION-MAP.md) và [readiness](IMPLEMENTATION-READINESS.md) để nắm nghiên cứu Owner Control mới, đường đi và các gate; danh sách frame đề xuất không là ảnh đã hoàn tất.
 2. [Market working summary](research/MARKET-RESEARCH-WORKING-SUMMARY.md): control layer, một nguồn PMS/CM chính.
 3. [OwnerOps assessment](OWNEROPS-ASSESSMENT.md) và [đặc tả MVP đề xuất](OWNEROPS-MVP-CONTRACT.md): một bộ phận, ba góc nhìn, một hành trình nghiệm thu.
 4. [DECISIONS](DECISIONS.md): những gì còn mở; không tự điền bằng suy đoán.

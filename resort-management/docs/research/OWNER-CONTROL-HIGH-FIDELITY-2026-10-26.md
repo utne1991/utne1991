@@ -1,0 +1,1176 @@
+# BeeSmart HotelOS Owner — nghiên cứu high-fidelity, vận hành và giảm phòng trống
+
+Tiếp nhận ngày 26/10/2026 từ văn bản người dùng cung cấp. [Bản nguyên văn](OWNER-CONTROL-HIGH-FIDELITY-2026-10-26.raw.txt) giữ nguyên bytes; [manifest](OWNER-CONTROL-HIGH-FIDELITY-MANIFEST.json) ghi hash và giới hạn bằng chứng.
+
+Đọc [đánh giá và mức sẵn sàng triển khai](../IMPLEMENTATION-READINESS.md) và [bản đồ bàn giao](../IMPLEMENTATION-MAP.md) trước khi dùng báo cáo. Phạm vi hiện tại chỉ lưu/đánh giá, chưa code. Claim đọc Figma/web trong báo cáo thuộc tác giả nguồn; Codex chưa xác minh độc lập. Báo cáo không cung cấp URL nguồn hoặc node/version/export Figma, và tự ghi chưa tạo high-fidelity mới. Các giá, effort, SLA, lịch và ngưỡng là đề xuất, chưa thành baseline.
+
+---
+
+Title: BeeSmart HotelOS Owner — Kế hoạch High-Fidelity, vận hành và giảm phòng trống
+Boss man, kết luận quan trọng nhất sau khi đọc lại repo, kiểm tra trực tiếp cấu trúc Figma hiện tại và đối chiếu PMS/Channel Manager/OTA là: chúng ta không nên vẽ thêm một “dashboard khách sạn” thông thường. BeeSmart cần được thiết kế thành Owner Control & Revenue Action Center — chủ khách sạn nhìn vào là biết đang xảy ra chuyện gì → vì sao → ảnh hưởng bao nhiêu → ai chịu trách nhiệm → nên làm gì → kết quả ra sao.
+
+Hướng khả thi nhất cho pilot resort 100 phòng vẫn là connector-first: BeeSmart đọc và đối soát PMS/Channel Manager đang có, làm lớp điều hành + giảm phòng trống + quản lý trách nhiệm; chưa cố thay toàn bộ PMS/OTA ngay. Repo cũng đang đi đúng hướng này nhưng Figma hiện mới là blueprint, chưa đủ high-fidelity để đem trình bày như một sản phẩm hoàn chỉnh hoặc giao code không cần diễn giải thêm.
+
+Tóm tắt điều hành
+Điều cần thay đổi trong cách nghĩ về “phòng trống”
+Điểm quan trọng nhất là BeeSmart không được gom tất cả thành một con số “40 phòng trống”.
+
+Đối với một khách sạn, ít nhất phải tách bốn tình trạng:
+
+Khái niệm	Ví dụ	Có nên giảm giá/chạy Ads?
+Commercial Vacancy	Phòng thực sự bán được nhưng chưa có booking	Có thể
+Operational Unavailable	Phòng bảo trì, blocked, out-of-order	Không
+Operational Unready	Khách vừa trả, đang dọn/chờ kiểm tra	Không phải vấn đề demand
+Committed but Unassigned	Booking đoàn đã có nhưng chưa gán phòng vật lý	Tuyệt đối không coi là phòng trống
+
+Đây cũng phù hợp với thiết kế hiện tại trong Figma: lịch tồn bán được tách khỏi housekeeping; phòng “Ready” không tự động có nghĩa là inventory đó có thể bán, và booking chưa gán phòng vẫn phải chiếm tồn. Repo đã nhấn mạnh rằng PMS/Channel Manager phải tiếp tục là nguồn chính cho booking/inventory nếu BeeSmart mới chỉ là OwnerOps.
+
+Sản phẩm Owner phải trả lời sáu câu hỏi
+Màn hình đầu tiên của chủ khách sạn phải giúp ông chủ trả lời trong khoảng 30–60 giây:
+
+Khách sạn hôm nay thế nào?
+Ba mươi ngày tới ngày nào đang yếu?
+Vì sao những ngày đó yếu?
+Nếu không hành động thì doanh thu phòng có nguy cơ bỏ lỡ bao nhiêu?
+Hệ thống đề xuất làm gì và ai chịu trách nhiệm?
+Sau khi làm thì booking thực sự tăng hay chỉ giảm giá/đốt Ads?
+
+Mục tiêu “nhìn trong 30 giây” hiện đã được repo coi là mục tiêu usability cần kiểm thử chứ chưa phải điều đã chứng minh đạt.
+
+BeeSmart khác thị trường ở đâu?
+Không thể định vị bằng câu “chúng tôi có dashboard, housekeeping và app điện thoại”. ezCloud hiện công khai ứng dụng dành cho chủ khách sạn có báo cáo, thông báo, booking và thay đổi quyết định bán phòng; họ cũng công bố PMS, mobile, housekeeping và kết nối kênh bán. Skyhotel có quản lý online trên điện thoại và bảng giá khá thấp; Agoda bản thân đã có Availability Center, rate plans, promotions và các công cụ marketing. Đây là tuyên bố/chức năng công bố bởi nhà cung cấp, không phải đánh giá độc lập về chất lượng thực tế. 
+
+Vì vậy lợi thế BeeSmart nên là:
+
+“Một màn hình dành cho chủ khách sạn, kết nối dữ liệu đang có, chỉ ra chỗ đang mất cơ hội kinh doanh, giao việc xử lý, kiểm tra việc đã thực hiện và đo kết quả tài chính sau cùng.”
+
+Đây là suy luận sản phẩm của em dựa trên khoảng trống hiện tại, không phải tuyên bố rằng thị trường chưa có bất kỳ sản phẩm nào làm tương tự.
+
+Hướng triển khai em khuyến nghị
+Không: AI tự giảm giá → tự bật Ads → mong occupancy tăng.
+
+Có: Data → xác minh tồn thật → phân tích nguyên nhân → đề xuất phương án → so sánh contribution → có người duyệt → thực thi → xác minh OTA/PMS → đo pickup/cancellation/contribution → tự dừng hoặc rollback theo rule.
+
+Đó là sản phẩm có thể bán được cho chủ khách sạn.
+
+Bộ ảnh high-fidelity cần tạo
+Trong phiên nghiên cứu này em đã đọc trực tiếp metadata của file Figma hiện tại. Các frame UI01–UI09 đã có bố cục 1440×970 và chứa đúng những khái niệm nền như room map, cảnh báo OTA stale, housekeeping, tài chính, Revenue & Ads, báo cáo và kết nối. Tuy nhiên chúng vẫn thiên về blueprint nghiệp vụ: chưa có một chuỗi high-fidelity riêng cho Owner tập trung vào vacancy → quyết định → hành động → kết quả. Repo cũng ghi rõ thiết kế chưa được coi là baseline nghiệm thu cuối cùng.
+
+Em đề xuất tạo một Figma page mới hoàn toàn: OWNER · Revenue & Operations Command Center, không phá UI01–UI09 cũ.
+
+Chuẩn hình ảnh
+Loại	Frame thiết kế	Export presentation
+Desktop application	1600 × 1000	PNG @2x = 3200 × 2000
+Slide giải thích quy trình	1920 × 1080	PNG 1x/2x
+Mobile Owner/Manager/Staff	390 × 844	PNG @3x = 1170 × 2532
+Modal / Drawer detail	800–1000 px rộng	PNG @2x
+Flow diagram presentation	1920 × 1080	PNG + SVG/PDF
+Social/marketing preview	1080 × 1350	PNG
+
+Không nên xuất ảnh JPG cho UI vì chữ nhỏ, bảng và chart cần giữ nét. Mỗi ảnh nên có cả phiên bản clean screenshot và annotated presentation.
+
+Bộ dữ liệu demo phải dùng chung
+Toàn bộ ảnh nên dùng một fixture thống nhất, tránh hiện tượng Figma cũ có nhiều con số demo không cùng mẫu.
+
+Đề xuất fixture:
+
+BeeSmart Bay Resort — 100 phòng — DỮ LIỆU MINH HỌA — ngày kinh doanh 26/10/2026
+
+Không dùng số demo này để tuyên bố ROI:
+
+100 phòng vật lý.
+4 phòng đang out-of-order trong ví dụ D+3.
+96 phòng-night có thể bán.
+52 booking đã xác nhận cho D+3.
+3 hold chưa xác nhận, hiển thị riêng.
+41 room-night còn mở bán.
+ADR demo: 1.500.000đ.
+Giá sàn demo Deluxe: 1.250.000đ.
+last PMS sync: 10:42:18.
+Dữ liệu tài chính luôn có asOf và coverage.
+Mọi số tài chính ghi “Dữ liệu minh họa”.
+Các threshold cảnh báo như vacancy >40%, discount 5%, ngân sách Ads… phải gắn nhãn “Rule demo — cấu hình theo khách sạn”, không trình bày như chuẩn ngành.
+
+Danh mục ảnh Owner high-fidelity
+Em đề xuất ba mươi ảnh sản phẩm, đủ để anh trình bày cho khách hàng như một hành trình hoàn chỉnh.
+
+ID	Ảnh cần tạo	Nội dung high-fidelity
+OWN-01	Owner Command Center	Occupancy hôm nay/D+7/D+30, ADR, RevPAR, doanh thu, chi phí đã ghi, room downtime, task overdue, data freshness và “3 việc cần Chủ quyết định”
+OWN-02	Owner Mobile Home	Phiên bản điện thoại: 5 KPI, 3 cảnh báo, 2 đề xuất đang chờ duyệt
+OWN-03	Vacancy Heatmap 30 ngày	Cột ngày × hàng room type; % booked, % open, blocked; highlight D+1/D+3/D+7/D+14
+OWN-04	Vacancy Heatmap 90 ngày	Calendar theo tuần/tháng, season/event annotations, pickup trend
+OWN-05	Ngày yếu — Drill-down	Một ngày cụ thể: Standard/Deluxe/Suite, OTB, pickup, cancellation, channel mix
+OWN-06	Vacancy Diagnosis	“Tại sao còn phòng?”: demand weakness, stale sync, expired hold, maintenance, rate mismatch, cancellation spike
+OWN-07	Vacancy Alert Center	P0/P1/P2, owner, SLA, trạng thái acknowledged/resolved
+OWN-08	Data Trust Panel	PMS last sync, OTA last sync, missing source, reconciliation status, confidence
+OWN-09	Revenue Exposure	Room-night chưa bán × current rate; tách gross exposure khỏi profit opportunity
+OWN-10	Scenario Comparator	Giữ giá / value package / discount / OTA promo / Ads; net ADR và contribution dự kiến
+OWN-11	Suggested Actions	AI/rules xếp hạng hành động; lý do, dữ liệu sử dụng, risk và người cần duyệt
+OWN-12	Action Detail	Click đề xuất: target dates, room type, inventory cap, floor price, expected cost, expiry
+OWN-13	Direct Offer Wizard	Chọn ngày → room type → segment → package → inventory
+OWN-14	Package Builder	Phòng + breakfast/spa/late checkout; hiển thị incremental variable cost
+OWN-15	Discount Wizard	Giá hiện tại → giá mới → % giảm → floor → inventory cap → thời hạn
+OWN-16	OTA Promotion Wizard	Chọn kênh, rate plan, ngày lưu trú, blackout, số lượng phòng; trạng thái “handoff/API”
+OWN-17	Last-minute Ads Wizard	Google/Meta, khu vực, dates, landing page, inventory, budget, stop rule
+OWN-18	Approval Preview	Before/after giá; contribution; budget; nguồn dữ liệu; warning; approve/reject
+OWN-19	Owner Approval Inbox	Giá, Ads, khoản chi, maintenance lớn, compensation khách — một queue chung
+OWN-20	Execution Monitor	PMS/CM/OTA/Ads status: pending → sent → acknowledged → verified
+OWN-21	Campaign Live Monitor	Spend, bookings, cancellations, pickup, remaining inventory, guardrail status
+OWN-22	Campaign Result	Before/after vs baseline/control nếu có; không dùng ROAS attribution như incremental profit
+OWN-23	Channel Economics	Direct, OTA, corporate, travel agent; gross ADR → commission → Ads → net ADR/contribution
+OWN-24	Owner Finance	Revenue recognized, cash collected, costs captured, payables, contribution; completeness badge
+OWN-25	Hotel Operations Health	Housekeeping SLA, maintenance downtime, guest-service SLA, tasks overdue, rework
+OWN-26	Department Accountability	Front Desk / HK / Maintenance / Sales / Accounting; jobs assigned/submitted/accepted/rework
+OWN-27	Issue Detail + Audit Trail	Ai phát hiện, ai nhận, ảnh, timeline, comment, approve/rework/escalate
+OWN-28	Integration Health	PMS, Channel Manager, Booking.com, Agoda, Ads, accounting; sync/error/reconciliation
+OWN-29	Daily Owner Briefing	“Hôm qua — Hôm nay — 7 ngày tới”; biến động doanh thu, vacancy, issues
+OWN-30	Monthly Owner Review	Occupancy, ADR, RevPAR, contribution, channel cost, room downtime, operating trends
+
+Đặc biệt OWN-01 phải là hero image khi bán sản phẩm.
+
+Mockup Owner Command Center
+Cấu trúc đề xuất:
+
+text
+Sao chép
+BeeSmart HotelOS                         BeeSmart Bay Resort
+TỔNG QUAN CHỦ KHÁCH SẠN                  Cập nhật: 10:42 · PMS ✓
+
+HÔM NAY                7 NGÀY TỚI               TÀI CHÍNH
+Công suất 74%          D+3 ⚠ 54%                DT ghi nhận 84,5tr
+ADR 1,48tr             41 room-night mở bán     Chi phí đã ghi 31,2tr
+RevPAR 1,10tr          Pickup ↓ 8%               Coverage 82%
+
+┌─────────────────────────────────────────────────────────────┐
+│  30 NGÀY TỚI — NGÀY CÓ NGUY CƠ TRỐNG                       │
+│  27  28  29  30  31   01   02 ...                          │
+│  82% 75% 54% 58% 91%  93%  77%                             │
+│          ⚠   ⚠                                              │
+└─────────────────────────────────────────────────────────────┘
+
+3 VIỆC CẦN QUYẾT ĐỊNH
+⚠ D+3 Deluxe còn 18 phòng    [Xem đề xuất]
+⚠ OTA sync chậm 13 phút      [Đối soát]
+● Ads D+2 đã đạt stop rule   [Dừng chiến dịch]
+
+BỘ PHẬN CẦN CHÚ Ý
+Housekeeping      96% đúng SLA
+Maintenance       2 phòng blocked
+Sales             1 đề xuất quá hạn
+Front Desk        3 hold sắp hết hạn
+Nguyên tắc UX: Chủ không phải click mười màn để hiểu chuyện gì đang xảy ra. Card “D+3 Deluxe còn 18 phòng” phải mở thẳng OWN-05 → OWN-06 → OWN-10 → OWN-18.
+
+Bộ ảnh Manager và Staff để giải thích khả năng thực thi
+Chỉ có Owner dashboard mà không chứng minh được “ai làm việc” thì sản phẩm sẽ giống BI dashboard.
+
+ID	Ảnh	Nội dung
+MGR-01	Manager Today	Hôm nay cần xử lý gì, priority, department
+MGR-02	Vacancy Action Queue	Action do Owner/Revenue duyệt, người nhận, deadline
+MGR-03	Assign Work	Người thực hiện, SLA, checklist, evidence
+MGR-04	Review Queue	Submitted → Accept/Rework
+MGR-05	Revenue Action Mobile	Approve draft trong quyền, escalate Owner
+MGR-06	Shift Handover	Open tasks, exceptions, pending approvals
+HK-01	My Tasks	Chỉ phòng được giao
+HK-02	Room Cleaning	Bắt đầu, checklist, minibar/damage, notes
+HK-03	Photo Evidence	Ảnh trước/sau, thời gian, room/task ID
+HK-04	Submit for Inspection	Summary trước khi nộp
+HK-05	Rework	Hạng mục không đạt + ảnh inspector
+MNT-01	Maintenance Ticket	Phòng, thiết bị, severity, block-room flag
+MNT-02	Repair Evidence	Before/after + vật tư + thời gian
+MNT-03	Return to Service	Kỹ thuật xong → QA → mở block
+FD-01	Front Desk Vacancy Prompt	Direct offer/upsell được duyệt, không tự thay giá
+FD-02	Stale Sync Warning	Không cho thao tác rủi ro nếu nguồn inventory quá cũ
+
+Các ảnh mobile phải giảm tối đa dữ liệu không liên quan. Nhân viên housekeeping không cần nhìn doanh thu, ADR, PII khách hoặc Ads; repo hiện tại cũng xác định staff view phải giới hạn theo vai trò.
+
+Asset xuất cuối cùng
+Mỗi frame nên export:
+
+PNG @2x/@3x cho presentation; SVG cho chart/diagram/icon; PDF cho board trình bày; thumbnail PNG 960px; và file manifest.csv/json chứa frame_id, name, role, version, demo_fixture, export_time.
+
+Repo hiện ghi rõ việc thiếu snapshot/version/node mapping là một khoảng trống trong handoff hiện nay.
+
+Quy trình vận hành Owner → Manager → Staff
+Luồng giảm phòng trống
+Đây mới là “trái tim” của BeeSmart.
+
+Không
+
+Có
+
+Không
+
+Có
+
+Có
+
+Không
+
+Có
+
+Không
+
+PMS / Channel Manager / Booking Sources
+
+BeeSmart Connector Layer
+
+Dữ liệu mới và đã đối soát?
+
+Tạo cảnh báo Sync / Reconciliation
+
+Manager/IT xử lý
+
+Vacancy Detection Engine
+
+Phòng trống thực sự để bán?
+
+Phân loại: maintenance / hold / booking chưa gán / room unready
+
+Giao việc vận hành
+
+Staff xử lý + bằng chứng
+
+Manager nghiệm thu
+
+Vacancy Diagnosis
+
+Đánh giá pickup / ADR / channel / cancellation / contribution
+
+Sinh 3–5 phương án
+
+Giữ giá
+
+Direct offer
+
+Value package
+
+OTA promotion
+
+Last-minute Ads
+
+Manager / Revenue review
+
+Vượt guardrail?
+
+Owner approval
+
+Manager approval
+
+Execute
+
+Xác minh PMS / OTA / Ads
+
+Theo dõi pickup, cancellations, net contribution
+
+Đạt stop / rollback rule?
+
+Stop / rollback
+
+Tiếp tục đến expiry
+
+Owner Result Report
+
+
+
+Hiển thị mã
+Chủ khách sạn làm gì?
+Owner không điều hành từng phòng.
+
+Owner cấu hình policy:
+
+mức giảm giá tối đa Manager có thể tự duyệt;
+giá sàn theo room type/rate plan;
+ngân sách Ads theo ngày/chiến dịch/tháng;
+khoản chi vượt bao nhiêu phải trình Chủ;
+loại campaign nào bắt buộc Owner duyệt;
+room block bao lâu phải escalation;
+threshold cảnh báo vacancy;
+tài khoản nào được ghi ra PMS/Channel Manager.
+Sau đó Owner chỉ xử lý ngoại lệ.
+
+Manager làm gì?
+Một ngày D+3 xuất hiện vacancy cao, Manager nhận:
+
+text
+Sao chép
+D+3 · Deluxe
+52/96 room-night confirmed
+41 room-night open
+Pickup 3 ngày gần nhất: thấp hơn baseline demo
+Data freshness: PMS 42s · Channel Manager 58s
+Risk: HIGH
+
+Hệ thống đề xuất:
+① Direct package
+② OTA targeted promotion
+③ Last-minute Ads nếu pickup không cải thiện sau checkpoint
+Manager kiểm tra nguyên nhân rồi gửi phương án cần Owner duyệt nếu vượt quyền.
+
+Staff làm gì?
+Một vấn đề “vacancy” có thể thực ra là vấn đề vận hành:
+
+text
+Sao chép
+Phòng 411
+Status: Out of Order
+Nguyên nhân: điều hòa không lạnh
+
+Maintenance
+→ nhận việc
+→ chụp ảnh
+→ sửa
+→ ghi vật tư
+→ nộp
+
+Supervisor
+→ kiểm tra
+→ đạt
+
+Housekeeping/QA
+→ kiểm tra phòng
+→ Ready
+
+Connector
+→ xác minh block PMS đã được gỡ đúng quyền
+
+Inventory Engine
+→ căn phòng mới trở lại pool bán
+Như vậy BeeSmart không chỉ “chạy quảng cáo để lấp phòng”, mà còn khôi phục inventory bị mất do vận hành.
+
+Booking state machine
+Booking và trạng thái vật lý của phòng không được dùng chung một state machine.
+
+giữ tồn có TTL
+
+thanh toán/xác nhận hợp lệ
+
+hết TTL
+
+Draft
+
+Hold
+
+Cancelled
+
+Confirmed
+
+Expired
+
+CheckedIn
+
+NoShow
+
+CheckedOut
+
+Completed
+
+
+
+Hiển thị mã
+Việc đổi ngày, đổi rate plan hoặc đổi phòng nên được lưu dưới dạng versioned event + audit trail, không xóa lịch sử reservation cũ.
+
+Room operational state machine
+check-in
+
+checkout
+
+staff bắt đầu
+
+staff nộp
+
+supervisor đạt
+
+yêu cầu làm lại
+
+sự cố
+
+sự cố
+
+phát hiện hỏng
+
+sự cố nghiêm trọng / quy trình xử lý
+
+sửa xong + QA
+
+Ready
+
+Occupied
+
+VacantDirty
+
+Cleaning
+
+Inspection
+
+OutOfOrder
+
+
+
+Hiển thị mã
+Ready ở đây chỉ là trạng thái vận hành. Inventory bán theo ngày vẫn phải tính booking, hold, room block, room type, restrictions và nguồn PMS/CM.
+
+SLA pilot đề xuất
+Các mốc dưới đây là SLA thiết kế cho pilot, không phải tiêu chuẩn chung của ngành.
+
+Sự kiện	Mục tiêu BeeSmart
+Webhook đã tới BeeSmart → read model cập nhật	< 60 giây p95
+Poll fallback connector thông thường	5 phút
+Cảnh báo dữ liệu stale	10 phút
+Chặn write rủi ro nếu stale	15 phút / 2 chu kỳ lỗi
+Vacancy D0–D3 → Manager acknowledge	≤ 15 phút
+Vacancy D0–D3 → có quyết định	≤ 30 phút
+Vacancy D4–D7	≤ 2 giờ
+Vacancy D8–D30	Review một lần/ngày
+Campaign push → verify channel	≤ 5 phút
+Mismatch sau push → reconciliation	≤ 15 phút
+Housekeeping P1 → nhận phân công	≤ 5 phút
+Submitted → supervisor review	≤ 10 phút
+Maintenance P1 → Manager acknowledge	≤ 5 phút
+Critical room issue → block bán	Ngay khi sự cố được xác nhận
+
+SiteMinder hiện tài liệu hóa chế độ reservation pull theo chu kỳ 2–5 phút bên cạnh push real-time, nên fallback polling vài phút là thiết kế thực tế hơn lời hứa “mọi nguồn đều real-time tuyệt đối”. 
+
+Timeline xử lý vacancy D+3
+08:00
+09:00
+10:00
+11:00
+12:00
+13:00
+14:00
+15:00
+16:00
+17:00
+Đồng bộ PMS/CM
+Đối soát tồn
+Phát hiện vacancy
+Phân tích nguyên nhân
+Manager xem phương án
+Owner duyệt nếu vượt quyền
+Direct/package
+OTA promotion nếu được duyệt
+Ads nếu qua gate
+Verify channel
+Theo dõi pickup
+Data
+Detection
+Decision
+Action
+Verify
+Ví dụ quy trình xử lý một ngày D+3 yếu
+
+
+Hiển thị mã
+Tích hợp và tính khả thi kỹ thuật
+Nguyên tắc connector-first
+PMS của resort pilot hiện chưa xác định, vì vậy không được viết business logic phụ thuộc Cloudbeds, Opera hay ezCloud ngay trong core.
+
+Core nên hiểu interface chung:
+
+text
+Sao chép
+PropertyConnector
+├── getProperty()
+├── getRoomTypes()
+├── getRooms()
+├── getRatePlans()
+├── getInventory(dateRange)
+├── getReservations(dateRange)
+├── getReservationChanges(cursor)
+├── getHousekeepingStatus()
+├── getRoomBlocks()
+├── getRevenueSummary()
+│
+├── updateRates()           // optional/write-gated
+├── updateAvailability()    // optional/write-gated
+├── updateRoomBlock()       // optional/write-gated
+└── subscribeEvents()       // optional
+Sau đó từng adapter khai báo capability:
+
+text
+Sao chép
+READ_RESERVATIONS       yes/no
+READ_INVENTORY          yes/no
+READ_RATES              yes/no
+READ_HOUSEKEEPING       yes/no
+READ_FOLIO              yes/no
+
+WRITE_RATES             yes/no
+WRITE_AVAILABILITY      yes/no
+WRITE_ROOM_BLOCKS       yes/no
+
+WEBHOOKS                 yes/no
+POLLING                  yes/no
+Ma trận tích hợp thực tế
+Hệ thống	Docs công khai?	Production access	Điều BeeSmart cần
+Cloudbeds	Có	Có thể nằm trong package hoặc phải mua API add-on	Reservation, room, rate, HK, webhook
+SiteMinder	Có	Cần partnership; từng API cần certification	ARI, reservation, mapping, SMX
+OPERA Cloud/OHIP	Có	Cần property/partner environment và quyền tương ứng	Reservation, inventory, rates, business events
+Booking.com	Có	Connectivity Partner workflow	ARI, reservation, promotions nếu đủ quyền
+Agoda	Partner docs	Hotel thường kết nối qua supported Channel Manager	Property/room/rate mapping, ARI, reservations
+Expedia Group	Có	Connectivity Partner/API License/technical requirements	Availability/rates/bookings
+ezCloud	Website mô tả tích hợp	Production API contract chưa được xác minh trong nghiên cứu này	Phải hỏi vendor/property
+SMILE PMS	Website sản phẩm có	Không tìm thấy tài liệu API production công khai đủ để chốt connector	Phải làm discovery trực tiếp
+
+Cloudbeds là ví dụ rất rõ về việc “tài liệu API công khai” không đồng nghĩa “API miễn phí và mở ngay”: tài liệu chính thức nói API access có thể đã bao gồm trong package hoặc phải yêu cầu và trả thêm phí. Cloudbeds cũng hỗ trợ webhook cho reservation và room-assignment events. 
+
+SiteMinder còn chặt hơn: quá trình tích hợp chỉ bắt đầu sau khi hoàn tất partnership agreement; tài liệu năm 2026 nêu development thường 4–6 tuần và toàn bộ quá trình tích hợp thường khoảng 60 ngày, tùy API/độ phức tạp; từng API có quy trình certification riêng. 
+
+SiteMinder pmsXchange có hai chiều cho inventory, rates, restrictions và reservations; reservation có push real-time và pull 2–5 phút. Đây là connector phù hợp nếu resort pilot đã dùng SiteMinder, nhưng không nên coi đây là API có thể lấy production credentials ngay ngày đầu. 
+
+Oracle OHIP cung cấp API và business events cho OPERA Cloud; Oracle cũng mô tả synchronous API cho reservation và asynchronous API cho bulk inventory/rate data. Do đó OPERA Cloud về kỹ thuật có đường tích hợp rõ, nhưng quyền/environment của resort vẫn phải xác minh. 
+
+Booking.com Connectivity APIs cho phép Connectivity Partners quản lý availability, reservations và prices. Chính cách mô tả của Booking.com cho thấy BeeSmart không nên mặc định rằng một khách sạn đơn lẻ có thể tự lấy một API key rồi viết trực tiếp vào Booking.com; pilot an toàn hơn là đi qua PMS/Channel Manager đang được khách sạn cấp quyền. 
+
+Agoda công khai quy trình hotel chọn Channel Manager rồi map property ID, room type ID, rate plan ID. Agoda cũng mô tả trường hợp update validation lỗi, lỗi kết nối và trường hợp email booking có thể đến dù notification qua channel manager gặp sự cố — đây chính là lý do BeeSmart cần reconciliation thay vì tin một webhook duy nhất. 
+
+Expedia có chương trình Connectivity Partner với yêu cầu commercial/API License Agreement và technical requirements. Vì vậy direct OTA integration là một sản phẩm riêng, không nên đặt vào critical path của MVP. 
+
+Đồng bộ dữ liệu đề xuất
+text
+Sao chép
+                   ┌──── Webhook/Event ────┐
+PMS/CM ────────────┤                       ▼
+                   │                  Webhook Inbox
+                   │                  verify
+                   │                  deduplicate
+                   │                  persist
+                   │                  process
+                   │                       │
+                   └─ Poll 5m fallback ───┤
+                                          ▼
+                                  Canonical Hotel Model
+                                          │
+                          ┌───────────────┼──────────────┐
+                          ▼               ▼              ▼
+                     Inventory       Reservations      Revenue
+                          │               │              │
+                          └────── Reconciliation ────────┘
+                                          │
+                                          ▼
+                                   Owner Read Model
+Bắt buộc có:
+
+external_event_id; source_system; source_updated_at; received_at; processed_at; schema_version; idempotency_key; reconciliation_status; last_successful_sync; error_code; retry_count.
+
+Error handling
+Không nên xây:
+
+text
+Sao chép
+OTA API → update thành công HTTP 200 → coi là xong
+Phải xây:
+
+text
+Sao chép
+Intent
+→ Outbox
+→ Send
+→ ACK
+→ Re-read/verify
+→ Reconcile
+→ Verified
+Trạng thái:
+
+text
+Sao chép
+DRAFT
+PENDING_APPROVAL
+APPROVED
+QUEUED
+SENT
+ACKNOWLEDGED
+VERIFIED
+PARTIAL_FAILURE
+FAILED
+RECONCILING
+ROLLED_BACK
+Nếu ACKNOWLEDGED ≠ VERIFIED, Owner phải thấy “Đã gửi nhưng chưa xác minh”, không thấy dấu ✓ giả.
+
+Ước tính độ phức tạp connector
+Đây là ước tính engineering nội bộ, không phải báo giá của các vendor.
+
+Connector	Công sức ước tính
+CSV/import read-only có mapping	3–7 dev-days
+PMS API read-only đơn giản	10–20 dev-days
+PMS read + webhook + reconciliation	15–30 dev-days
+PMS/CM có write rates/inventory	20–45 dev-days
+Connector cần certification vendor	30–60+ dev-days + thời gian vendor
+Direct OTA production connector	40–80+ dev-days/kênh + partner process
+
+Vì SiteMinder chính thức cho biết integration có thể kéo dài khoảng 60 ngày toàn quy trình, thời gian vendor/certification không thể quy đổi đơn giản thành số ngày coder làm việc. 
+
+Khuyến nghị: pilot đầu tiên chỉ cần một PMS/CM connector read-only đáng tin cậy, rồi mới bổ sung write.
+
+Mô hình doanh thu, KPI và tự động hóa
+KPI Owner phải thấy
+Occupancy, ADR và RevPAR là các metric revenue-management nền tảng; Cornell cũng dùng ba metric này trong nội dung quản trị doanh thu khách sạn. Công thức RevPAR có thể tính bằng ADR × occupancy hoặc room revenue / available rooms. 
+
+BeeSmart cần mở rộng thành bốn lớp.
+
+Lớp	KPI
+Inventory	Available room-nights, commercial vacancy, OOO, room block
+Demand	OTB occupancy, pickup, lead time, cancellations, no-show
+Revenue	ADR, RevPAR, Net ADR, Net RevPAR
+Profit	Incremental contribution, channel cost, Ads cost, variable room cost
+Operations	Turnaround time, ready-before-arrival, rework, room downtime
+Data	Freshness, reconciliation mismatch, missing financial coverage
+
+Cần đặc biệt tránh biến Owner Dashboard thành bảng “tiền thu hôm nay = doanh thu hôm nay”. Repo đã xác định phải tách recognized revenue, cash received/refunded, incurred cost, paid cost và contribution/profit.
+
+Công thức
+text
+Sao chép
+Occupancy
+= Sold Room Nights / Sellable Room Nights
+text
+Sao chép
+Commercial Vacancy Rate
+= 1 - Occupancy
+text
+Sao chép
+ADR
+= Room Revenue / Sold Room Nights
+text
+Sao chép
+RevPAR
+= Room Revenue / Sellable Room Nights
+= ADR × Occupancy
+Cornell và các tài liệu ngành cũng nhấn mạnh rằng nhìn cả occupancy lẫn rate quan trọng hơn tối ưu riêng một số, vì giảm giá để đạt occupancy cao có thể làm giảm chất lượng doanh thu. 
+
+BeeSmart nên tự định nghĩa rõ:
+
+text
+Sao chép
+Net ADR
+= (Room Revenue
+   - Channel Commission
+   - Channel-specific Discount/Subsidies)
+  / Sold Room Nights
+Và metric quan trọng hơn đối với campaign:
+
+text
+Sao chép
+Incremental Contribution
+= Verified Incremental Revenue
+- Incremental Variable Room Cost
+- OTA / Channel Cost
+- Discount / Package Subsidy
+- Advertising Spend
+Incremental yêu cầu có baseline/counterfactual hợp lý. Booking được Ads platform attribution không tự động đồng nghĩa là booking tăng thêm nhờ Ads.
+
+Kịch bản giảm vacancy
+Ví dụ toán học dưới đây chỉ minh họa cơ chế; không phải dự báo BeeSmart sẽ tạo ra mức tăng đó.
+
+Giả định:
+
+100 phòng.
+30 ngày.
+3.000 sellable room-nights.
+Occupancy baseline minh họa: 60%.
+Vacancy baseline: 40%.
+ADR giữ nguyên ở mức demo 1.500.000đ.
+Không giả định contribution margin.
+Cải thiện occupancy	Vacancy mới	Room-night bán thêm	Gross room revenue minh họa
++2 điểm %	38%	60	90 triệu
++5 điểm %	35%	150	225 triệu
++8 điểm %	32%	240	360 triệu
+
+Phép tính:
+
+text
+Sao chép
+3.000 × 5% = 150 room-nights
+150 × 1.500.000 = 225.000.000đ
+Nhưng 225 triệu không phải lợi nhuận tăng thêm. Phải trừ giảm giá, commission, Ads, breakfast/spa package, cleaning/laundry/amenities và các biến phí thực tế; đồng thời phải tránh tính booking vốn dĩ sẽ đến dù không chạy campaign.
+
+Waterfall nên xuất hiện trên Owner UI
+text
+Sao chép
++ 225m  Gross Room Revenue
+-  18m  Discount Cost
+-  24m  OTA / Distribution
+-  15m  Ads
+-   ?m  Incremental Variable Cost
+--------------------------------
+=   ?m  Incremental Contribution
+Nếu chưa có biến phí, UI phải hiển thị:
+
+“Contribution chưa hoàn chỉnh — thiếu dữ liệu Housekeeping/Laundry/Breakfast.”
+
+Thay vì tự gán lợi nhuận.
+
+Decision ladder giảm phòng trống
+Em không khuyến nghị “vacancy >40% → giảm ngay 10%”.
+
+Nên dùng thứ tự:
+
+Xác minh dữ liệu → sửa tồn giả → mở inventory bị chặn sai → Direct → Value Package → Discount có điều kiện → OTA Promotion → Paid Ads.
+
+Lý do rất đơn giản: nếu 10 phòng “trống” vì expired hold hoặc room block chưa gỡ, không cần quảng cáo thêm một đồng.
+
+Rules Engine mẫu
+text
+Sao chép
+RULE VAC-D3-001
+
+WHEN
+  stay_date <= D+3
+  AND commercial_vacancy >= configured_threshold
+  AND data_freshness < 10 minutes
+  AND reconciliation_status = VERIFIED
+
+THEN
+  run vacancy diagnosis
+
+IF
+  unassigned_group_bookings > 0
+THEN
+  DO NOT PROMOTE
+  create allocation task
+
+ELSE IF
+  room_block_anomaly > 0
+THEN
+  create operations task
+
+ELSE
+  generate commercial actions
+Tiếp theo:
+
+text
+Sao chép
+ACTION RANKING
+
+1. Direct audience already opted-in
+2. Value-added package
+3. Controlled discount
+4. OTA promotion
+5. Paid Ads
+Thứ tự này là đề xuất BeeSmart, không phải quy tắc bắt buộc toàn ngành.
+
+Ads rule đề xuất
+Một Last-Minute Campaign phải có tối thiểu:
+
+text
+Sao chép
+Stay dates
+Room types
+Sellable inventory cap
+Landing page / booking path
+Geo market
+Audience
+Campaign start
+Campaign expiry
+Internal spend ceiling
+Platform budget
+Stop conditions
+Attribution window
+Owner/Manager approval
+Geo không nên hardcode “100–200 km” cho mọi khách sạn. Với Hồ Tràm có thể thử các catchment như TP.HCM/Bình Dương/Đồng Nai; với Đà Nẵng hay Phú Quốc logic demand khác. Đây phải là hypothesis được A/B test theo property, không phải quy tắc ngành.
+
+Budget guardrails
+Google Ads dùng average daily budget; với phần lớn campaign, một ngày có thể chi tới 2× mức average daily budget và giới hạn tháng thường là 30,4×. Vì vậy “Daily Budget” trong BeeSmart không được coi là hard cap nội bộ. 
+
+Meta cũng mô tả daily budget là mức trung bình, không phải hard cap. 
+
+Vì vậy BeeSmart phải có internal spend guardrail riêng:
+
+text
+Sao chép
+platform_average_daily_budget
+internal_campaign_ceiling
+internal_monthly_ceiling
+max_cost_per_verified_booking
+max_cost_per_incremental_room_night
+Ví dụ rule:
+
+text
+Sao chép
+IF internal_campaign_spend >= approved_campaign_ceiling
+THEN request PAUSE immediately
+
+IF available_inventory <= safety_inventory
+THEN request PAUSE
+
+IF PMS freshness > stale_limit
+THEN PAUSE writes and new ad escalation
+
+IF room rate falls below approved floor
+THEN BLOCK execution
+
+IF cancellation-adjusted contribution <= 0
+THEN notify Revenue Manager
+Approval gates
+Hành động	Auto	Manager	Owner
+Phát hiện vacancy	✓		
+Tạo cảnh báo	✓		
+Giao task		✓	
+Draft package	✓	✓	
+Publish package trong quyền		✓	
+Thay giá public		Theo threshold	Nếu vượt threshold
+Bật OTA promotion		Theo quyền	Nếu vượt policy
+Tạo Ads draft	✓	✓	
+Chi ngân sách Ads		Giới hạn nhỏ được cấu hình	Vượt hạn mức
+Giá dưới floor		✗	Owner/authorized revenue only
+AI tự đổi production	✗		
+
+Đây là guardrail quan trọng: AI nên giải thích và đề xuất, chưa nên là nguồn quyết định tiền hay inventory. Thiết kế UI07 hiện tại của BeeSmart cũng đã đi theo nguyên tắc này.
+
+Pilot, chi phí và tiêu chí thành công
+Pilot không nên bắt đầu bằng Ads
+Thứ tự pilot em đề xuất:
+
+2026-11-08
+2026-11-15
+2026-11-22
+2026-11-29
+2026-12-06
+2026-12-13
+2026-12-20
+2026-12-27
+2027-01-03
+2027-01-10
+2027-01-17
+2027-01-24
+2027-01-31
+2027-02-07
+2027-02-14
+2027-02-21
+Xác định PMS/CM và nguồn dữ liệu
+KPI dictionary + room mapping
+Owner high fidelity
+Manager/Staff mobile
+Prototype + usability
+Owner dashboard + work engine
+Connector read-only
+Error tracking + reconciliation
+Shadow mode
+Assisted action
+Revenue experiments
+Discovery
+Design
+Build
+Pilot
+Pilot BeeSmart OwnerOps — khuyến nghị
+
+
+Hiển thị mã
+Ngày trên chỉ là lịch tham chiếu để hình dung dependency, không phải cam kết ngày giao hàng.
+
+Các phase
+Shadow mode: BeeSmart chỉ đọc. So sánh với PMS hằng ngày. Không thay giá.
+
+Assisted mode: BeeSmart đề xuất; Manager thao tác thủ công trên PMS/OTA. BeeSmart ghi lại kết quả.
+
+Controlled write: chỉ khi connector đã đối soát đủ tốt, cho phép một số write có approval.
+
+Commercial experiment: package/discount.
+
+Paid Ads: cuối cùng, sau khi booking path và contribution tracking đủ tin cậy.
+
+Dữ liệu phải thu pilot
+Không cần lấy toàn bộ hồ sơ cá nhân khách nếu mục tiêu chỉ là vacancy/revenue.
+
+Tối thiểu:
+
+text
+Sao chép
+Stay date
+Booking created timestamp
+Check-in/check-out
+Room type
+Room assignment optional
+Booking status
+Source/channel
+Rate plan
+Gross room rate
+Discount
+Commission/distribution cost nếu có
+Cancellation timestamp
+Room block / out-of-order
+Rate snapshots
+Inventory snapshots
+Campaign action timeline
+Ads spend
+Variable cost inputs nếu có
+PII khách phải được tối thiểu hóa.
+
+KPI pilot
+Nhóm	KPI
+Data	reconciliation match, stale incidents, missing mappings
+Adoption	weekly active targeted users
+Owner	time-to-understand exception, approval time
+Operations	task SLA, rework, room turnaround, downtime
+Revenue	Occupancy, ADR, RevPAR, pickup
+Commercial	net ADR, campaign contribution
+Quality	cancellation/no-show
+System	error rate, sync latency, queue backlog
+Support	support tickets/property/week
+
+GO / PAUSE / STOP
+Các threshold sau là ngưỡng pilot do BeeSmart đề xuất, không phải benchmark ngành.
+
+GO
+Tiếp tục mở rộng khi:
+
+≥ 99,5% các record booking/inventory trong phạm vi pilot được đối soát hoặc có lý do mismatch rõ ràng.
+Không có lỗi làm overbooking do BeeSmart.
+Không có cross-property data leak.
+≥ 80% user thuộc nhóm pilot dùng workflow mục tiêu hàng tuần.
+≥ 90% action critical có owner và audit trail.
+Owner có thể giải thích được ba cảnh báo chính mà không cần hỏi người kỹ thuật.
+Một hoặc nhiều workflow chứng minh giảm thao tác/thời gian vận hành bằng số đo trước/sau.
+Khách hàng pilot đồng ý rằng sản phẩm giải quyết vấn đề đủ lớn để thảo luận hợp đồng trả phí.
+Không bắt buộc phải chứng minh tăng RevPAR trong pilot đầu tiên để GO.
+
+PAUSE
+Dừng mở rộng tính năng khi:
+
+mismatch >0,5% mà chưa biết nguyên nhân;
+manager phải nhập lại quá nhiều dữ liệu;
+approval queue trở thành bottleneck;
+nhân viên bỏ app và quay lại Zalo/sổ tay;
+financial coverage quá thấp để tính contribution;
+một connector đòi hỏi chi phí/certification vượt giả định ban đầu.
+STOP production write
+Phải dừng write ngay khi:
+
+BeeSmart có thể tạo overbooking;
+giá public bị thay sai;
+OTA/PMS diverge mà hệ thống không phát hiện;
+Ads vượt internal approved ceiling;
+payment/booking idempotency lỗi;
+dữ liệu một khách sạn có thể bị khách sạn khác truy cập;
+không khôi phục được backup đã kiểm thử.
+Chi phí thiết kế high-fidelity
+Các mức dưới đây là budget planning của em, không phải bảng giá thị trường đã khảo sát bằng báo giá nhà thiết kế.
+
+Phạm vi	Person-days	Ngân sách tham chiếu
+Owner 15–18 màn cốt lõi	12–18	35–80 triệu
+Full Owner 30 màn	20–28	60–140 triệu
+Manager/Staff mobile 16 màn	10–16	30–80 triệu
+Design system + component states	6–10	20–50 triệu
+Prototype + error/loading/empty/stale	5–8	15–40 triệu
+Presentation boards + export	3–5	10–25 triệu
+Full high-fidelity package	35–50	100–250 triệu
+
+Nếu chúng ta tự làm phần lớn bằng Figma + AI + Codex và chỉ thuê designer để art-direction/review, chi phí tiền mặt có thể thấp đáng kể, nhưng công sức nội bộ vẫn tồn tại.
+
+Giá sản phẩm trong bối cảnh thị trường
+ezCloud hiện niêm yết gói 0–2 sao ở mức 18.000đ/phòng/tháng, Nâng cao 48.000đ/phòng/tháng, Cao cấp 66.000đ/phòng/tháng; gói cao hơn bổ sung OTA/channel distribution và direct booking. Đây là bảng giá công khai của nhà cung cấp dành cho phân khúc họ mô tả, không phải báo giá resort 3–5 sao. 
+
+Skyhotel hiện niêm yết cho 100 phòng mức tương đương 1 triệu đồng/tháng ở một số kỳ thanh toán dài; module housekeeping được tính thêm 3.000đ/phòng/tháng. Cấu trúc bảng giá phụ thuộc kỳ hạn và module nên không nên so sánh một con số duy nhất với BeeSmart. 
+
+Do đó em vẫn không chọn chiến lược “BeeSmart rẻ nhất”.
+
+Đề xuất hypothesis cần thử:
+
+BeeSmart	Giá thử nghiệm	Mục tiêu
+OwnerOps Basic	1,9–2,9 triệu/tháng	Dashboard + work engine
+OwnerOps Connect	3,9–5,9 triệu/tháng	+ PMS connector + reconciliation
+Revenue Control	6,9–9,9 triệu/tháng	+ vacancy/revenue/approval
+Growth Automation	Add-on	Ads/API/AI usage
+Custom PMS connector	Setup fee	Theo vendor/complexity
+
+Đây chưa phải bảng giá chính thức. Điểm cần kiểm chứng là khách có trả thêm cho Owner Control + accountability + revenue action hay không.
+
+Deliverables, checklist và nguồn nghiên cứu
+Bộ bàn giao cuối cùng em đề xuất
+Deliverable	Số lượng	Effort
+Owner desktop high-fidelity	30 frames	20–28 ngày người
+Manager/staff mobile	16 frames	10–16 ngày người
+Presentation PNG clean	46+	Nằm trong design
+Presentation PNG annotated	25–30	3–5 ngày
+Owner mobile	5–8 frames	3–5 ngày
+Design system	1 library	6–10 ngày
+Vacancy flow diagrams	5–7	2–3 ngày
+Booking/room state diagrams	3	1 ngày
+Clickable prototype	5 journeys	4–6 ngày
+API capability matrix	1	2–4 ngày
+Connector contract	1 spec	3–5 ngày
+Pilot runbook	1	2–3 ngày
+KPI dictionary	1	2–3 ngày
+GO/PAUSE/STOP checklist	1	1 ngày
+Figma export manifest	1	<1 ngày
+
+Các effort có thể chồng lấn; không cộng thẳng tất cả thành lịch calendar.
+
+Năm prototype journey phải click được
+Journey A
+
+text
+Sao chép
+Owner Dashboard
+→ Vacancy Heatmap
+→ D+3 detail
+→ Cause analysis
+→ Suggested Action
+→ Approve
+→ Execution
+→ Results
+Journey B
+
+text
+Sao chép
+Owner Alert
+→ Maintenance issue
+→ Manager
+→ Technician
+→ Photo evidence
+→ QA
+→ Room back to inventory
+→ Owner sees recovered inventory
+Journey C
+
+text
+Sao chép
+Checkout
+→ Dirty
+→ Housekeeping task
+→ Submit
+→ Failed inspection
+→ Rework
+→ Accepted
+→ Ready
+Journey D
+
+text
+Sao chép
+Weak date
+→ Package builder
+→ contribution preview
+→ approval
+→ publish
+→ verify
+Journey E
+
+text
+Sao chép
+Weak D+2
+→ Ads draft
+→ Owner budget approval
+→ launch
+→ inventory drops
+→ stop rule
+→ result report
+Checklist Figma/Canva
+Trước khi một ảnh được coi là hoàn thành:
+
+Có role rõ: Owner/Manager/Staff.
+Có property/date/timezone.
+Có DEMO DATA.
+Có last updated/asOf.
+Có nguồn PMS/CM.
+Có loading state.
+Có empty state.
+Có stale state.
+Có error state.
+Có no-permission state.
+Có partial-data state.
+Có action owner.
+Có người chịu trách nhiệm.
+Có deadline/SLA.
+Có audit history.
+Có before/after cho thay đổi giá.
+Có contribution preview trước campaign.
+Có floor/cap/expiry.
+Có confirmation khi write ra hệ thống ngoài.
+Có trạng thái sent khác verified.
+Có rollback.
+Mobile không lộ dữ liệu không cần thiết.
+Ảnh minh chứng có task/room association.
+Không dùng số demo như claim ROI.
+Component dùng Auto Layout/variants.
+Export có node/frame/version rõ ràng.
+Việc em đề xuất làm ngay sau báo cáo này
+Không vẽ tiếp toàn bộ PMS một cách dàn trải.
+
+Khóa trước bộ Owner Vacancy Command Center:
+
+OWN-01 → OWN-03 → OWN-05 → OWN-06 → OWN-10 → OWN-11 → OWN-18 → OWN-20 → OWN-22 → OWN-24 → OWN-25
+
+Sau đó mới vẽ mobile Manager/Staff để chứng minh rằng những gì Owner nhìn thấy thực sự dẫn tới công việc ở khách sạn.
+
+Về mặt trình bày sales, đây sẽ tạo ra câu chuyện rất rõ:
+
+“Chủ nhìn thấy vấn đề → BeeSmart giải thích nguyên nhân → đề xuất hướng xử lý → quản lý giao việc → nhân viên thực hiện → quản lý nghiệm thu → hệ thống đo kết quả → chủ nhìn thấy tiền và hiệu quả.”
+
+Đó là câu chuyện bán hàng mạnh hơn nhiều so với trình bày 9 menu PMS.
+
+Đối chiếu thị trường
+ezCloud đã có mobile app cho Owner, PMS/housekeeping và channel integration; Skyhotel đã có PMS giá thấp; Agoda có availability, rate plans và promotions; SiteMinder, Cloudbeds và OPERA có hệ sinh thái tích hợp mạnh. Vì thế “quản lý phòng” không phải moat của BeeSmart. 
+
+Suy luận chiến lược của em: moat có khả năng hình thành hơn nằm ở sự kết hợp:
+
+text
+Sao chép
+Trusted operational data
+        +
+Owner-centric decision UX
+        +
+Work accountability
+        +
+Revenue action workflow
+        +
+Vietnamese onboarding/support
+        +
+Cross-PMS connector
+        +
+Measured contribution
+Khả năng này vẫn phải chứng minh bằng pilot. Không có nguồn nào hiện cho phép chúng ta tuyên bố BeeSmart chắc chắn tăng occupancy hoặc RevPAR một tỷ lệ cụ thể.
+
+Nguồn chính và ngày truy cập
+Tất cả các nguồn web dưới đây được truy cập 26/10/2026.
+
+Nguồn Việt Nam / nhà cung cấp
+
+ezCloudhotel — sản phẩm PMS và ứng dụng Owner — nguồn chính thức của nhà cung cấp; thông tin tính năng là tuyên bố của ezCloud. 
+
+ezCloud — bảng giá PMS 0–2 sao — giá niêm yết công khai, có Basic/Advanced/Premium và trial; không dùng làm báo giá cho resort 3–5 sao. 
+
+Skyhotel — bảng giá — giá theo số phòng/kỳ hạn và module add-on. 
+
+SMILE PMS — website nhà cung cấp; trong nghiên cứu này chưa tìm thấy tài liệu production API đủ để kết luận quyền tích hợp. 
+
+OTA / Channel Manager / PMS APIs
+
+Booking.com Connectivity APIs — tài liệu chính thức về availability, reservations và prices cho Connectivity Partners. 
+
+Booking.com Rates & Availability — inventory/pricing/restrictions. 
+
+Agoda — Connect Channel Manager — mapping property/room/rate-plan IDs và xử lý lỗi kết nối. 
+
+Cloudbeds — API Access — access có thể nằm trong package hoặc là add-on trả thêm. 
+
+Cloudbeds — Webhooks — event-driven reservation/room updates. 
+
+SiteMinder — Integration Process — partnership, test environment, development/certification. 
+
+SiteMinder — pmsXchange API — ARI, reservations, push/pull. 
+
+SiteMinder — Integration FAQ — partnership/certification và timeline tham khảo. 
+
+Oracle Hospitality Integration Platform — OPERA Cloud APIs/business events. 
+
+Expedia Group Connectivity Partner Program — commercial và technical requirements cho connectivity partners. 
+
+Revenue management / Ads
+
+Cornell eCornell — Hotel Revenue Management — occupancy/ADR/RevPAR và revenue-management decision making. 
+
+HotelTechReport — RevPAR — công thức RevPAR và tương tác giữa ADR/occupancy; nguồn ngành thứ cấp. 
+
+Google Ads — Average Daily Budget — daily/monthly spend behavior. 
+
+Meta — About Budgets — daily budget là average amount và không phải hard cap. 
+
+Nguồn nội bộ dự án
+
+Repo resort-management hiện xác định OwnerOps là ứng viên MVP, giữ PMS/CM làm nguồn chính và chưa coi willingness-to-pay, hiệu quả vận hành hay kết nối PMS thật là điều đã được chứng minh.
+
+Tài liệu handoff Figma cũng chưa coi thiết kế hiện tại là biên bản nghiệm thu cuối cùng; cần frame/node mapping, trạng thái loading/error/stale/permission, mobile flow và prototype xuyên màn hình trước khi khóa thiết kế.
+
+Khuyến nghị cuối cùng, boss man: bước tiếp theo không phải nghiên cứu thêm hàng chục PMS. Nên dành vòng thiết kế kế tiếp để tạo bộ khoảng 30 ảnh Owner high-fidelity + 16 ảnh Manager/Staff, trong đó vacancy là câu chuyện trung tâm. Khi khách hàng nhìn bộ ảnh, họ phải hiểu ngay BeeSmart không chỉ nói “phòng đang trống”, mà giúp họ phát hiện đúng phòng trống, tìm nguyên nhân, giao người xử lý, lựa chọn cách bán, kiểm soát ngân sách và xem kết quả tài chính sau cùng. Đây là phiên bản sản phẩm đủ mạnh để đem đi trình bày, lấy phản hồi thị trường và quyết định có nên đầu tư full implementation hay không.
+
+Status: Đã hoàn thành Deep Research, kiểm tra trực tiếp Figma hiện tại và tài liệu GitHub, đối chiếu PMS/Channel Manager/OTA chính thức, xác định bộ 46+ màn high-fidelity, workflow vacancy, state machine, API/connector strategy, KPI, Ads guardrails, pilot, GO/PAUSE/STOP và ngân sách thiết kế; chưa tạo các PNG/Figma high-fidelity mới trong lượt nghiên cứu này.

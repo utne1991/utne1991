@@ -1,0 +1,30 @@
+{
+  "received_date": "2026-10-26",
+  "source_type": "user_supplied_research",
+  "original_file_name": "Văn bản đã dán.txt",
+  "uploaded_file_id": "file_00000000fa0082098ec23f45024f8179",
+  "original_path": "OWNER-CONTROL-HIGH-FIDELITY-2026-10-26.raw.txt",
+  "readable_path": "OWNER-CONTROL-HIGH-FIDELITY-2026-10-26.md",
+  "byte_count": 47774,
+  "sha256": "d0e871b13a4631070f807466a35b5507d0941745fa222cc1f33aa355f8dd2e37",
+  "project_head_at_intake": "dd90c191bfab0d6b274b8c7e45683ff781110add",
+  "url_count_in_supplied_text": 0,
+  "claims_attributed_to_source": [
+    "direct Figma metadata inspection",
+    "official vendor documentation research"
+  ],
+  "independently_verified_in_this_intake": [
+    "file integrity",
+    "repository artifacts at recorded commit",
+    "illustrative inventory and revenue arithmetic"
+  ],
+  "not_independently_verified": [
+    "Figma nodes or versions",
+    "vendor documentation and current prices",
+    "API entitlement",
+    "market demand or ROI",
+    "deployment state outside repository"
+  ],
+  "application_implementation_authorized_by_this_request": false,
+  "figma_high_fidelity_created_in_this_intake": false
+}
