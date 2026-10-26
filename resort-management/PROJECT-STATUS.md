@@ -4,6 +4,8 @@ Ngày rà soát: 26/10/2026. Snapshot đối chiếu ban đầu: `f9b004d69f34de
 
 **Tiếp nhận kế hoạch PR #1 sau vòng rà soát ban đầu:** đã đọc head `7577c9c`, một file task kế hoạch, và lưu [review + backlog + fixture](docs/PILOT-OBSERVABILITY-REVIEW.md). Main tại thời điểm đọc PR là `0c6b9bf`; task chưa được merge. Người dùng xác nhận chỉ đánh giá/lưu, chưa bắt đầu code. Không có VPS/repo app/DNS/telemetry thực được tạo.
 
+**Lượt tiếp tục sau commit `ceb5e95`:** đã gom NEXT-01 thành [đặc tả OwnerOps đề xuất](docs/OWNEROPS-MVP-CONTRACT.md) và sửa [handoff Claude](docs/CLAUDE-HANDOFF.md) để không mặc định giao dashboard S3a cũ. Bổ sung luồng sáu view, ma trận quyền, state/revision, source ownership và mẫu số KPI. Đây là kế hoạch chưa duyệt; không phải prototype mới, backend, test nghiệp vụ hoặc tiến độ OBS-01–08.
+
 ## 1. Kết luận
 
 **Các báo cáo đã nhận, tài liệu thiết kế và đầu ra local có thể lưu đã được đưa vào repo. Đủ căn cứ để chọn MVP và thử một hành trình demo, chưa đủ để kết luận sản phẩm sẵn sàng vận hành/bán.**
@@ -47,6 +49,8 @@ Không có package manifest/app framework, backend, migration BeeSmart đã ch�
 
 Đầu ra cần có: một scope ngắn gồm người dùng, hành trình, dữ liệu đọc/ghi, phần không làm, policy reviewer/giá trị critical, mẫu số KPI, nguồn tài chính và điều kiện nghiệm thu. Quyết định liên quan D02/D03/D06/D07/D11/D14; chưa được đánh dấu đã chốt.
 
+Bản thảo đã có tại [OWNEROPS-MVP-CONTRACT](docs/OWNEROPS-MVP-CONTRACT.md): đề xuất housekeeping synthetic trước, chưa bật tài chính/ảnh thật/PMS write; còn cần chốt scope, người review, KPI, nguồn UI và nơi đặt mã. NEXT-01 vẫn mở.
+
 ### NEXT-02 — Khảo sát resort thật và một nguồn dữ liệu
 
 Xác định PMS/CM đang dùng, quyền API/export, mẫu dữ liệu đã ẩn thông tin cá nhân, room/rate map và cách phát sinh task. Đề xuất lập ma trận ownership/capability cho booking, inventory, room readiness, task, chi phí, revenue/collection và approval. Chỉ một bên làm nguồn ghi chính cho từng dữ liệu; CSV có thể dùng để prototype/đối soát nhưng không tự cho phép bán phòng realtime.
@@ -84,3 +88,5 @@ AI không thể tự tạo lời phỏng vấn, API entitlement, quote thương 
 Đã fetch và so HEAD với `refs/heads/main` từ GitHub; snapshot đầu vào trùng `f9b004d`. Đã so các raw source market/OwnerOps với upload/hash và bytes được commit, kiểm tra source/HTML của sáu Archify cùng hash evidence DOM. Kết quả khớp, không thực hiện lại browser-check hoặc backend test. Đã bổ sung raw source audit 002 còn thiếu; hai upload giống nhau không bị lưu trùng.
 
 Trang này và liên kết tài liệu được cập nhật trong commit tiếp theo; kiểm tra cuối chỉ xác nhận persistence/tính toàn vẹn, không phải duyệt sản phẩm. Khi có quyết định mới, cập nhật DECISIONS và trạng thái tương ứng thay vì ghi “đã hoàn thiện” cho toàn dự án.
+
+Lượt bổ sung đặc tả sau `ceb5e95`: kiểm tra 48 Markdown do dự án biên soạn (không gồm nội dung research) không có liên kết tệp nội bộ thiếu hoặc code fence lệch; một wireflow OwnerOps parse được bằng Mermaid 11.12.1. Đã đối chiếu prompt S3a lưu riêng với bản gốc: chỉ thêm dòng chỉ dẫn tham chiếu. Chưa render/browser review sơ đồ mới; không chạy lại tests wireframe/backend vì không thay mã ứng dụng.

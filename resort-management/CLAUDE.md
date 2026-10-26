@@ -2,6 +2,8 @@
 
 Đọc [PROJECT-STATUS](PROJECT-STATUS.md) để nắm inventory tài liệu, giới hạn bằng chứng và NEXT-01/02/03 trước khi đọc báo cáo dài. Trang này không thay DECISIONS hoặc biến các task đề xuất thành lệnh code.
 
+Lượt tiếp tục hiện tại chỉ hoàn thiện tài liệu: đọc [đặc tả OwnerOps đề xuất](docs/OWNEROPS-MVP-CONTRACT.md) và [handoff hiện hành](docs/CLAUDE-HANDOFF.md). Prompt dashboard S3a đã chuyển sang tài liệu tham chiếu riêng; không mặc định dùng nó để khởi tạo app hoặc coi scope OwnerOps đã chốt.
+
 **Chỉ thị xác nhận mới nhất:** người dùng chọn “Chỉ đánh giá và lưu kế hoạch, chưa bắt đầu code ứng dụng” cho hai báo cáo và PR #1. Xem [review pilot/observability](docs/PILOT-OBSERVABILITY-REVIEW.md). PR task vẫn là đề xuất; chưa merge, chưa có repo app/VPS/DNS/Sentry triển khai. Fixture synthetic là đầu vào kiểm thử tương lai, không phải tests đã chạy hoặc auth/work engine đã có.
 
 **Đọc căn cứ mới nhất trước:** [tóm tắt nghiên cứu thị trường dùng khi làm việc](docs/research/MARKET-RESEARCH-WORKING-SUMMARY.md), [báo cáo đầy đủ](docs/research/MARKET-RESEARCH-2026-10-26.md) và [tình trạng nguồn/bằng chứng](docs/research/MARKET-RESEARCH-SOURCE-REGISTER.md). Người dùng đã giao lưu và dùng làm căn cứ lập kế hoạch. Ưu tiên một PMS/CM connector, read/reconcile → ops → revenue có duyệt; không tự triển khai full PMS/CM hoặc direct OTA từ prototype cũ. Giá/ICP/cost/gate chưa là kết quả thị trường hoặc baseline đã chốt.
@@ -20,7 +22,7 @@
 4. [docs/PRODUCT-MAP.md](docs/PRODUCT-MAP.md): quy tắc phòng, booking và KPI.
 5. [docs/TOOLING-AND-SOURCES.md](docs/TOOLING-AND-SOURCES.md): cách dùng Archify, ECC, Hello-Agents.
 6. [design/dashboard.html](design/dashboard.html): bản mẫu có dữ liệu minh họa.
-7. [docs/CLAUDE-HANDOFF.md](docs/CLAUDE-HANDOFF.md): phạm vi và tiêu chí khi được giao triển khai giao diện.
+7. [docs/CLAUDE-HANDOFF.md](docs/CLAUDE-HANDOFF.md): hướng dẫn rà soát hiện hành và điều kiện trước lệnh code tương lai; prompt S3a cũ được liên kết riêng.
 
 ## Trạng thái và giới hạn
 

@@ -4,6 +4,8 @@ Bộ tài liệu dự án trong repository `utne1991/utne1991`, thư mục `reso
 
 ## Bắt đầu
 
+- **Kế hoạch bàn giao đang hoàn thiện:** [đặc tả OwnerOps MVP đề xuất](docs/OWNEROPS-MVP-CONTRACT.md) có bản đồ màn hình, quyền, chuyển trạng thái, nguồn dữ liệu và KPI; [hướng dẫn Claude hiện hành](docs/CLAUDE-HANDOFF.md) thay prompt dashboard cũ. Chỉ lưu kế hoạch, chưa chốt OwnerOps hoặc bắt đầu code.
+
 - **PR #1 / kế hoạch VPS và giám sát:** [kết quả review, backlog và fixture](docs/PILOT-OBSERVABILITY-REVIEW.md). Chỉ đánh giá/lưu theo xác nhận của người dùng; chưa merge PR hoặc bắt đầu code ứng dụng.
 
 - **Đọc nhanh trạng thái hiện tại:** [Đã lưu gì, còn thiếu gì và ba việc tiếp theo](PROJECT-STATUS.md). Đây là trang tổng hợp; các báo cáo dài và thiết kế đầy đủ nằm ở liên kết phía dưới.
@@ -16,7 +18,7 @@ Bộ tài liệu dự án trong repository `utne1991/utne1991`, thư mục `reso
 
 - **Bộ thiết kế bên ngoài được báo cáo:** [Figma/FigJam BeeSmart HotelOS và checklist đối chiếu](docs/FIGMA-HANDOFF.md). Đã ghi nhận liên kết; chưa đọc được frame/node. [SaaS và profile 2–5 sao](docs/BEESMART-PRODUCT-OPTIONS.md) là phương án nghiên cứu, chưa khóa phạm vi/giá.
 
-- **Toàn bộ PMS, không chỉ dashboard:** đọc [mô hình vận hành resort 100 phòng](docs/RESORT-OPERATING-MODEL.md), [đặc tả chín phân hệ](docs/SCREEN-SPECIFICATIONS.md) và [bảng bao phủ màn hình](docs/SCREEN-COVERAGE.md). Repo chưa chứa bản vẽ chi tiết ngoài dashboard; bộ Figma bên ngoài được theo dõi riêng ở FIGMA-HANDOFF.
+- **Toàn bộ PMS, không chỉ dashboard:** đọc [mô hình vận hành resort 100 phòng](docs/RESORT-OPERATING-MODEL.md), [đặc tả chín phân hệ](docs/SCREEN-SPECIFICATIONS.md) và [bảng bao phủ màn hình](docs/SCREEN-COVERAGE.md). Repo có dashboard và wireframe local chín phân hệ/bốn mobile view; chưa phải bộ UI đã duyệt. Figma bên ngoài được theo dõi riêng ở FIGMA-HANDOFF.
 
 - **Trước khi khóa triển khai:** đọc [kết quả rà soát](docs/DESIGN-REVIEW.md), [quyết định còn mở](docs/DECISIONS.md) và [phạm vi từng đợt](docs/IMPLEMENTATION-BRIEF.md). Chưa có baseline vận hành được xác nhận.
 

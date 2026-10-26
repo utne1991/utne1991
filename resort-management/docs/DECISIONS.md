@@ -32,6 +32,8 @@
 
 D01 đã được hỏi trong cuộc trò chuyện; chưa nhận thông tin thì tiếp tục làm tài liệu và giao diện mẫu, giữ câu trả lời là chưa biết. Không suy từ README hồ sơ GitHub rằng resort chưa có PMS.
 
+Bản thảo hỗ trợ chốt D03/D07/D13/D14: [OWNEROPS-MVP-CONTRACT](OWNEROPS-MVP-CONTRACT.md), gồm housekeeping synthetic, sáu view, quyền/state/revision và KPI. Các lựa chọn trong bản thảo chưa được người dùng xác nhận; không đóng quyết định vì tài liệu đã được lưu. [Handoff hiện hành](CLAUDE-HANDOFF.md) dành cho rà soát kế hoạch, prompt S3a cũ là tham chiếu riêng.
+
 ## Cách ghi một quyết định đã chốt
 
 Ghi ID, nội dung chọn, lựa chọn bị loại và lý do nếu cần, người xác nhận, ngày, liên kết thông điệp/issue/PR và commit baseline. Nếu không có thông tin xác nhận, giữ trạng thái mở. Không dùng checklist đã tích để đại diện việc người dùng chưa trả lời.

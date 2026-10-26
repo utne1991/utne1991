@@ -2,6 +2,8 @@
 
 Đây là đề xuất để chốt phạm vi, chưa phải lệnh bắt đầu code. Đọc cùng [sổ quyết định](DECISIONS.md) và [quy tắc vận hành](OPERATING-RULES.md).
 
+Điểm bàn giao hiện hành là [CLAUDE-HANDOFF](CLAUDE-HANDOFF.md); [đặc tả OwnerOps đề xuất](OWNEROPS-MVP-CONTRACT.md) cụ thể hóa một thử nghiệm nhỏ. S3a–d dưới đây giữ làm thư viện chia đợt cũ, chưa là thứ tự MVP được chọn.
+
 Đề xuất [OwnerOps](OWNEROPS-ASSESSMENT.md) đã được đánh giá như ứng viên thu hẹp MVP, chưa được chốt. Các task HOTEL-OWNER-001 đến HOTEL-AI-008 trong nguồn là ý tưởng phân rã, không phải lệnh chạy theo thứ tự số: discovery/nguồn dữ liệu, tenant và quyền cần trước backend; thu/hoàn thật và PMS replacement không tự thuộc OwnerOps. Không biến yêu cầu lưu/đánh giá thành triển khai app.
 
 **Căn cứ thị trường tiếp nhận sau audit 002:** dùng [working summary](research/MARKET-RESEARCH-WORKING-SUMMARY.md) để lập MVP kết nối PMS/CM, đọc/đối soát rồi ops/revenue có duyệt. Các đợt S3a–d bên dưới là cấu trúc demo/full PMS trước đó, chưa là backlog v1 được duyệt. Trước giao code cần chốt scope một connector, ownership từng dữ liệu và hành động ghi được hỗ trợ; form thu/hoàn/night audit trong prototype không cấp quyền thay nghiệp vụ nguồn chính.
@@ -14,7 +16,7 @@ Gồm dashboard hiện tại, bộ lọc trạng thái, chuyển nhóm công vi�
 
 Không nằm trong PR này: lịch kéo thả đầy đủ, backend, database, PMS/OTA, thanh toán, AI hoặc chạy quảng cáo. Báo cáo kênh hiện là dữ liệu kỳ mẫu độc lập, phải ghi rõ.
 
-Đầu ra: app chạy được theo hướng dẫn, ảnh ở các viewport đã kiểm tra, build/typecheck, kiểm thử có ý nghĩa và PR có phạm vi rõ. Theo tiêu chí chi tiết trong [CLAUDE-HANDOFF](CLAUDE-HANDOFF.md).
+Đầu ra: app chạy được theo hướng dẫn, ảnh ở các viewport đã kiểm tra, build/typecheck, kiểm thử có ý nghĩa và PR có phạm vi rõ. Theo tiêu chí chi tiết trong [prompt dashboard S3a tham chiếu](DASHBOARD-DEMO-HANDOFF.md), chỉ khi được giao riêng S3a.
 
 ## 2. S3b — Lịch phòng và booking demo, PR sau
 

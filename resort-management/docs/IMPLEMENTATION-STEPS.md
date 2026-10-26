@@ -2,6 +2,8 @@
 
 Đây là bảng trạng thái chung. Sơ đồ thể hiện **trình tự dự kiến**, không có nghĩa các bước đã được triển khai hoặc được chủ dự án duyệt.
 
+Lượt tiếp tục chỉ hoàn thiện kế hoạch: [đặc tả OwnerOps đề xuất](OWNEROPS-MVP-CONTRACT.md) và [handoff hiện hành](CLAUDE-HANDOFF.md) cụ thể hóa NEXT-01, chưa giao code. S0–S7 là lịch sử bộ thiết kế full PMS; không phải dependency bắt buộc phải code toàn PMS trước khi thử OwnerOps.
+
 **Đọc trước khi chọn bước:** [nghiên cứu thị trường dùng làm căn cứ](research/MARKET-RESEARCH-WORKING-SUMMARY.md) ưu tiên pilot một connector và luồng discovery/baseline → read/reconcile → ops/agency → revenue → controlled write có điều kiện. Bảng S0–S7 bên dưới giữ tiến độ bộ thiết kế trước đó; chưa tự duyệt full PMS hoặc tất cả S3a–d làm MVP thương mại. Chốt scope pilot/nguồn chính trước khi cập nhật baseline code.
 
 Đọc [kết quả rà soát trước khi khóa](DESIGN-REVIEW.md). Baseline chưa được xác nhận; các quyết định ở [DECISIONS](DECISIONS.md). Theo yêu cầu cập nhật 26/10/2026, thiết kế phải bao quát [cả chín phân hệ PMS](SCREEN-SPECIFICATIONS.md) và [quy trình vận hành](RESORT-OPERATING-MODEL.md) trước khi chốt giao diện. S3a–S3d chia đợt code theo [phạm vi giao việc](IMPLEMENTATION-BRIEF.md), không bỏ qua thiết kế phần còn lại.
@@ -28,8 +30,8 @@ flowchart TD
 | --- | --- | --- | --- |
 | S0 | Có bản nháp | Tổng quan, PRODUCT-MAP, HTML dashboard | Có file; đã kiểm tra cú pháp JS và phép tính mẫu; chưa kiểm tra giao diện trong trình duyệt |
 | S1 | Có tài liệu và HTML Archify; kiểm tra trình duyệt còn vướng | Danh mục ba nguồn, sơ đồ nghiệp vụ, hướng dẫn đọc | Sáu HTML đã đạt validate/deliver/strict check; browser-check lỗi môi trường, chưa duyệt trực quan. Xem [bằng chứng](diagrams/VERIFICATION.md) |
-| S2 | Chưa chốt | Vẽ UI01–UI09 và rà hành trình xuyên màn hình; xác nhận chính sách/phạm vi | Hiện mới có đặc tả toàn hệ thống và dashboard HTML; chưa có đủ bản vẽ/phê duyệt |
-| S3a | Chưa làm app | Dashboard và tương tác theo CLAUDE-HANDOFF; không gồm lịch đầy đủ | App demo có hướng dẫn chạy, kiểm tra responsive, build/typecheck và PR |
+| S2 | Chưa chốt | Vẽ UI01–UI09 và rà hành trình xuyên màn hình; xác nhận chính sách/phạm vi | Có đặc tả, dashboard và wireframe local 9+4 view; chưa duyệt UI/Figma/baseline |
+| S3a | Chưa làm app | Dashboard theo DASHBOARD-DEMO-HANDOFF, chỉ khi giao riêng; không gồm lịch đầy đủ | App demo có hướng dẫn chạy, kiểm tra responsive, build/typecheck và PR |
 | S3b | Chưa làm | Chốt lịch/form rồi làm đợt demo riêng | Lịch theo ngày, booking mẫu và xử lý xung đột; chưa kết nối dịch vụ thật |
 | S3c | Chưa làm | Buồng phòng, bảo trì, khách và yêu cầu demo | Có người phụ trách, ưu tiên và bàn giao; cùng fixture booking/phòng |
 | S3d | Chưa làm | Thu chi, doanh thu/chiến dịch, báo cáo và cấu hình demo | Tiền/chỉ số/quyền rõ, không giao dịch hoặc kết nối thật |
