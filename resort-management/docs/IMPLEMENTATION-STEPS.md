@@ -4,6 +4,8 @@
 
 Đọc [kết quả rà soát trước khi khóa](DESIGN-REVIEW.md). Baseline chưa được xác nhận; các quyết định ở [DECISIONS](DECISIONS.md). Theo yêu cầu cập nhật 26/10/2026, thiết kế phải bao quát [cả chín phân hệ PMS](SCREEN-SPECIFICATIONS.md) và [quy trình vận hành](RESORT-OPERATING-MODEL.md) trước khi chốt giao diện. S3a–S3d chia đợt code theo [phạm vi giao việc](IMPLEMENTATION-BRIEF.md), không bỏ qua thiết kế phần còn lại.
 
+Đã tiếp nhận báo cáo thiết kế Figma/FigJam BeeSmart HotelOS; việc ánh xạ frame và nghiệm thu chưa xác minh. Xem [FIGMA-HANDOFF](FIGMA-HANDOFF.md). Chưa đổi các bước S3–S7 thành đã làm từ báo cáo thiết kế.
+
 ```mermaid
 flowchart TD
     S0["S0 · Tổng quan và dashboard mẫu: đã có"] --> S1["S1 · Bản đồ từng bước và nguồn tham khảo: đã có"]

@@ -4,7 +4,9 @@ Bộ tài liệu dự án trong repository `utne1991/utne1991`, thư mục `reso
 
 ## Bắt đầu
 
-- **Toàn bộ PMS, không chỉ dashboard:** đọc [mô hình vận hành resort 100 phòng](docs/RESORT-OPERATING-MODEL.md), [đặc tả chín phân hệ](docs/SCREEN-SPECIFICATIONS.md) và [bảng bao phủ màn hình](docs/SCREEN-COVERAGE.md). Các trang ngoài dashboard hiện mới được đặc tả, chưa có bản vẽ chi tiết.
+- **Bộ thiết kế bên ngoài được báo cáo:** [Figma/FigJam BeeSmart HotelOS và checklist đối chiếu](docs/FIGMA-HANDOFF.md). Đã ghi nhận liên kết; chưa đọc được frame/node. [SaaS và profile 2–5 sao](docs/BEESMART-PRODUCT-OPTIONS.md) là phương án nghiên cứu, chưa khóa phạm vi/giá.
+
+- **Toàn bộ PMS, không chỉ dashboard:** đọc [mô hình vận hành resort 100 phòng](docs/RESORT-OPERATING-MODEL.md), [đặc tả chín phân hệ](docs/SCREEN-SPECIFICATIONS.md) và [bảng bao phủ màn hình](docs/SCREEN-COVERAGE.md). Repo chưa chứa bản vẽ chi tiết ngoài dashboard; bộ Figma bên ngoài được theo dõi riêng ở FIGMA-HANDOFF.
 
 - **Trước khi khóa triển khai:** đọc [kết quả rà soát](docs/DESIGN-REVIEW.md), [quyết định còn mở](docs/DECISIONS.md) và [phạm vi từng đợt](docs/IMPLEMENTATION-BRIEF.md). Chưa có baseline vận hành được xác nhận.
 

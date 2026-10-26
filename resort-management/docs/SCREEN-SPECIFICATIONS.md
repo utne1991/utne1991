@@ -2,6 +2,8 @@
 
 **Bản thiết kế bằng văn bản ngày 26/10/2026.** Chưa phải chín giao diện đã được vẽ/chạy; HTML hiện tại chỉ là dashboard mẫu. Đặc tả này là đầu vào để vẽ các trang liên kết và xuất Archify sau khi các quyết định liên quan được xác nhận.
 
+Bộ Figma/FigJam BeeSmart HotelOS bên ngoài đã được người dùng báo cáo tạo thành công, nhưng chưa đối chiếu nội dung trong phiên này. Xem [FIGMA-HANDOFF](FIGMA-HANDOFF.md); không tự đổi trạng thái các yêu cầu thành đạt từ số lượng khung hoặc tiêu đề báo cáo.
+
 ## Thành phần dùng chung
 
 Sidebar chín phân hệ; header có cơ sở, ngày/khoảng ngày, người dùng và trạng thái dữ liệu. Bộ lọc trong URL khi phù hợp để giữ ngữ cảnh giữa các trang. Panel chi tiết phòng/booking dùng cùng ID và nguồn dữ liệu; thao tác xong phản ánh ở các trang liên quan.

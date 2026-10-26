@@ -2,7 +2,9 @@
 
 Ngày 26/10/2026. Bảng này phân biệt **có đặc tả**, **có bản vẽ**, **có implementation** và **đã nghiệm thu**. Không có màn hình app production nào đã triển khai.
 
-| ID | Phân hệ | Đặc tả bố cục/hành động | Bản vẽ/HTML có thể xem | App / nghiệm thu |
+**Nguồn bên ngoài mới:** người dùng đã cung cấp báo cáo tạo Figma/FigJam BeeSmart HotelOS gồm chín màn nghiệp vụ. Xem [liên kết và bảng đối chiếu](FIGMA-HANDOFF.md). Chưa đọc được nội dung trong phiên cloud này nên không coi bản vẽ bên ngoài là chưa tồn tại hoặc đã nghiệm thu. Bảng bên dưới mô tả artifact hiện có trong repo.
+
+| ID | Phân hệ | Đặc tả bố cục/hành động | Bản vẽ/HTML trong repo | App / nghiệm thu |
 | --- | --- | --- | --- | --- |
 | UI01 | Tổng quan | Có bản nháp | Có dashboard HTML mẫu, chưa kiểm tra hiển thị | Chưa |
 | UI02 | Lịch phòng | Có bản nháp | Chưa có bản vẽ chi tiết | Chưa |

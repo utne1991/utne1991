@@ -18,6 +18,7 @@ Xây dựng ứng dụng quản lý phòng, lịch đặt phòng, buồng phòng
 - [Tổng quan dự án](resort-management/PROJECT-OVERVIEW.md)
 - [Quy trình vận hành và chín phân hệ PMS](resort-management/docs/RESORT-OPERATING-MODEL.md)
 - [Đặc tả từng màn hình](resort-management/docs/SCREEN-SPECIFICATIONS.md)
+- [Thiết kế Figma/FigJam BeeSmart HotelOS — nguồn và đối chiếu](resort-management/docs/FIGMA-HANDOFF.md)
 - [Rà soát trước khi chốt triển khai](resort-management/docs/DESIGN-REVIEW.md)
 - [Sơ đồ từng bước và tiến độ](resort-management/docs/IMPLEMENTATION-STEPS.md)
 - [Danh mục sơ đồ](resort-management/docs/diagrams/README.md)
