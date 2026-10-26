@@ -1,0 +1,12 @@
+{
+  "received_date": "2026-10-26",
+  "source_type": "user_supplied_report",
+  "author_attribution_as_supplied": "MrAiTiNiuBi",
+  "original_file_name": "Văn bản đã dán.txt",
+  "original_path": "MARKET-RESEARCH-2026-10-26.raw.txt",
+  "readable_path": "MARKET-RESEARCH-2026-10-26.md",
+  "byte_count": 40047,
+  "sha256": "663f940e4db940c977ac6f944106510d266af07c49f2032b0bfcf46eb49cb657",
+  "external_url_count_in_upload": 0,
+  "verification_scope": "file integrity and document ingestion; no independent market, source, pricing, API access or customer validation"
+}

@@ -2,6 +2,8 @@
 
 Đây là bảng trạng thái chung. Sơ đồ thể hiện **trình tự dự kiến**, không có nghĩa các bước đã được triển khai hoặc được chủ dự án duyệt.
 
+**Đọc trước khi chọn bước:** [nghiên cứu thị trường dùng làm căn cứ](research/MARKET-RESEARCH-WORKING-SUMMARY.md) ưu tiên pilot một connector và luồng discovery/baseline → read/reconcile → ops/agency → revenue → controlled write có điều kiện. Bảng S0–S7 bên dưới giữ tiến độ bộ thiết kế trước đó; chưa tự duyệt full PMS hoặc tất cả S3a–d làm MVP thương mại. Chốt scope pilot/nguồn chính trước khi cập nhật baseline code.
+
 Đọc [kết quả rà soát trước khi khóa](DESIGN-REVIEW.md). Baseline chưa được xác nhận; các quyết định ở [DECISIONS](DECISIONS.md). Theo yêu cầu cập nhật 26/10/2026, thiết kế phải bao quát [cả chín phân hệ PMS](SCREEN-SPECIFICATIONS.md) và [quy trình vận hành](RESORT-OPERATING-MODEL.md) trước khi chốt giao diện. S3a–S3d chia đợt code theo [phạm vi giao việc](IMPLEMENTATION-BRIEF.md), không bỏ qua thiết kế phần còn lại.
 
 Đã tiếp nhận báo cáo thiết kế Figma/FigJam BeeSmart HotelOS; việc ánh xạ frame và nghiệm thu chưa xác minh. Xem [FIGMA-HANDOFF](FIGMA-HANDOFF.md). Chưa đổi các bước S3–S7 thành đã làm từ báo cáo thiết kế.

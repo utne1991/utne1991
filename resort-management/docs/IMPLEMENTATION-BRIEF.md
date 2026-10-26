@@ -2,6 +2,8 @@
 
 Đây là đề xuất để chốt phạm vi, chưa phải lệnh bắt đầu code. Đọc cùng [sổ quyết định](DECISIONS.md) và [quy tắc vận hành](OPERATING-RULES.md).
 
+**Căn cứ thị trường tiếp nhận sau audit 002:** dùng [working summary](research/MARKET-RESEARCH-WORKING-SUMMARY.md) để lập MVP kết nối PMS/CM, đọc/đối soát rồi ops/revenue có duyệt. Các đợt S3a–d bên dưới là cấu trúc demo/full PMS trước đó, chưa là backlog v1 được duyệt. Trước giao code cần chốt scope một connector, ownership từng dữ liệu và hành động ghi được hỗ trợ; form thu/hoàn/night audit trong prototype không cấp quyền thay nghiệp vụ nguồn chính.
+
 **Cập nhật 26/10/2026:** thiết kế phải bao quát cả PMS trước khi chốt giao diện. [Chín đặc tả màn hình](SCREEN-SPECIFICATIONS.md), [các hành trình cần rà](SCREEN-COVERAGE.md) và [wireframe local audit 002](../design/pms-wireframes.html) là đầu vào chung. Các đợt S3 chia khối lượng code, không giới hạn thiết kế vào dashboard. Wireframe còn là phác thảo, chưa mọi biến thể; Figma 16 frame theo báo cáo ngoài cần node/version và đối chiếu theo [FIGMA-HANDOFF](FIGMA-HANDOFF.md).
 
 ## 1. S3a — PR dashboard mẫu đầu tiên

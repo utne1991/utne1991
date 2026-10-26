@@ -8,14 +8,15 @@
 - Tài liệu/mã nguồn lưu trong `utne1991/utne1991/resort-management/`.
 - Hoàn thiện bản đồ bằng Archify trước; việc giao Claude lập trình để sau. Không có yêu cầu bắt đầu backend hoặc chạy quảng cáo thật.
 - Cập nhật yêu cầu 26/10/2026: thiết kế phải bao quát lịch, booking, buồng phòng, doanh thu/chiến dịch và toàn quy trình PMS, không chỉ dashboard. Đây là yêu cầu phạm vi thiết kế; chưa đồng nghĩa đã duyệt từng bố cục hoặc cho phép code.
+- Sau nghiên cứu thị trường, người dùng yêu cầu lưu báo cáo và dựa vào đó làm việc. Đã tiếp nhận làm căn cứ ưu tiên lập kế hoạch: [Operations & Revenue Control kết nối PMS/CM](research/MARKET-RESEARCH-WORKING-SUMMARY.md). Việc này không tự duyệt mọi số liệu/giá hoặc chọn provider/đóng các quyết định dưới đây.
 
 ## Các quyết định cần chốt
 
 | ID | Chủ đề | Đề xuất hoặc lựa chọn cần xác nhận | Cần trước |
 | --- | --- | --- | --- |
 | D01 | Hệ thống hiện có | Resort dùng PMS/channel manager nào, kênh bán nào, có API/export được hỗ trợ không? | S4 |
-| D02 | Nguồn dữ liệu chính | Nếu giữ PMS: app tích hợp theo quyền; nếu chưa có: đánh giá app làm nguồn booking/tồn chính. Chọn một bên sở hữu ghi cho từng dữ liệu. | S4 |
-| D03 | Phạm vi thiết kế và chia đợt code | Thiết kế toàn UI01–UI09 trước. Đề xuất chia code S3a dashboard, S3b lịch/booking, S3c vận hành/khách, S3d thu chi/báo cáo/doanh thu/cấu hình mẫu; chốt từng đợt sau khi rà hành trình liên màn hình. | Trước chốt UI và đợt code tương ứng |
+| D02 | Nguồn dữ liệu chính | Theo nghiên cứu, ưu tiên giữ PMS/CM hiện có làm nguồn booking/tồn chính, BeeSmart đọc/đối soát rồi ghi qua capability được cấp. Vẫn cần tên nguồn, entity/field ownership và contract thật; chưa giả định có quyền tạo/đổi booking hoặc tồn local. | S4 |
+| D03 | Phạm vi thiết kế và chia đợt code | Giữ UI01–09/S3a–d làm thư viện thiết kế/demo toàn PMS. Chốt MVP mới theo nghiên cứu: 1 connector + read/reconcile, ops/agency, revenue có duyệt; selected write chỉ khi đủ điều kiện. Chưa duyệt backlog hoặc baseline code cụ thể. | Trước chốt UI và đợt code tương ứng |
 | D04 | Phòng và thời gian | Danh mục phòng/loại thật; múi giờ, giờ nhận/trả, chốt ngày, khách nhận sớm/trả muộn, dọn phòng. Tiếng Việt/VND/Asia/Ho_Chi_Minh hiện là giả định mẫu. | S4 |
 | D05 | Chính sách bán | Hold bao lâu, điều kiện xác nhận, hủy/no-show, khách đoàn, gia hạn, overbooking và phòng bảo trì. Đề xuất không chủ động overbooking. | S4 |
 | D06 | Giá và tiền | Giá theo đêm, người/giường phụ nếu có; VAT/phí, đặt cọc, hoàn tiền, giảm giá; giao dịch nào qua app, giao dịch nào đối soát từ PMS. | S4 |

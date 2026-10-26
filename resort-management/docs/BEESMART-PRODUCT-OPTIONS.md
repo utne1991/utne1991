@@ -2,6 +2,8 @@
 
 Nguồn: báo cáo thiết kế người dùng cung cấp ngày 26/10/2026. Nội dung dưới đây là **đề xuất được ghi nhận**, chưa phải quyết định đổi thương hiệu, sản phẩm đã có hoặc bảng giá bán được phê duyệt. Phạm vi nền vẫn là PMS resort 100 phòng theo PROJECT-OVERVIEW.
 
+**Bổ sung sau nghiên cứu thị trường:** người dùng đã yêu cầu dựa vào [báo cáo thị trường](research/MARKET-RESEARCH-WORKING-SUMMARY.md) khi làm việc. Hướng v1 được ưu tiên lập kế hoạch là control layer trên PMS/CM, không mặc định thay PMS. Báo cáo đưa thêm giả thuyết gói Ops/Connect/Revenue; cả giá mới và bảng Figma bên dưới đều chưa là price list. Xem [bằng chứng/assumption](research/MARKET-RESEARCH-SOURCE-REGISTER.md), chưa tự cấu hình gói thuê bao hoặc lấy số đó làm báo giá thật.
+
 ## 1. Ba lớp cần chốt riêng
 
 | Lớp | Nội dung | Trạng thái |

@@ -16,6 +16,7 @@ You can click the Preview link to take a look at your changes.
 Xây dựng ứng dụng quản lý phòng, lịch đặt phòng, buồng phòng và hiệu quả kinh doanh cho resort 100 phòng.
 
 - [Tổng quan dự án](resort-management/PROJECT-OVERVIEW.md)
+- [Nghiên cứu thị trường — căn cứ làm việc tiếp theo](resort-management/docs/research/MARKET-RESEARCH-WORKING-SUMMARY.md)
 - [Audit 002: Figma, bảy blueprint, mobile và PMS tham khảo](resort-management/docs/TASK-RESORT-DESIGN-AUDIT-002.md)
 - [Quy trình vận hành và chín phân hệ PMS](resort-management/docs/RESORT-OPERATING-MODEL.md)
 - [Đặc tả từng màn hình](resort-management/docs/SCREEN-SPECIFICATIONS.md)

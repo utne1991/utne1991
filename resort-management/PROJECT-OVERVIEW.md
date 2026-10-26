@@ -6,6 +6,14 @@
 
 **Chủ dự án:** utne1991. **Nơi lưu:** repository `utne1991/utne1991`, thư mục `resort-management/`.
 
+## Căn cứ lập kế hoạch mới nhất
+
+Người dùng yêu cầu lưu nghiên cứu thị trường ngày 26/10/2026 và dựa vào đó làm việc. [Tóm tắt định hướng](docs/research/MARKET-RESEARCH-WORKING-SUMMARY.md) là điểm bắt đầu, kèm [báo cáo đầy đủ](docs/research/MARKET-RESEARCH-2026-10-26.md), [bản nguyên văn](docs/research/MARKET-RESEARCH-2026-10-26.raw.txt) và [tình trạng bằng chứng](docs/research/MARKET-RESEARCH-SOURCE-REGISTER.md).
+
+Ưu tiên lập kế hoạch **Operations & Revenue Control Layer kết nối PMS/channel manager hiện có**, pilot một resort, một nguồn booking/tồn chính và một connector. Luồng discovery/baseline → đọc/đối soát → ops/agency → revenue có duyệt → ghi có kiểm soát khi đủ điều kiện. Chưa chọn nhà cung cấp hoặc khẳng định resort đã có PMS; chưa phê duyệt giá, entitlement API, ngân sách hoặc baseline triển khai.
+
+Các phần chín phân hệ, ERD và full PMS bên dưới được giữ làm thư viện thiết kế dài hạn. Chúng không tự trở thành scope v1 sau khuyến nghị thị trường mới. Đọc lại ownership và giới hạn ghi trước khi giao code; không tạo inventory/folio song song với PMS nguồn chính.
+
 **Audit 002:** [gói thiết kế bổ sung](docs/TASK-RESORT-DESIGN-AUDIT-002.md) có wireframe local chín phân hệ/bốn mobile view, form mẫu, bảy blueprint và benchmark mã PMS. Figma được người kiểm toán báo cáo có 16 frame; Codex chưa có node/version để đối chiếu. Các đầu ra vẫn là bản nháp, không có baseline hoặc backend đã duyệt.
 
 **Phạm vi thiết kế cập nhật 26/10/2026:** toàn bộ PMS chín phân hệ, không chỉ dashboard. Xem [mô hình vận hành resort](docs/RESORT-OPERATING-MODEL.md), [đặc tả màn hình](docs/SCREEN-SPECIFICATIONS.md) và [bảng bao phủ](docs/SCREEN-COVERAGE.md). Repo có dashboard cũ và wireframe bổ sung; Figma/FigJam vẫn được theo dõi độc lập ở [tiếp nhận thiết kế](docs/FIGMA-HANDOFF.md). SaaS/profile dịch vụ là [phương án mở rộng chưa chốt](docs/BEESMART-PRODUCT-OPTIONS.md).

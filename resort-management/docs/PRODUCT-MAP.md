@@ -1,5 +1,7 @@
 # Bản đồ sản phẩm Resort 100
 
+**Phạm vi tham chiếu:** đây là bản đồ full PMS. Đối với kế hoạch v1 sau nghiên cứu thị trường, đọc [working summary](research/MARKET-RESEARCH-WORKING-SUMMARY.md): ưu tiên lớp Operations & Revenue Control kết nối một PMS/CM, source ownership rõ và ghi có điều kiện. Không tự triển khai mọi nhánh booking/finance như một PMS thứ hai.
+
 ## 1. Phạm vi và mục tiêu
 
 Một cơ sở 100 phòng. Giao diện tiếng Việt, tiền VND, múi giờ cơ sở cấu hình được; bản mẫu dùng Asia/Ho_Chi_Minh. Suite/Villa/Deluxe/Standard là phân loại minh họa, cần đối chiếu danh mục thật.
